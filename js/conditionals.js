@@ -19,8 +19,19 @@
  * You should use an if-else-if-else block to return different messages.
  *
  * Test your function by passing various string literals to it and
- * console.logging the function's return value
- */
+ * console.logging the function's return value*/
+
+//  function analyzeColor(color){
+//
+//      if (color === "red"){
+//          return "Red is the color of red paint";
+//      } else if (color === "blue"){
+//          return "Blue is the color of the blue lagoon";
+//      } else if (color === "green"){
+//          return "Green is the color of the green green grass of home"
+//      } else return "Sorry, I don't know anything about that particular color"
+//
+// }
 
 // Don't change the next two lines!
 // These lines create two variables for you:
@@ -34,18 +45,37 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Pass the `randomColor` variable to your 'analyzeColor' function and console.log the results.
  * You should see a different message every time you refresh the page
  */
+//console.log(analyzeColor(randomColor));
 
 /**
  * TODO:
  * Comment out the code above, and refactor your function to use a switch-case statement
  */
+function analyzeColor(color){
+    switch(color){
+        case "red":
+            return "Red is the color of red paint";
+            //break;
+        case "blue":
+            return "Blue is the color of the blue lagoon";
+            //break;
+        case "green":
+            return "Green is the color of the green green grass of home";
+            //break;
+        default:
+            return "Sorry, I don't know anything about that particular color";
 
+    }
+
+}
 /**
  * TODO:
  * Prompt the user for a color when the page loads, and pass the input from the
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
  */
+let myAnswer = prompt("Please submit a color").toLowerCase();
+console.log(analyzeColor(myAnswer));
 
 /* ########################################################################## */
 
@@ -68,7 +98,24 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
+function calculateTotal(discountCode, originalPrice){
 
+    if (discountCode === 0){
+        return originalPrice;
+    }else if (discountCode === 1){
+        return originalPrice * .90;
+    }else if (discountCode === 2){
+        return originalPrice * .75;
+    }else if (discountCode === 3){
+        return originalPrice * .65;
+    }else if (discountCode === 4){
+        return originalPrice * .5;
+    }else if (discountCode === 5){
+        return 0;
+    }
+
+
+}
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 5.
@@ -78,7 +125,11 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * price before the discount was, and what their price after the discount is.
  */
 // Generate a random number between 0 and 6
-// var luckyNumber = Math.floor(Math.random() * 6);
+var luckyNumber = Math.floor(Math.random() * 6);
+let totalBill = prompt("What's your total bill?");
+let newPrice = (calculateTotal(luckyNumber, totalBill));
+alert("Your lucky number today was " + luckyNumber + ". " + "Your original price was $" + totalBill + ". " + "Your new price after discount is $" + newPrice + ".");
+
 
 /**
  * TODO:
