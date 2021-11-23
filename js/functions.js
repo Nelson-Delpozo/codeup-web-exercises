@@ -126,7 +126,7 @@ alert("Your discounted price is " + applyDiscount(discount, price));
 
 
 
-////////////
+////////////class exercises
 // function goodDayToFly(cloudy, traffic){
 //     if(!cloudy && traffic < 10){
 //         console.log("Today's a good day to take to the sky!")
@@ -135,3 +135,19 @@ alert("Your discounted price is " + applyDiscount(discount, price));
 //
 // }
 // goodDayToFly(false, 8);
+
+// function add(a, b){
+//     return a + b
+// }
+//
+// function subtract(a, b){
+//     return a - b
+// }
+//
+// function multiply(a, b){
+//     return a * b
+// }
+//
+// function divide(a, b){
+//     return a / b
+// }
