@@ -149,3 +149,4 @@ alert("Your lucky number today was " + luckyNumber + ". " + "Your original price
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+
