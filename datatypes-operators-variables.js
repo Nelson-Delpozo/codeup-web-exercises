@@ -128,17 +128,17 @@ let totalPay = (facebookRate * 10) + (googleRate * 6) + (amazonRate * 4);
 console.log(totalPay);
 ///////////////////////
 
-let classFull = false;
+let classFull = true;
 let conflict = false;
 
-if (classFull === false && conflict === false){
+if (!classFull && !conflict){
     console.log("You are eligible!")
 } else console.log("Sorry, you're not eligible");
 ///////////////////////
-
+let offerValid = true;
 let premiumMember = false;
-let numberOfItems = 2;
-if (premiumMember == true || numberOfItems >= 2){
+let numberOfItems = 1;
+if ((premiumMember == true || numberOfItems > 2) && offerValid){
     console.log("Continue to checkout")
 } else console.log("You need to be a premium member or purchase at least 2 items");
 ///////////////////////
@@ -149,5 +149,10 @@ var password = 'notastrongpassword';
 console.log(password.length >= 5);
 console.log(password.includes(username));
 console.log(username.length <= 20);
+console.log(!username.startsWith(" "));
+console.log(!password.startsWith(" "));
+console.log(!username.endsWith(" "));
+console.log(!password.endsWith(" "));
 
-/////////////////////
+
+//////////////////////////////////////////////

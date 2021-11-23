@@ -123,3 +123,15 @@ let discount = prompt("What's your discount percentage?");
 let price = prompt("What's the price of the item?")
 
 alert("Your discounted price is " + applyDiscount(discount, price));
+
+
+
+////////////
+// function goodDayToFly(cloudy, traffic){
+//     if(!cloudy && traffic < 10){
+//         console.log("Today's a good day to take to the sky!")
+//     }else console.log("Sorry buddy, you're GROUNDED")
+//
+//
+// }
+// goodDayToFly(false, 8);
