@@ -163,9 +163,30 @@ if (confirmation){
     }else { alert("Ha! Your number is zero you cheeky monkey!")
 
     }
-}
+
+}else alert("Understandable have a nice day")
+
 
  /* Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
 
+// let confirmation = confirm("Would you like to enter a number?");
+//
+// if (confirmation){
+//     let number = prompt("Please enter a number");
+//
+//     if (number % 2 === 0){
+//         alert("Your number is even!")
+//     }else { alert("Your number is odd")}
+//
+//     alert("Your number plus 100  is: " + (parseInt(number) + 100));
+//
+//     if (number > 0){
+//         alert("Your number is positive!")
+//     }else if (number < 0){
+//         alert("Your number is negative!")
+//     }else { alert("Ha! Your number is zero you cheeky monkey!")
+//
+//     }
+// }
