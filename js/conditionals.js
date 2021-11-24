@@ -1,6 +1,6 @@
 "use strict";
 
-/* ########################################################################## */
+
 
 /**
  * TODO:
@@ -75,7 +75,7 @@ function analyzeColor(color){
  * function to show it to the user.
  */
 let myAnswer = prompt("Please submit a color").toLowerCase();
-console.log(analyzeColor(myAnswer));
+alert(analyzeColor(myAnswer));
 
 /* ########################################################################## */
 
@@ -143,10 +143,29 @@ alert("Your lucky number today was " + luckyNumber + ". " + "Your original price
  *
  * Do *NOT* display any of the above information
  * if the user enters a value that is not of the number data type.
- * Instead, use an alert to inform them of the incorrect input data type.
- *
- *
- * Can you refactor your code to use functions?
+ * Instead, use an alert to inform them of the incorrect input data type.*/
+
+let confirmation = confirm("Would you like to enter a number?");
+
+if (confirmation){
+    let number = prompt("Please enter a number");
+
+    if (number % 2 === 0){
+        alert("Your number is even!")
+    }else { alert("Your number is odd")}
+
+    alert("Your number plus 100  is: " + (parseInt(number) + 100));
+
+    if (number > 0){
+        alert("Your number is positive!")
+    }else if (number < 0){
+        alert("Your number is negative!")
+    }else { alert("Ha! Your number is zero you cheeky monkey!")
+
+    }
+}
+
+ /* Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
 
