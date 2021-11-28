@@ -52,22 +52,24 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Comment out the code above, and refactor your function to use a switch-case statement
  */
 function analyzeColor(color){
+    var result = "";
     switch(color){
         case "red":
-            return "Red is the color of red paint";
-            //break;
+            result = "Red is the color of red paint";
+            break;
         case "blue":
-            return "Blue is the color of the blue lagoon";
-            //break;
+            result = "Blue is the color of the blue lagoon";
+            break;
         case "green":
-            return "Green is the color of the green green grass of home";
-            //break;
+            result = "Green is the color of the green green grass of home";
+            break;
         default:
-            return "Sorry, I don't know anything about that particular color";
+            result = "Sorry, I don't know anything about that particular color";
 
     }
-
+        return result;
 }
+
 /**
  * TODO:
  * Prompt the user for a color when the page loads, and pass the input from the
