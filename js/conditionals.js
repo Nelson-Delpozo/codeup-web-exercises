@@ -211,6 +211,45 @@ function whatToWear(){
 
 alert(whatToWear());
 
+/////////////////////////////////////////
+
+function checkAge(){
+    let message = "";
+    let age = prompt("What's your age?");
+    if(age >= 21){
+        message = "You are 21 or over!"
+    }else message = "Sorry, you're not old enough yet"
+    return message;
+}
+alert(checkAge());
+
+////////////////////////////////
+
+function returnGrades(studentGradeNumber) {
+
+    let letterGrade = "";
+    if (studentGradeNumber >= 90) {
+        letterGrade = "A";
+    } else if (studentGradeNumber >= 80) {
+        letterGrade = "B";
+    } else if (studentGradeNumber >= 70) {
+        letterGrade = "C";
+    } else if (studentGradeNumber >= 60) {
+        letterGrade = "D";
+    } else letterGrade = "F";
+
+    return `Your letter grade is: ${letterGrade}`;
+}
+alert(returnGrades(90));
+
+///////////////////////////////////////////////
+
+
+
+
+
+
+
 
 
 
