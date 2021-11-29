@@ -225,9 +225,12 @@ alert(checkAge());
 
 ////////////////////////////////
 
-function returnGrades(studentGradeNumber) {
-
+function returnGrades() {
+    let students = ["Joe", "Mike", "Laura"];
+    for(let i = 0; i < students.length; i++){
+    let studentGradeNumber = prompt("What's your number grade?");
     let letterGrade = "";
+    let message = "";
     if (studentGradeNumber >= 90) {
         letterGrade = "A";
     } else if (studentGradeNumber >= 80) {
@@ -238,9 +241,12 @@ function returnGrades(studentGradeNumber) {
         letterGrade = "D";
     } else letterGrade = "F";
 
-    return `Your letter grade is: ${letterGrade}`;
-}
-alert(returnGrades(90));
+   message = `Your letter grade is: ${letterGrade}`;
+   alert(message);
+}}
+
+returnGrades();
+
 
 ///////////////////////////////////////////////
 
