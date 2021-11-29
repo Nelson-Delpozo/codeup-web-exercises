@@ -223,10 +223,10 @@ function checkAge(){
 }
 alert(checkAge());
 
-////////////////////////////////
+//////////////////////////////////
 
 function returnGrades() {
-    let students = ["Joe", "Mike", "Laura"];
+    let students = [{name:"Joe", grade:""}, {name: "Mike", grade:""}, {name: "Laura", grade:""}];
     for(let i = 0; i < students.length; i++){
     let studentGradeNumber = prompt("What's your number grade?");
     let letterGrade = "";
@@ -240,15 +240,44 @@ function returnGrades() {
     } else if (studentGradeNumber >= 60) {
         letterGrade = "D";
     } else letterGrade = "F";
-
+    students[i].grade = letterGrade;
    message = `Your letter grade is: ${letterGrade}`;
    alert(message);
-}}
 
+
+   }alert(JSON.stringify(students));
+}
 returnGrades();
 
 
+
+
+
 ///////////////////////////////////////////////
+
+//ternary operator
+
+function howsTheWeather(){
+    let input = parseInt(prompt("What's the temp?"));
+    (input >= 90) ? alert("It's pretty hot")
+        : (input >= 80) ? alert("It's kind of warm!")
+        : (input >= 70) ? alert("It's perfect out")
+        : (input < 70) ? alert("Whoa get a jacket")
+        : alert("That's all I have to say about that");
+
+
+
+}
+howsTheWeather();
+
+////////////////////////////////////////////
+
+
+
+
+
+
+
 
 
 
