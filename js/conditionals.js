@@ -147,32 +147,6 @@ alert("Your lucky number today was " + luckyNumber + ". " + "Your original price
  * if the user enters a value that is not of the number data type.
  * Instead, use an alert to inform them of the incorrect input data type.*/
 
-let confirmation = confirm("Would you like to enter a number?");
-
-if (confirmation){
-    let number = prompt("Please enter a number");
-
-    if (number % 2 === 0){
-        alert("Your number is even!")
-    }else { alert("Your number is odd")}
-
-    alert("Your number plus 100  is: " + (parseInt(number) + 100));
-
-    if (number > 0){
-        alert("Your number is positive!")
-    }else if (number < 0){
-        alert("Your number is negative!")
-    }else { alert("Ha! Your number is zero you cheeky monkey!")
-
-    }
-
-}else alert("Understandable have a nice day")
-
-
- /* Can you refactor your code to use functions?
- * HINT: The way we prompt for a value could be improved
- */
-
 // let confirmation = confirm("Would you like to enter a number?");
 //
 // if (confirmation){
@@ -191,7 +165,35 @@ if (confirmation){
 //     }else { alert("Ha! Your number is zero you cheeky monkey!")
 //
 //     }
-// }
+//
+// }else alert("Understandable have a nice day")
+
+
+ /* Can you refactor your code to use functions?
+ * HINT: The way we prompt for a value could be improved
+ */
+
+function whatsYourNumber(){
+let confirmation = confirm("Would you like to enter a number?");
+
+if (confirmation){
+    let number = prompt("Please enter a number");
+
+    if (number % 2 === 0){
+        alert("Your number is even!")
+    }else { alert("Your number is odd")}
+
+    alert("Your number plus 100  is: " + (parseInt(number) + 100));
+
+    if (number > 0){
+        alert("Your number is positive!")
+    }else if (number < 0){
+        alert("Your number is negative!")
+    }else { alert("Ha! Your number is zero you cheeky monkey!")
+
+    }
+}}
+whatsYourNumber();
 
 ///If it's sunny => wear a t-shirt;
 ///If it's rainy => wear galoshes;
@@ -245,7 +247,7 @@ function returnGrades() {
    alert(message);
 
 
-   }alert(JSON.stringify(students));
+   }alert("Here are the grades so far:" + (JSON.stringify(students)));
 }
 returnGrades();
 
@@ -272,6 +274,55 @@ howsTheWeather();
 
 ////////////////////////////////////////////
 
+function skyStatus(){
+let sky = prompt("What's the sky look like?").toLowerCase();
+switch(sky){
+    case "sunny":
+        return "Grab a hat";
+    case "rainy":
+        return "Grab an umbrella";
+    case "snowy":
+        return "Grab some boots";
+    default: return "I don't know anything about that weather";
+}}
+
+alert(skyStatus());
+
+//////////////////////////////////////////////
+
+// function returnGrades() {
+//     let students = [{name:"Joe", grade:""}, {name: "Mike", grade:""}, {name: "Laura", grade:""}];
+//     for(let i = 0; i < students.length; i++){
+//         let studentGradeNumber = prompt("What's your number grade?");
+//         let letterGrade = "";
+//         let message = "";
+//         switch(studentGradeNumber){
+//             case studentGradeNumber >= 90:
+//             letterGrade = "A";
+//             break;
+//             case studentGradeNumber >= 80:
+//             letterGrade = "B";
+//             break;
+//             case studentGradeNumber >= 70:
+//             letterGrade = "C";
+//             break;
+//             case studentGradeNumber >= 60:
+//             letterGrade = "D";
+//             break;
+//             default: letterGrade = "F";}
+//
+//         students[i].grade = letterGrade;
+//         message = `Your letter grade is: ${letterGrade}`;
+//         alert(message);
+//
+//
+//     }alert("Here are the grades so far:" + (JSON.stringify(students)));
+// }
+// returnGrades();
+
+
+
+/////////////////////////////////////////////////////
 
 
 
