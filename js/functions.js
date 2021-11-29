@@ -83,7 +83,7 @@ console.log(isTwo(random));
  */
 
 function calculateTip(tip, total){
-    return ((tip / 100) * total)
+    return ((tip / 100) * total);
 }
 //console.log(calculateTip(.5, 10));
 

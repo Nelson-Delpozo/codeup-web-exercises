@@ -192,3 +192,26 @@ if (confirmation){
 //
 //     }
 // }
+
+///If it's sunny => wear a t-shirt;
+///If it's rainy => wear galoshes;
+///If it's snowy => wear a hat;
+
+function whatToWear(){
+    let weather = prompt("What's the weather like?").toLowerCase();
+
+    if(weather === "sunny"){
+        return "You should wear shorts";
+    }else if(weather === "rainy"){
+        return "You should wear galoshes";
+    }else if(weather === "snowy"){
+        return "You should wear a hat"
+    }else return "I don't know what kind of weather that is"
+}
+
+alert(whatToWear());
+
+
+
+
+
