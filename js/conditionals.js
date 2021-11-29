@@ -179,6 +179,11 @@ let confirmation = confirm("Would you like to enter a number?");
 if (confirmation){
     let number = prompt("Please enter a number");
 
+    if(isNaN(parseInt(number))){
+        alert("That's not a number")
+        whatsYourNumber();
+    } else{
+
     if (number % 2 === 0){
         alert("Your number is even!")
     }else { alert("Your number is odd")}
@@ -192,8 +197,12 @@ if (confirmation){
     }else { alert("Ha! Your number is zero you cheeky monkey!")
 
     }
-}}
+}
+}else alert("Understandable have a nice day");
+
+}whatsYourNumber();
 whatsYourNumber();
+
 
 ///If it's sunny => wear a t-shirt;
 ///If it's rainy => wear galoshes;
