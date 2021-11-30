@@ -152,4 +152,67 @@ alert("Your discounted price is $" + applyDiscount(discount, price));
 //     return a / b
 // }
 
+///generates random scores///
+
+function randomScores(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+console.log(randomScores(200, 300));
+
+//makes an array of three random numbers//
+
+function makeScoreBoard() {
+    let score1 = randomScores(200, 300);
+    let score2 = randomScores(200, 300);
+    let score3 = randomScores(200, 300);
+    return [score1, score2, score3]
+
+}
+let scoreBoard = makeScoreBoard();
+console.log(scoreBoard);
+
+
+
+///////////////////////////////////////
+
+function getAverage(score1, score2, score3) {
+
+    const scoreBoard = makeScoreBoard();
+     return ((score1 + score2 + score3) / 3).toFixed();
+
+}
+
+console.log(getAverage(200, 300, 150));
+
+/////////////////////////////////////
+
+function threeOrFive(num){
+    return (num % 3 === 0) && (num % 5 === 0 );
+}
+
+console.log(threeOrFive(15));
+
+//////////////////////////////////////
+
+function toLowerCase(str){
+   // str = str.replace(/([A-Z])/g, ' $1').trim();
+    return str.toLowerCase();
+}
+
+console.log(toLowerCase("ThEbEsTbOwLiNgPlAcEever");
+
+//////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
 
