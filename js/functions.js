@@ -176,16 +176,23 @@ console.log(scoreBoard);
 
 ///////////////////////////////////////
 
-function getAverage(score1, score2, score3) {
+function getAverage() {
+    return ((scoreBoard[0] + scoreBoard[1] + scoreBoard[2]) / 3).toFixed()
+    }
 
-    const scoreBoard = makeScoreBoard();
-     return ((score1 + score2 + score3) / 3).toFixed();
+console.log(getAverage());
 
-}
 
-console.log(getAverage(200, 300, 150));
+
 
 /////////////////////////////////////
+function getHighestScore(){
+    return Math.max(...scoreBoard);
+
+}
+console.log(getHighestScore());
+
+///////////////////////////////////
 
 function threeOrFive(num){
     return (num % 3 === 0) && (num % 5 === 0 );
@@ -203,6 +210,47 @@ function toLowerCase(str){
 console.log(toLowerCase("ThEbEsTbOwLiNgPlAcEever");
 
 //////////////////////////////////////
+
+function returnVariableTypes(variable){
+
+    let score = 109;
+    let name = "Bowling is fun"
+    let isBowlingFun = true;
+    let players = ["Tom", "Jerry", "Garfield"];
+
+    console.log(typeof score);
+    console.log(typeof name);
+    console.log(typeof isBowlingFun);
+    console.log(typeof players);
+
+}
+
+returnVariableTypes();
+
+////////////////////////////////////////
+
+function myFunction(firstName, lastName){
+    return firstName + " " + lastName;
+}
+
+
+function thatIsNotMyName(name) {
+
+    if (name === "Laura") {
+        return "that's me!, I'm " + name
+    } else return "that's not my name";
+}
+
+console.log(myFunction("Nelson", "Delpozo"));
+console.log(thatIsNotMyName("Laura"));
+
+////////////////////////////////////////////
+
+
+
+
+
+
 
 
 
