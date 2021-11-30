@@ -38,8 +38,8 @@
 // - `colors`: a list of the colors of the rainbow
 // - `randomColor`: contains a single random color value from the list (this
 //                  will contain a different color every time the page loads)
-var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
-var randomColor = colors[Math.floor(Math.random() * colors.length)];
+let colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+let randomColor = colors[Math.floor(Math.random() * colors.length)];
 /**
  * TODO:
  * Pass the `randomColor` variable to your 'analyzeColor' function and console.log the results.
@@ -52,7 +52,7 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Comment out the code above, and refactor your function to use a switch-case statement
  */
 function analyzeColor(color){
-    var result = "";
+    let result = "";
     switch(color){
         case "red":
             result = "Red is the color of red paint";
@@ -200,7 +200,7 @@ if (confirmation){
 }
 }else alert("Understandable have a nice day");
 
-}whatsYourNumber();
+}
 whatsYourNumber();
 
 
@@ -276,8 +276,6 @@ function howsTheWeather(){
         : (input < 70) ? alert("Whoa get a jacket")
         : alert("That's all I have to say about that");
 
-
-
 }
 howsTheWeather();
 
@@ -299,39 +297,7 @@ alert(skyStatus());
 
 //////////////////////////////////////////////
 
-// function returnGrades() {
-//     let students = [{name:"Joe", grade:""}, {name: "Mike", grade:""}, {name: "Laura", grade:""}];
-//     for(let i = 0; i < students.length; i++){
-//         let studentGradeNumber = prompt("What's your number grade?");
-//         let letterGrade = "";
-//         let message = "";
-//         switch(studentGradeNumber){
-//             case studentGradeNumber >= 90:
-//             letterGrade = "A";
-//             break;
-//             case studentGradeNumber >= 80:
-//             letterGrade = "B";
-//             break;
-//             case studentGradeNumber >= 70:
-//             letterGrade = "C";
-//             break;
-//             case studentGradeNumber >= 60:
-//             letterGrade = "D";
-//             break;
-//             default: letterGrade = "F";}
-//
-//         students[i].grade = letterGrade;
-//         message = `Your letter grade is: ${letterGrade}`;
-//         alert(message);
-//
-//
-//     }alert("Here are the grades so far:" + (JSON.stringify(students)));
-// }
-// returnGrades();
 
-
-
-/////////////////////////////////////////////////////
 
 
 

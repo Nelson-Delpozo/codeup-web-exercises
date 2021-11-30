@@ -151,3 +151,5 @@ alert("Your discounted price is $" + applyDiscount(discount, price));
 // function divide(a, b){
 //     return a / b
 // }
+
+
