@@ -171,7 +171,7 @@ function makeScoreBoard() {
     return [score1, score2, score3];
 
 }
-let scoreBoard = makeScoreBoard();
+const scoreBoard = makeScoreBoard();
 console.log(scoreBoard);
 
 
@@ -257,9 +257,18 @@ console.log(thatIsNotMyName("Laura"));
 //////////////////////////////////////////////
 //function to run all the other functions//
 
-function runAll(){
+// function runAll(){
+//     const scoreBoard = makeScoreBoard();
+//     console.log(scoreBoard);
+//     console.log(getAverage());
+//     console.log(getHighestScore());
+//     console.log(threeOrFive());
+// }
 
-}
+
+
+
+
 
 //////////////////////////////////////////////
 
