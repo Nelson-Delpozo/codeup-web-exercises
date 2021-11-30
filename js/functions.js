@@ -151,6 +151,8 @@ alert("Your discounted price is $" + applyDiscount(discount, price));
 // function divide(a, b){
 //     return a / b
 // }
+/////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////
 
 ///generates random scores///
 
@@ -175,6 +177,7 @@ console.log(scoreBoard);
 
 
 ///////////////////////////////////////
+///gets average score from array//
 
 function getAverage() {
     return ((scoreBoard[0] + scoreBoard[1] + scoreBoard[2]) / 3).toFixed()
@@ -186,21 +189,26 @@ console.log(getAverage());
 
 
 /////////////////////////////////////
+//gets highest score from the array//
+
 function getHighestScore(){
     return Math.max(...scoreBoard);
-
 }
 console.log(getHighestScore());
 
 ///////////////////////////////////
+//returns whether or not the highest score is divisible by 3 and 5//
 
-function threeOrFive(num){
+function threeOrFive(){
+    let num = getHighestScore();
     return (num % 3 === 0) && (num % 5 === 0 );
 }
 
 console.log(threeOrFive(15));
 
+
 //////////////////////////////////////
+//returns string as all lower case//
 
 function toLowerCase(str){
    // str = str.replace(/([A-Z])/g, ' $1').trim();
@@ -210,6 +218,7 @@ function toLowerCase(str){
 console.log(toLowerCase("ThEbEsTbOwLiNgPlAcEever");
 
 //////////////////////////////////////
+//returns data types of the four variables//
 
 function returnVariableTypes(variable){
 
@@ -228,11 +237,11 @@ function returnVariableTypes(variable){
 returnVariableTypes();
 
 ////////////////////////////////////////
+///these are bonus exercises//
 
 function myFunction(firstName, lastName){
     return firstName + " " + lastName;
 }
-
 
 function thatIsNotMyName(name) {
 
@@ -244,7 +253,7 @@ function thatIsNotMyName(name) {
 console.log(myFunction("Nelson", "Delpozo"));
 console.log(thatIsNotMyName("Laura"));
 
-////////////////////////////////////////////
+//////////////////////////////////////////////
 
 
 
