@@ -168,7 +168,7 @@ function makeScoreBoard() {
     let score1 = randomScores(200, 300);
     let score2 = randomScores(200, 300);
     let score3 = randomScores(200, 300);
-    return [score1, score2, score3]
+    return [score1, score2, score3];
 
 }
 let scoreBoard = makeScoreBoard();
@@ -180,6 +180,7 @@ console.log(scoreBoard);
 ///gets average score from array//
 
 function getAverage() {
+
     return ((scoreBoard[0] + scoreBoard[1] + scoreBoard[2]) / 3).toFixed()
     }
 
@@ -254,6 +255,19 @@ console.log(myFunction("Nelson", "Delpozo"));
 console.log(thatIsNotMyName("Laura"));
 
 //////////////////////////////////////////////
+//function to run all the other functions//
+
+function runAll(){
+
+}
+
+//////////////////////////////////////////////
+
+
+
+
+
+
 
 
 

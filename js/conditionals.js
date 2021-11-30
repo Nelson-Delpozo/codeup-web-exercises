@@ -126,11 +126,17 @@ function calculateTotal(discountCode, originalPrice){
  * and alerts to display to the user what their lucky number was, what their
  * price before the discount was, and what their price after the discount is.
  */
+function numberPlay() {
 // Generate a random number between 0 and 6
-var luckyNumber = Math.floor(Math.random() * 6);
-let totalBill = prompt("What's your total bill?");
-let newPrice = (calculateTotal(luckyNumber, totalBill));
-alert("Your lucky number today was " + luckyNumber + ". " + "Your original price was $" + totalBill + ". " + "Your new price after discount is $" + newPrice + ".");
+    var luckyNumber = Math.floor(Math.random() * 6);
+
+    let totalBill = parseInt(prompt("What's your total bill?"));
+    if (!isNaN(totalBill)) {
+        let newPrice = (calculateTotal(luckyNumber, totalBill));
+        alert("Your lucky number today was " + luckyNumber + ". " + "Your original price was $" + totalBill + ". " + "Your new price after discount is $" + newPrice + ".");
+    } else alert("That's not a valid number");
+}
+numberPlay();
 
 
 /**
@@ -230,9 +236,9 @@ function checkAge(){
     if(age >= 21){
         message = "You are 21 or over!"
     }else message = "Sorry, you're not old enough yet"
-    return message;
+    alert(message);
 }
-alert(checkAge());
+checkAge();
 
 //////////////////////////////////
 
