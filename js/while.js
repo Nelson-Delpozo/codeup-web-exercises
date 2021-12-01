@@ -13,11 +13,17 @@ while(i <= 65536) {
 /////////////////////////////
 //generates a random number between 50 - 100//
 
-var allCones = Math.floor(Math.random() * 50) + 50;
+let allCones = Math.floor(Math.random() * 50) + 50;
 
 
 //generates random number between 1 - 5//
 
-Math.floor(Math.random() * 5) + 1;
+do{
+   let ConesPerPerson =  Math.floor(Math.random() * 5) + 1;
+
+
+} while (allCones > 0);
+
+
 
 
