@@ -10,19 +10,31 @@ while(i <= 65536) {
     i *= 2;
 }
 
-/////////////////////////////
+////////////////////////////////
+
 //generates a random number between 50 - 100//
-
-let allCones = Math.floor(Math.random() * 50) + 50;
-
-
-//generates random number between 1 - 5//
-
+var allCones = Math.floor(Math.random() * 50) + 50;
+console.log(allCones);
 do{
-   let ConesPerPerson =  Math.floor(Math.random() * 5) + 1;
 
 
+        const ConesPerPerson =  Math.floor(Math.random() * 5) + 1;
+        //allCones -= ConesPerPerson;
+        if (allCones >= ConesPerPerson) {
+            console.log(ConesPerPerson + " cones sold!")
+            allCones -= ConesPerPerson
+            console.log("Only " + allCones + " left!");
+        } else {
+            console.log("I can't sell you " + ConesPerPerson + " cones, I only have " + allCones + " left!");
+        }
 } while (allCones > 0);
+
+//////////////////////////////////////////
+
+
+
+
+
 
 
 
