@@ -42,10 +42,8 @@ function makePyramidOfNumbers(){
     let str = "";
     for(let i = 1; i < 10; i++){
         str += i.toString();
-        console.log(str)
-        // str += i;
-        // let newStr = str.toString();
-        // console.log(newStr);
+        console.log(str);
+
     }
 
 }
@@ -65,6 +63,8 @@ function forLoop100to5(){
 forLoop100to5();
 
 //////////////////////////////////
+
+
 
 
 
