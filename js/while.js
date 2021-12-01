@@ -27,6 +27,9 @@ do{
         } else {
             console.log("I can't sell you " + ConesPerPerson + " cones, I only have " + allCones + " left!");
         }
+        if(allCones === 0){
+            console.log("Yay I sold them all now I can go home to my family!");
+        }
 } while (allCones > 0);
 
 //////////////////////////////////////////
