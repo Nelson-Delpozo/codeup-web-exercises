@@ -39,15 +39,16 @@ tenRandomNumbers();
 // 999999999
 
 function makePyramidOfNumbers(){
-    let str = "";
+    //let str = "";
     for(let i = 1; i < 10; i++){
-        str += i.toString();
-        console.log(str);
-
+        let str = "";
+        for(let f = i; f > 0; f--){
+            str += i;
+        }console.log(str);
     }
-
 }
 makePyramidOfNumbers();
+
 
 ///////////////////////////////////
 //logs 100-5 in increments of 5//
@@ -63,6 +64,7 @@ function forLoop100to5(){
 forLoop100to5();
 
 //////////////////////////////////
+
 
 
 
