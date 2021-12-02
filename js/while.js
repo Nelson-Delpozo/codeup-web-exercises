@@ -10,7 +10,7 @@ while(i <= 65536) {
     i *= 2;
 }
 
-////////////////////////////////
+///////////////////////////////////
 
 //generates a random number between 50 - 100//
 var allCones = Math.floor(Math.random() * 50) + 50;
@@ -19,7 +19,7 @@ do{
 
 
         const ConesPerPerson =  Math.floor(Math.random() * 5) + 1;
-        //allCones -= ConesPerPerson;
+
         if (allCones >= ConesPerPerson) {
             console.log(ConesPerPerson + " cones sold!")
             allCones -= ConesPerPerson
