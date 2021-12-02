@@ -54,36 +54,37 @@ makePyramidOfNumbers();
 //logs 100-5 in increments of 5//
 
 function forLoop100to5(){
-
+    let gap = 5;
     for(let i = 100; i > 0; i--){
-        if(i % 5 === 0){
+        if(i % gap === 0){
             console.log(i)
         }
     }
 }
 forLoop100to5();
 
+
 //////////////////////////////////
 
-function oddNumbers(){
-   // let num =  prompt("Enter an odd number")
-    let num;
-    do{
-      num = prompt("Enter an odd number")
-    }while (num % 2 === 0);
-    console.log("Number to skip: " + num);
-    for(let i = 1; i < 51; i++){
-        if(i % 2 === 0){
-            continue
-        }
-        if(i - num === 0){
-            console.log("Yikes! Skipping number: " + num);
-        }else
-        console.log("Here is an odd number: " + i)
-    }
-}
-
-oddNumbers();
+// function oddNumbers(){
+//    // let num =  prompt("Enter an odd number")
+//     let num;
+//     do{
+//       num = prompt("Enter an odd number")
+//     }while (num % 2 === 0);
+//     console.log("Number to skip: " + num);
+//     for(let i = 1; i < 51; i++){
+//         if(i % 2 === 0){
+//             continue
+//         }
+//         if(i - num === 0){
+//             console.log("Yikes! Skipping number: " + num);
+//         }else
+//         console.log("Here is an odd number: " + i)
+//     }
+// }
+//
+// oddNumbers();
 
 //////////////////////////////
 
@@ -113,15 +114,15 @@ zeroToFiftyByTwos();
 
 //////////////////////////////////////////
 
-let dozens = 0;
-for (let e = 0; e <= 48; e++){
-    if(e % 12 === 0){
-        console.log("we have another dozen eggs" + (e/12))
-        dozens++
-    }
-    console.log(e);
-}
-///////////////////////////////////////////////
+// let dozens = 0;
+// for (let e = 0; e <= 48; e++){
+//     if(e % 12 === 0){
+//         console.log("we have another dozen eggs" + (e/12))
+//         dozens++
+//     }
+//     console.log(e);
+// }
+// ///////////////////////////////////////////////
 
 
 
