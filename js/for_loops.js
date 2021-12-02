@@ -39,7 +39,7 @@ tenRandomNumbers();
 // 999999999
 
 function makePyramidOfNumbers(){
-    //let str = "";
+
     for(let i = 1; i < 10; i++){
         let str = "";
         for(let f = i; f > 0; f--){
