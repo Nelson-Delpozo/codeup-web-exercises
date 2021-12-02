@@ -13,10 +13,11 @@ while(i <= 65536) {
 ///////////////////////////////////
 
 //generates a random number between 50 - 100//
-var allCones = Math.floor(Math.random() * 50) + 50;
-console.log(`We have to sell ${allCones} before we can go home :(`);
-do{
+let allCones = Math.floor(Math.random() * 50) + 50;
 
+console.log(`We have to sell ${allCones} cones before we can go home :(`);
+
+do{
 
         const ConesPerPerson =  Math.floor(Math.random() * 5) + 1;
 
@@ -37,9 +38,29 @@ let z = 2;
 while(z <= 50){
     if(z % 2 === 0){
     console.log(`the number is: ${z}.`);
-
-}z++;
+    }z++;
 }
+
+
+/////////////////////////////////////////////
+let k  = 1
+while(k <= 10){
+
+    console.log(k)
+    k++
+}
+
+let l = 1;
+do{
+    console.log(l)
+    l++
+}while(l <= 10);
+
+//////////////////////////////////////////
+
+
+
+
 
 
 

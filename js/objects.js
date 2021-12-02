@@ -75,6 +75,26 @@ console.log("connected");
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+    let books = [
+        {title: "For Whom the Bell Tolls",
+        author: {firstName: "Ernest",
+        lastName: "Hemingway"}},
+        {title: "On the Road",
+        author: {firstName: "Jack",
+        lastName: "Kerouac"}},
+        {title: "Roots",
+        author: {firstName: "Alex",
+        lastName: "Haley"}},
+        {title: "Valley of the Dolls",
+        author: {firstName: "Jacqueline",
+        lastName: "Susann"}},
+        {title: "Siddhartha",
+        author: {firstName: "Herman"},
+        lastName: "Hesse"}
+    ]
+    console.log(books);
+
+
 
     /**
      * TODO:
@@ -100,6 +120,13 @@ console.log("connected");
      *      ---
      *      ...
      */
+    books.forEach(function(book){
+        console.log("Book # " + books.indexOf(book));
+        console.log("Title: " + book.title);
+        console.log("Author: " + book.author.firstName + " " + book.author.lastName);
+
+    })
+
 
     /**
      * Bonus:
@@ -111,5 +138,20 @@ console.log("connected");
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+
+    function createBook(title, firstName, lastName) {
+
+        let book = {title:"", author:{firstName:"", lastName:""}};
+        book.title = title;
+        book.author.firstName = firstName;
+        book.author.lastName = lastName;
+        console.log(book);
+    }
+
+    createBook("B", "Joe", "Jones");
+
+
+
+
 
 })();
