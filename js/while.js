@@ -33,6 +33,15 @@ do{
 } while (allCones > 0);
 
 //////////////////////////////////////////
+let z = 2;
+while(z <= 50){
+    if(z % 2 === 0){
+    console.log(`the number is: ${z}.`);
+
+}z++;
+}
+
+
 
 
 
