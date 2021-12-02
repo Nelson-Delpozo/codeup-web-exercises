@@ -87,6 +87,26 @@ oddNumbers();
 
 //////////////////////////////
 
+function parkingSpots(spots){
+
+    let openSpots = 0;
+    console.log(`There are ${spots} spots in this lot.`)
+
+    for (let i = spots; i > 0; i--){
+        openSpots++
+        console.log(`A spot has opened! There are now: ${openSpots} available.`)
+    }
+
+}
+parkingSpots(20);
+
+
+
+
+
+
+
+
 
 
 
