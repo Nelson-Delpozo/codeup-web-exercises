@@ -113,6 +113,18 @@ zeroToFiftyByTwos();
 
 //////////////////////////////////////////
 
+let dozens = 0;
+for (let e = 0; e <= 48; e++){
+    if(e % 12 === 0){
+        console.log("we have another dozen eggs" + (e/12))
+        dozens++
+    }
+    console.log(e);
+}
+///////////////////////////////////////////////
+
+
+
 
 
 

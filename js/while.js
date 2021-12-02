@@ -58,6 +58,32 @@ do{
 
 //////////////////////////////////////////
 
+// TODO: using prompt() and alert(), write a loop that will continue to ask for the correct password until the
+// correct password is given.
+function pass(){
+
+const actualPassword = "qwerty123";
+let password = prompt("Please enter your password");
+
+    while(password !== actualPassword){
+        alert("Wrong password, try again");
+        password = prompt("Please re-enter password")
+    }alert("Correct!");
+}
+
+pass();
+////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
 
 
 
