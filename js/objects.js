@@ -13,6 +13,10 @@ console.log("connected");
      *  > console.log(person.firstName) // "Rick"
      *  > console.log(person.lastName) // "Sanchez"
      */
+    let person = {
+        firstName: "Nelson",
+        lastName: "Delpozo"
+    };
 
     /**
      * TODO:
@@ -23,6 +27,10 @@ console.log("connected");
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
+    person.sayHello = function(){
+        return "Hello, " + this.firstName + " " + this.lastName;
+    }
+    console.log(person.sayHello());
 
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
@@ -38,11 +46,22 @@ console.log("connected");
      * and console.log the relevant messages for each person
      */
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
+    var shoppers = [
+        {name: 'Cameron', amount: 180},
+        {name: 'Ryan', amount: 250},
+        {name: 'George', amount: 320}
+    ];
+
+    shoppers.forEach(function(shopper){
+        if (shopper.amount >= 200){
+            console.log(shopper.name + ", you've earned a discount! You spent " + shopper.amount + ", and you earned a discount of " + (shopper.amount * .12).toFixed(2) + ". Bringing your new total to: " + (shopper.amount * .88).toFixed(2));
+        }else console.log("Sorry, " + shopper.name + ", if you want a discount, you have to spend: " + (200 - shopper.amount) + " more. Thank you.")
+
+    })
+
+
+
+
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
