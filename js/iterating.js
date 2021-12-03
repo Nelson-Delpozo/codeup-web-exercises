@@ -8,7 +8,7 @@ console.log("connected");
      * Create an array of 4 people's names and store it in a variable called
      * 'names'.
      */
-    let names = ["Donny", "Walter", "Teddy", "Dude"];
+    let names = ["Donny", "Walter", "Bunny", "Dude"];
 
     /**
      * TODO:
@@ -82,4 +82,32 @@ console.log("connected");
 
 
 })();
+
+////////////////////////////////////////////
+//create an array of my favorite foods
+let pizza = ["cheese", "crust", "arugula"]
+let myFaveFoods = ["Beans", "Rice", "Spinach Dip", "Green Bean Casserole", "Chik'n Nuggets", pizza];
+console.log(myFaveFoods);
+
+myFaveFoods[1] += " Johnson";
+console.log(myFaveFoods);
+myFaveFoods[0] += " #1";
+myFaveFoods[1] += " #2";
+myFaveFoods[2] += " #3";
+myFaveFoods[3] += " #4";
+myFaveFoods[4] += " #5";
+
+console.log(myFaveFoods);
+
+
+
+for(let i = 0; i < myFaveFoods.length; i++){
+    myFaveFoods[i] += " ala mode"
+}
+console.log(myFaveFoods);
+
+
+
+
+
 
