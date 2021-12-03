@@ -10,6 +10,7 @@ console.log("connected");
      */
     let names = ["Donny", "Walter", "Bunny", "Dude"];
 
+
     /**
      * TODO:
      * Create a log statement that will log the number of elements in the names
@@ -49,6 +50,7 @@ console.log("connected");
         console.log("Here is a name: " + name + ".");
     });
 
+    names.forEach((name) => {console.log("Here's another name: " + name)})
 
     /**
      * TODO:
@@ -106,15 +108,6 @@ for(let i = 0; i < myFaveFoods.length; i++){
 }
 console.log(myFaveFoods);
 
-///removes ala-mode//
-let newString = [];
-for(let z = 0; z < myFaveFoods.length; z++){
-
-    newString =  myFaveFoods[z].substring(0, myFaveFoods[z].lastIndexOf(" "));
-
-    console.log(newString)
-
-}console.log(typeof newString);
 
 
 //////////////////////////////
