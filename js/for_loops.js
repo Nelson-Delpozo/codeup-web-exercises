@@ -2,13 +2,14 @@
 
 console.log("connected");
 ///multiplication table, returns 1-10 times the passed argument//
-function multiplicationTable(num){
+function multiplicationTable(){
+    let num = prompt("Enter a number to multiply")
     for(let i = 1; i < 11; i++){
         console.log(num + " x " + i + " = " + (num*i) )
     }
 }
 
-multiplicationTable(7);
+multiplicationTable();
 
 ////////////////////////////////////
 //tenRandomNumbers generates ten random numbers using a for loop and logs the numbers and whether they are even or odd//
