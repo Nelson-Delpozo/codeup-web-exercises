@@ -120,8 +120,9 @@ console.log("connected");
      *      ---
      *      ...
      */
+
     books.forEach(function(book){
-        console.log("Book # " + books.indexOf(book));
+        console.log("Book # " + (books.indexOf(book) + 1));
         console.log("Title: " + book.title);
         console.log("Author: " + book.author.firstName + " " + book.author.lastName);
 
@@ -149,6 +150,23 @@ console.log("connected");
     }
 
     createBook("B", "Joe", "Jones");
+
+    ////////////////////////////////////////////////////
+
+    function showBookInfo(array){
+        array.forEach(function(book){
+            console.log("Book # " + (array.indexOf(book) + 1));
+            console.log("Title: " + book.title);
+            console.log("Author: " + book.author.firstName + " " + book.author.lastName);
+
+        })
+    }
+
+    showBookInfo(books);
+
+
+
+
 
 
 
