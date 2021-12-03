@@ -140,29 +140,33 @@ console.log("connected");
      *   `showBookInfo` function.
      */
 
-    function createBook(title, firstName, lastName) {
+    function createBook() {
+        let title = prompt("Enter a title");
+        let firstName = prompt("Enter the author's first name");
+        let lastName = prompt("Enter author's last name")
+        let newBook = {title:"", author:{firstName:"", lastName:""}};
+        newBook.title = title;
+        newBook.author.firstName = firstName;
+        newBook.author.lastName = lastName;
+        console.log(newBook);
+        books.push(newBook);
 
-        let book = {title:"", author:{firstName:"", lastName:""}};
-        book.title = title;
-        book.author.firstName = firstName;
-        book.author.lastName = lastName;
-        console.log(book);
     }
-
-    createBook("B", "Joe", "Jones");
+    console.log(books);
+    createBook();
 
     ////////////////////////////////////////////////////
-
-    function showBookInfo(array){
-        array.forEach(function(book){
-            console.log("Book # " + (array.indexOf(book) + 1));
-            console.log("Title: " + book.title);
-            console.log("Author: " + book.author.firstName + " " + book.author.lastName);
-
-        })
-    }
-
-    showBookInfo(books);
+    //
+    // function showBookInfo(array){
+    //     array.forEach(function(book){
+    //         console.log("Book # " + (array.indexOf(book) + 1));
+    //         console.log("Title: " + book.title);
+    //         console.log("Author: " + book.author.firstName + " " + book.author.lastName);
+    //
+    //     })
+    // }
+    //
+    // showBookInfo(books);
 
 
 
