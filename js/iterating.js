@@ -100,11 +100,39 @@ myFaveFoods[4] += " #5";
 console.log(myFaveFoods);
 
 
-
+///adds ala-mode//
 for(let i = 0; i < myFaveFoods.length; i++){
-    myFaveFoods[i] += " ala mode"
+    myFaveFoods[i] += " ala-mode"
 }
 console.log(myFaveFoods);
+
+///removes ala-mode//
+let newString = [];
+for(let z = 0; z < myFaveFoods.length; z++){
+
+    newString =  myFaveFoods[z].substring(0, myFaveFoods[z].lastIndexOf(" "));
+
+    console.log(newString)
+
+}console.log(typeof newString);
+
+
+//////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
