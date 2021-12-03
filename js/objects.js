@@ -46,7 +46,7 @@ console.log("connected");
      * and console.log the relevant messages for each person
      */
 
-    var shoppers = [
+    let shoppers = [
         {name: 'Cameron', amount: 180},
         {name: 'Ryan', amount: 250},
         {name: 'George', amount: 320}
@@ -54,8 +54,8 @@ console.log("connected");
 
     shoppers.forEach(function(shopper){
         if (shopper.amount >= 200){
-            console.log(shopper.name + ", you've earned a discount! You spent " + shopper.amount + ", and you earned a discount of " + (shopper.amount * .12).toFixed(2) + ". Bringing your new total to: " + (shopper.amount * .88).toFixed(2));
-        }else console.log("Sorry, " + shopper.name + ", if you want a discount, you have to spend: " + (200 - shopper.amount) + " more. Thank you.")
+            console.log(shopper.name + ", you've earned a discount! You spent $" + shopper.amount + ", and you earned a discount of " + (shopper.amount * .12).toFixed(2) + ". Bringing your new total to: $" + (shopper.amount * .88).toFixed(2));
+        }else console.log("Sorry, " + shopper.name + ", if you want a discount, you have to spend: $" + (200 - shopper.amount) + " more. Thank you.")
 
     })
 
