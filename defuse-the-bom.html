@@ -35,13 +35,13 @@
     function defuseTheBOM() {
         clearInterval(countdown);
         document.getElementById('message').innerHTML = "We're saved thanks McGruber!";
-
+        document.getElementById('defuser').innerHTML = "Click me to play again"
+        //location.reload();
+        document.getElementById('defuser').addEventListener('click', restart);
     }
-
-
-
-
-
+    let restart = function(event){
+        location.reload()
+    }
 
     // Don't modify anything below this line!
     //
