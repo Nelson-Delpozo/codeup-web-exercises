@@ -149,14 +149,14 @@ console.log("connected");
         newBook.author.firstName = firstName;
         newBook.author.lastName = lastName;
         console.log(newBook);
-        books.push(newBook);
+        books += books.push(newBook);
 
     }
     console.log(books);
     createBook();
 
     ////////////////////////////////////////////////////
-    //
+
     // function showBookInfo(array){
     //     array.forEach(function(book){
     //         console.log("Book # " + (array.indexOf(book) + 1));
