@@ -18,7 +18,7 @@ body{
 }
 
 ol{
-    list-style: disc;
+    list-style: circle;
 }
 
 ul{
@@ -45,4 +45,50 @@ tr:nth-child(even){
 
 tr:nth-child(odd){
     background-color: darkseagreen;
+}
+
+a:link{
+    color: red;
+}
+a:visited link:{
+    color: darkred;
+}
+
+.lists{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+li{
+    font-size: 1.5em;
+}
+
+.box {
+    display: flex;
+    height: 300px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.box img{
+    width: 300px;
+    height: 300px;
+}
+
+
+/*.imgwrap {*/
+/*    width: 300px; !*or whatever you choose*!*/
+/*    margin: auto;*/
+/*    height: 300px;*/
+/*}*/
+/*.imgwrap img {*/
+/*    display: block;*/
+/*    width: 300px;*/
+/*    max-width: 300px; !*actual image width*!*/
+/*    height: auto; !* maintain aspect ratio*!*/
+/*    margin: auto; !*optional centering of image*!*/
+/*}*/
+
+.ourvision{
+    text-align: center;
 }
