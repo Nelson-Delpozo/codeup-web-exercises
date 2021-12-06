@@ -95,8 +95,8 @@ console.log("connected");
         author: {firstName: "Jacqueline",
         lastName: "Susann"}},
         {title: "Siddhartha",
-        author: {firstName: "Herman"},
-        lastName: "Hesse"}
+        author: {firstName: "Herman",
+        lastName: "Hesse"}}
     ]
     console.log(books);
 

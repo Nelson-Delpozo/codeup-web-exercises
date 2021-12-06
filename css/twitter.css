@@ -65,28 +65,33 @@ a {
 }
 
 .profile-details{
-    width: 25%;
+    width: calc(25% - 1em);
     float: left;
-    margin-left: .5em;
-    margin-right: .5em;
-    /*margin-top: 50px;*/
-    clear: right;
+    margin: .5em;
 }
 
-.profile-items{
-    width: 25%;
+.profile-items {
+    padding: 0;
+}
+
+.profile-entry li{
+    margin: 0;
+    padding: 0;
 }
 
 .who-to-follow{
-    /*width: 25%;*/
+    width: calc(25% - 1em);
     float: right;
-    position: relative;
+    margin: .5em;
+    /*position: absolute;*/
+
 }
 
 .timeline{
-    width: 45%;
+    width: calc(50% - 1em);
     float: left;
-    clear: right;
+    margin: .5em;
+
 
 
 }
@@ -124,23 +129,29 @@ a {
 
 .container{
     width: 100%;
+    height: 100%;
     margin-top: 2em;
+    display: inline-block;
 }
 
 .media{
     width: 100%;
     background-color: var(--light-bg);
     padding: .5em;
-    border-bottom: var(--separator-color);
+    border-bottom:  1px solid var(--separator-color);
     overflow: auto;
+
 }
 
 .media-image{
     max-width: 50px;
     float: left;
+    margin-top: 1.33em;
 }
 
 .media-body{
+    float: left;
+    width: calc(100% - 50px);
 
 }
 
