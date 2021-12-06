@@ -1,5 +1,5 @@
 .fancy-header {
-    color: purple; /* single line comment */
+    color: #368a71; /* single line comment */
     text-decoration: underline;
 }
 h1.fancy-header, .sub-header{
@@ -7,7 +7,7 @@ h1.fancy-header, .sub-header{
 }
 
 h2{
-    color: darkgreen;
+    color: #368a71;
     text-decoration: underline;
 }
 
@@ -63,17 +63,107 @@ li{
     font-size: 1.5em;
 }
 
-.box {
-    display: flex;
+.ourvision{
+    text-align: center;
+}
+
+#pics{
+
+    display: grid;
+    margin-right: 50px;
+    margin-left: 50px;
+    grid-gap: .5em;
+    grid-template-areas:
+        "photo-one photo-two photo-three"
+        "photo-one photo-four photo-five";
+    grid-template-columns: 50% 25% 25%;
+    width: 850px;
+    justify-content: center;
+
+
+}
+
+#pics>div{
+    border: 5px solid #368a71;
+    border-radius: 5px;
+}
+#pics>div:first-child{
+    grid-area: photo-one;
     height: 300px;
-    align-items: center;
+}
+
+
+#container{
+    display: flex;
+    justify-content: center;
+}
+
+#bottom{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+/*#bottom>h2{*/
+/*    text-align: center;*/
+/*}*/
+
+#bottom-container{
+    display: flex;
     justify-content: space-evenly;
 }
 
-.box img{
-    width: 300px;
-    height: 300px;
+img{
+    height: 100%;
+    width: 100%;
 }
+
+.imgwrap{
+
+    max-height: 100%;
+    max-width: 100%;
+    /*object-fit: fill;*/
+
+}
+
+form>label{
+    display: block;
+    background-color: goldenrod;
+    text-align: center;
+
+}
+textarea{
+    resize: none;
+    width: 300px;
+    height: 100px;
+}
+
+input{
+    width: 300px;
+}
+
+
+footer{
+    text-align: center;
+}
+
+
+
+
+
+
+/*.box {*/
+/*    display: flex;*/
+/*    height: 300px;*/
+/*    align-items: center;*/
+/*    justify-content: space-evenly;*/
+/*}*/
+
+/*.box img{*/
+/*    width: 300px;*/
+/*    height: 300px;*/
+/*}*/
 
 
 /*.imgwrap {*/
@@ -89,6 +179,4 @@ li{
 /*    margin: auto; !*optional centering of image*!*/
 /*}*/
 
-.ourvision{
-    text-align: center;
-}
+
