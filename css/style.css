@@ -2,3 +2,47 @@
     color: purple; /* single line comment */
     text-decoration: underline;
 }
+h1.fancy-header, .sub-header{
+    text-align: center;
+}
+
+h2{
+    color: darkgreen;
+    text-decoration: underline;
+}
+
+body{
+    background-color: aqua;
+    background-image: url("/img/light-bg.jpeg");
+    font-family: 'Bebas Neue', cursive;
+}
+
+ol{
+    list-style: disc;
+}
+
+ul{
+    list-style: circle;
+}
+
+td{
+    text-align: center;
+}
+
+table{
+
+}
+
+td, th{
+    padding: 15px;
+    border-bottom: 2px solid blue;
+
+}
+
+tr:nth-child(even){
+    background-color: goldenrod;
+}
+
+tr:nth-child(odd){
+    background-color: darkseagreen;
+}
