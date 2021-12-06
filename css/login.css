@@ -33,6 +33,7 @@ fieldset {
 .width-80 {
     /* The element with this class should be 80% of the width and it must be centered */
     max-width: 80%;
+    margin: auto;
 
     /* Read how to center elements with margin here: http://learnlayout.com/margin-auto.html*/
 }
@@ -47,7 +48,7 @@ fieldset {
 
 .form-label {
     /* The text of a label must be bold */
-    font-weight: bold;;
+    font-weight: bold;
 }
 
 .btn-block {
@@ -60,17 +61,27 @@ fieldset {
     /* The text color of this element should be white and bold */
     /* The border of this element should be 1px, and its color should be light grey */
     background-color: #0fb784;
+    padding: 8px;
+    color: white;
+    font-weight: bold;
 }
 
 .form-control {
     /* There must be 4px on top of the text and below the text of an input with this class */
     /* It should have a separation of .5em from elements on top of it and below it */
+    padding-bottom: 4px;
+    padding-top: 4px;
+    margin-bottom: .5em;
+    margin-top: .5em;
 
     /* You'll need to use the `calc` function to make the width of this element match the width of the button */
+    width: calc(100% );
+
     /* See the example at: https://developer.mozilla.org/en-US/docs/Web/CSS/calc */
     /* HINT: Examples are available at: https://glitch.com/~input-button-width */
-    width: 100%;
+    //width: 100%;
 }
+
 
 
 
