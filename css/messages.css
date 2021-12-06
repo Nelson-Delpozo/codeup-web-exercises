@@ -27,7 +27,7 @@ body, html {
 }
 
 .message{
-    padding: 5px;
+    padding: 10px;
     margin: .5em;
     border: 1px solid gray;
     grid-gap: .5em;
