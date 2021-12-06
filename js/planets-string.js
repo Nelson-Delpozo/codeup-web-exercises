@@ -24,6 +24,8 @@ console.log("connected");
      * list. You will need an opening AND closing <ul> tags around the entire
      * string, and <li> tags around each planet.
      */
+    let planetsWithBreaks = planetsArray.join("<br>")
+    console.log(planetsWithBreaks);
 
     let newString = planetsArray.join("\n");
     console.log(newString);
@@ -34,7 +36,7 @@ console.log("connected");
     planetsArray.forEach(function(planet){
 
         listString += "<li>" + planet + "</li>";
-        console.log(listString);
+        //console.log(listString);
 
     });
         listString += "</ul>";
