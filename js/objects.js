@@ -15,7 +15,13 @@ console.log("connected");
      */
     let person = {
         firstName: "Nelson",
-        lastName: "Delpozo"
+        lastName: "Delpozo",
+        birthday: {month: "February", day: 26, year: 1970},
+        sayHello:function(){
+            return "Hello, " + this.firstName + " " + this.lastName;},
+        getBirthday:function(){
+            return "Your birthday is " + this.birthday.month + " " + this.birthday.day + ", " + this.birthday.year
+        }
     };
 
     /**
@@ -27,10 +33,11 @@ console.log("connected");
      * Example
      * > console.log(person.sayHello()) // "Hello from Rick Sanchez!"
      */
-    person.sayHello = function(){
-        return "Hello, " + this.firstName + " " + this.lastName;
-    }
+    // person.sayHello = function(){
+    //     return "Hello, " + this.firstName + " " + this.lastName;
+    // }
     console.log(person.sayHello());
+    console.log(person.getBirthday());
 
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to
