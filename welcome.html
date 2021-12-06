@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -18,9 +18,28 @@
     <!--    </style>-->
 </head>
 <body>
-<h1 class="fancy-header" id="top">Welcome to Veridian Dynamics!</h1>
-<p class="sub-header">At Veridian Dynamics, <strong>we</strong> solve <em>your</em> problems with <strong><em>technology.</em></strong>
-</p>
+<header id="main-header">
+    <div id="logo-and-title">
+        <img id="logo" src="img/v-logo.png" alt="Our Logo">
+        <h1 class="fancy-header" id="top">Welcome to Veridian Dynamics!</h1>
+        <p class="sub-header">At Veridian Dynamics, <strong>we</strong> solve <em>your</em> problems with <strong><em>technology.</em></strong>
+        </p>
+    </div>
+    <nav id="navbar">
+        <ul id="navbar-buttons">
+            <li><a href="#home">Home</a></li>
+            <li><a href="about">About Us</a></li>
+            <li><a href="contact">Contact</a></li>
+            <li id="searchbar">
+                <form method="POST" action="https://request-inspector.glitch.me/">
+                    <input type="text" id="search">
+                    <button type="submit">Search</button>
+                    <label for="search"></label>
+                </form>
+            </li>
+        </ul>
+    </nav>
+</header>
 <hr>
 <div class="lists">
     <div id="list1">
@@ -53,87 +72,90 @@
 <div id="container">
     <section id="pics">
         <div class="imgwrap">
-                    <img src =img/dogs-main.jpeg alt="The Main Doggo">
+            <img src=img/dogs-main.jpeg alt="The Main Doggo">
         </div>
         <div class="imgwrap">
-                    <img src=img/dogs1.jpeg alt="Good Doggo">
+            <img src=img/dogs1.jpeg alt="Good Doggo">
         </div>
         <div class="imgwrap">
-                    <img src=img/dogs2.jpeg alt="Also a Good Doggo">
+            <img src=img/dogs2.jpeg alt="Also a Good Doggo">
         </div>
         <div class="imgwrap">
-                <img src=img/dog5.jpeg alt="Another Good Doggo">
+            <img src=img/dog5.jpeg alt="Another Good Doggo">
         </div>
         <div class="imgwrap">
-                <img src=img/dogs6.jpeg alt="One More Good Doggo">
+            <img src=img/dogs6.jpeg alt="One More Good Doggo">
         </div>
     </section>
+
 </div>
 <br>
+<hr>
+<br>
 <div id="bottom-container">
-<div id="bottom">
-    <div>
-        <h2>Our Product</h2>
-    </div>
-    <div>
-        <table>
-            <tr>
-                <th>Plan</th>
-                <th>Price</th>
-                <th>Features</th>
-            </tr>
-            <tr>
-                <td>Starter</td>
-                <td>$99</td>
-                <td>Base Technology</td>
-            </tr>
-            <tr>
-                <td>Advanced</td>
-                <td>$199</td>
-                <td>Additional Features</td>
-            </tr>
-            <tr>
-                <td>Premium</td>
-                <td>$499</td>
-                <td>Unlimited Support</td>
-            </tr>
-        </table>
-    </div>
+    <div id="bottom">
+        <div>
+            <h2>Our Product</h2>
+        </div>
+        <div>
+            <table>
+                <tr>
+                    <th>Plan</th>
+                    <th>Price</th>
+                    <th>Features</th>
+                </tr>
+                <tr>
+                    <td>Starter</td>
+                    <td>$99</td>
+                    <td>Base Technology</td>
+                </tr>
+                <tr>
+                    <td>Advanced</td>
+                    <td>$199</td>
+                    <td>Additional Features</td>
+                </tr>
+                <tr>
+                    <td>Premium</td>
+                    <td>$499</td>
+                    <td>Unlimited Support</td>
+                </tr>
+            </table>
+        </div>
 
-<div>
-    <p><em>All products come with our quality guarantee<sup>TM</sup>.</em></p>
-    <a href="#top">Go to the top of the page.</a>
-</div>
-</div>
+        <div>
+            <p><em>All products come with our quality guarantee<sup>TM</sup>.</em></p>
+            <a href="#top">Go to the top of the page.</a>
+        </div>
+    </div>
     <div id="form">
-    <h2>Get More Information</h2>
-    <form method="POST" action="https://request-inspector.glitch.me/">
-        <label for="name">What's Your Name?</label>
-        <br>
-        <input id="name" type="text" placeholder="Your Name">
-        <br>
-        <br>
-        <label for="email" type="email">Enter Email Address</label>
-        <br>
-        <input id="email" type="email" placeholder="yourname@email.com">
-        <br>
-        <br>
-        <label for="input">How Can We Help You?</label>
-        <br>
-        <textarea id="input" name="input" placeholder="Enter Question Here" ></textarea>
-        <br>
-        <br>
-        <button type="submit">Click to Submit</button>
-    </form>
+        <h2>Get More Information</h2>
+        <form method="POST" action="https://request-inspector.glitch.me/">
+            <label for="name">What's Your Name?</label>
+            <br>
+            <input id="name" type="text" placeholder="Your Name">
+            <br>
+            <br>
+            <label for="email">Enter Email Address</label>
+            <br>
+            <input id="email" type="email" placeholder="yourname@email.com">
+            <br>
+            <br>
+            <label for="input">How Can We Help You?</label>
+            <br>
+            <textarea id="input" name="input" placeholder="Enter Question Here"></textarea>
+            <br>
+            <br>
+            <button type="submit">Click to Submit</button>
+        </form>
     </div>
 </div>
 <br>
 <br>
 <footer>Copyright 2021 Nelson Delpozo |
-        Codeup WebDev Sirius Cohort |
-        All Rights Reserved
+    Codeup Web-Dev Sirius Cohort |
+    All Rights Reserved
 </footer>
-
 </body>
 </html>
+
 

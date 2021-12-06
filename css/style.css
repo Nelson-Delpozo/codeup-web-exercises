@@ -6,6 +6,19 @@ h1.fancy-header, .sub-header{
     text-align: center;
 }
 
+#main-header{
+    display: flex;
+    flex-direction: column;;
+}
+
+
+#logo{
+    width: 100px;
+    height: 100px;
+    float: left;
+    position: absolute;
+}
+
 h2{
     color: #368a71;
     text-decoration: underline;
@@ -48,7 +61,7 @@ tr:nth-child(odd){
 }
 
 a:link{
-    color: red;
+    color: #368a71;
 }
 a:visited link:{
     color: darkred;
@@ -57,6 +70,16 @@ a:visited link:{
 .lists{
     display: flex;
     justify-content: space-evenly;
+}
+
+#list1>h2{
+    text-align: center;;
+}
+#list2>h2{
+    text-align: center;;
+}
+#list3>h2{
+    text-align: center;;
 }
 
 li{
@@ -102,12 +125,29 @@ li{
     display: flex;
     justify-content: center;
     flex-direction: column;
+    text-align: center;
 
 }
+#navbar ul{
+    /*border: 3px solid #368a71 ;*/
+    display: flex;
+    justify-content: left;
+}
 
-/*#bottom>h2{*/
-/*    text-align: center;*/
-/*}*/
+#navbar ul #searchbar{
+    margin-left: auto;
+}
+
+
+#navbar-buttons li{
+    display: inline-block;
+    margin-right: 25px;
+}
+
+#navbar-buttons li label{
+    size: 1.5em;
+    color: #368a71;
+}
 
 #bottom-container{
     display: flex;
@@ -119,12 +159,18 @@ img{
     width: 100%;
 }
 
-.imgwrap{
+.imgwrap {
 
     max-height: 100%;
     max-width: 100%;
-    /*object-fit: fill;*/
 
+}
+
+#form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 form>label{
@@ -147,6 +193,8 @@ input{
 footer{
     text-align: center;
 }
+
+
 
 
 
