@@ -33,7 +33,11 @@ body{
 .navbar{
     display: flex;
 
+}
 
+.navbar a{
+    display: inline-block;
+    padding: 1em;
 }
 
 .left-side-list{
@@ -56,6 +60,11 @@ body{
     padding-top: .2em;
     padding-bottom: .2em;
     font-family: 'Montserrat', sans-serif;
+    height: 100%;
+}
+
+.logo h2{
+    margin: auto;
 }
 
 
@@ -70,4 +79,8 @@ a{
 li{
 
 
+}
+
+.follow-us{
+    margin: auto;
 }
