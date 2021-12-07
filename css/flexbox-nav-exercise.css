@@ -1,0 +1,73 @@
+*{
+    box-sizing: border-box;
+    color: black;
+}
+
+body{
+    padding: 0;
+    border: 0;
+    margin: 0;
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;}
+
+.main-header{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    background-color: darkgrey;
+    height: 3em;
+}
+
+.navbar{
+    display: flex;
+
+
+}
+
+.left-side-list{
+    display: flex;
+    margin: 0;
+    padding-left: 0;
+    font-family: 'Work Sans', sans-serif;
+
+}
+
+.right-side{
+    margin-left: auto;
+    align-items: baseline;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.logo{
+    margin: auto;
+    size: 3em;
+    padding-top: .2em;
+    padding-bottom: .2em;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+ul{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+
+
+}
