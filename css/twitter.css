@@ -56,11 +56,14 @@ a {
 .profile {
     background: var(--light-bg);
     height: 80px;
+    display: flex;
+    justify-content: flex-start;
 
 }
 
 .profile-form{
-    float: right;
+    margin-left: auto;
+
 
 }
 
