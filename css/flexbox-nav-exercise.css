@@ -1,14 +1,3 @@
-*{
-    box-sizing: border-box;
-    color: black;
-}
-
-body{
-    padding: 0;
-    border: 0;
-    margin: 0;
-}
-
 .material-icons {
     font-family: 'Material Icons';
     font-weight: normal;
@@ -22,66 +11,32 @@ body{
     white-space: nowrap;
     direction: ltr;}
 
-.main-header{
-    display: flex;
-    width: 100%;
-    align-items: center;
-    background-color: darkgrey;
-    height: 3em;
+body{
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+*{
+    box-sizing: border-box;
+    color: black;
 }
 
 .navbar{
     display: flex;
-    justify-content: space-between;
     align-items: center;
-
+    /*justify-content: space-between;*/
+    background-color: darkgrey;
+    width: 100%;
+    height: 3.5em;
+    position: absolute;
+    border: 1px solid black;
 }
 
-.navbar a{
-    display: inline-block;
-    padding: 1em;
-}
-
-.left-side-list{
-    display: flex;
-    margin: 0;
-    padding-left: 0;
-    font-family: 'Work Sans', sans-serif;
-
-}
-
-.right-side{
-    margin-left: auto;
-    /*margin: auto;*/
-    /*align-items: baseline;*/
-    justify-content: center;
-    align-items: center;
-    font-family: 'Work Sans', sans-serif;
-    display: inline-block;
-}
-
-.right-side a{
-    padding: .5em;
-    align-items: center;
-}
-
-.logo{
-    margin: auto;
-    size: 3em;
-    padding-top: .2em;
-    padding-bottom: .2em;
-    font-family: 'Montserrat', sans-serif;
-    height: 100%;
-}
-
-.logo h2{
-    margin: auto;
-    padding-top: .2em;
-}
-
-
-ul{
-    list-style-type: none;
+body{
+    background-color: #cbffcd;
 }
 
 a{
@@ -93,13 +48,54 @@ a:hover{
     color: blue;
 }
 
+ul{
+    list-style: none;
+}
 
-/*.follow-us{*/
-/*    margin-bottom: 5em;*/
-/*    height: 100%;*/
-/*}*/
+.logo{
+    width: 33.33%;
+    /*margin: auto;*/
+    font-size: 3em;
+    padding-top: 0em;
+    padding-bottom: 0em;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    justify-content: center;
+    /*height: 100%;*/
+    align-items: center;
+}
 
-/*.follow-us a{*/
-/*    margin-bottom: 2em;*/
-/*    height: 100%;*/
-/*}*/
+
+.left-side-list {
+    width: 33.33%;
+    font-family: 'Work Sans', sans-serif;
+    display: flex;
+    margin: 0;
+    padding: .5em;
+}
+
+.left-side-list a{
+    padding: .5em;
+}
+
+.right-side a{
+    padding: .5em;
+}
+
+.follow-us{
+    font-family: 'Work Sans', sans-serif;
+}
+
+.right-side{
+    width: 33.33%;
+    text-align: right;
+
+}
+
+#container{
+    display: flex;
+    align-items: flex-start;
+
+}
+
+

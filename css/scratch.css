@@ -11,6 +11,13 @@
     white-space: nowrap;
     direction: ltr;}
 
+body{
+    margin: 0;
+    padding: 0;
+}
+
+
+
 
 *{
     box-sizing: border-box;
@@ -20,10 +27,10 @@
 .navbar{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    /*justify-content: space-between;*/
     background-color: darkgrey;
-    /*height: 3em;*/
     width: 100%;
+    height: 3.5em;
     position: absolute;
     border: 1px solid black;
 }
@@ -46,16 +53,21 @@ ul{
 }
 
 .logo{
-    margin: auto;
+    width: 33.33%;
+    /*margin: auto;*/
     font-size: 3em;
-    padding-top: .2em;
-    padding-bottom: .2em;
+    padding-top: 0em;
+    padding-bottom: 0em;
     font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    justify-content: center;
     /*height: 100%;*/
+    align-items: center;
 }
 
 
 .left-side-list {
+    width: 33.33%;
     font-family: 'Work Sans', sans-serif;
     display: flex;
     margin: 0;
@@ -73,3 +85,16 @@ ul{
 .follow-us{
     font-family: 'Work Sans', sans-serif;
 }
+
+.right-side{
+    width: 33.33%;
+    text-align: right;
+
+}
+
+#container{
+    display: flex;
+    align-items: flex-start;
+
+}
+
