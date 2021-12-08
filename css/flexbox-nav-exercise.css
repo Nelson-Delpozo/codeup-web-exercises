@@ -56,6 +56,11 @@ body{
     display: inline-block;
 }
 
+.right-side a{
+    padding: .5em;
+    align-items: center;
+}
+
 .logo{
     margin: auto;
     size: 3em;
@@ -85,7 +90,10 @@ li{
 }
 
 .follow-us{
-    margin-top: auto;
-    margin-bottom: 1em;
+    margin-bottom: 5em;
+    height: 100%;
+}
 
+.follow-us a{
+    margin-bottom: 2em;
 }
