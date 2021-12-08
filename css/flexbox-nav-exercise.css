@@ -84,8 +84,32 @@ ul{
 
 #footer{
     background-color: #f2cfc4;
-    height: 150px;
     position: fixed;
     bottom: 0;
     width: 100%;
+    font-family: 'Work Sans', sans-serif;
 }
+
+.column{
+    float: left;
+    width: 33.33%;
+    padding: 25px;
+}
+
+#footer-header{
+    padding: 25px;
+}
+
+form input{
+    width: 50%;
+    background-color: #cbffcd;
+    border: 1px solid blue;
+}
+form textarea{
+    width: 50%;
+    resize: none;
+    background-color: #cbffcd;
+    border: 1px solid blue;
+}
+
+
