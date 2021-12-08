@@ -20,11 +20,8 @@
 .navbar{
     display: flex;
     align-items: center;
-    /*justify-content: space-between;*/
     background-color: darkgrey;
     width: 100%;
-    /*height: 3.5em;*/
-    /*position: absolute;*/
     border: 1px solid black;
 }
 
@@ -33,15 +30,6 @@ body{
     background-color: #cbffcd;
 }
 
-
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*    background-color: #cbffcd;*/
-
-/*    padding: 0;*/
-/*    !*width: 100%;*!*/
-/*    !*height: 100%;*!*/
-/*}*/
 
 a{
     text-decoration: none;
@@ -58,14 +46,12 @@ ul{
 
 .logo{
     width: 33.33%;
-    /*margin: auto;*/
     font-size: 3em;
-    padding-top: 0em;
-    padding-bottom: 0em;
+    padding-top: 0;
+    padding-bottom: 0;
     font-family: 'Montserrat', sans-serif;
     text-align: center;
     justify-content: center;
-    /*height: 100%;*/
     align-items: center;
 }
 
@@ -96,26 +82,10 @@ ul{
 
 }
 
-/*#container{*/
-/*    display: flex;*/
-/*    align-items: flex-start;*/
-
-/*}*/
-
 #footer{
-    /*margin-top: auto;*/
-    background-color: #3B94D9;
+    background-color: #f2cfc4;
     height: 150px;
     position: fixed;
     bottom: 0;
     width: 100%;
-
-}
-
-#spacer{
-    height: 600px;
-}
-
-#nothing{
-    width: 0;
 }
