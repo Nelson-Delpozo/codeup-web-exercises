@@ -32,6 +32,7 @@ body{
 
 .navbar{
     display: flex;
+    justify-content: center;
 
 }
 
@@ -50,8 +51,10 @@ body{
 
 .right-side{
     margin-left: auto;
-    align-items: baseline;
+    /*margin: auto;*/
+    /*align-items: baseline;*/
     justify-content: center;
+    align-items: center;
     font-family: 'Work Sans', sans-serif;
     display: inline-block;
 }
@@ -82,18 +85,20 @@ ul{
 
 a{
     text-decoration: none;
-}
-
-li{
-
 
 }
 
-.follow-us{
-    margin-bottom: 5em;
-    height: 100%;
+a:hover{
+    color: blue;
 }
 
-.follow-us a{
-    margin-bottom: 2em;
-}
+
+/*.follow-us{*/
+/*    margin-bottom: 5em;*/
+/*    height: 100%;*/
+/*}*/
+
+/*.follow-us a{*/
+/*    margin-bottom: 2em;*/
+/*    height: 100%;*/
+/*}*/
