@@ -1,0 +1,75 @@
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;}
+
+
+*{
+    box-sizing: border-box;
+    color: black;
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: darkgrey;
+    /*height: 3em;*/
+    width: 100%;
+    position: absolute;
+    border: 1px solid black;
+}
+
+body{
+    background-color: #cbffcd;
+}
+
+a{
+    text-decoration: none;
+
+}
+
+a:hover{
+    color: blue;
+}
+
+ul{
+    list-style: none;
+}
+
+.logo{
+    margin: auto;
+    font-size: 3em;
+    padding-top: .2em;
+    padding-bottom: .2em;
+    font-family: 'Montserrat', sans-serif;
+    /*height: 100%;*/
+}
+
+
+.left-side-list {
+    font-family: 'Work Sans', sans-serif;
+    display: flex;
+    margin: 0;
+    padding: .5em;
+}
+
+.left-side-list a{
+    padding: .5em;
+}
+
+.right-side a{
+    padding: .5em;
+}
+
+.follow-us{
+    font-family: 'Work Sans', sans-serif;
+}
