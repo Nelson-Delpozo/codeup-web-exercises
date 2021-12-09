@@ -71,11 +71,19 @@ ul{
 
 .right-side a{
     padding: .5em;
+
 }
 
 .follow-us{
     font-family: 'Work Sans', sans-serif;
     vertical-align: top;
+    padding: 0;
+    height: 24px;
+}
+
+.follow-us a{
+    padding: 0;
+    font-size: 1.25em;
 }
 
 .right-side{
