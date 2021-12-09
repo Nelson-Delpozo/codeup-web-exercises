@@ -22,15 +22,15 @@
     align-items: center;
     background-color: darkgrey;
     width: 100%;
-    border: 1px solid black;
-    position: fixed;
-    top: 0;
+    border: 3px solid #f2cfc4;
+    border-radius: 5px;
 }
 
 body{
     background-color: #cbffcd;
-    margin-top: 5em;
+    /*margin-top: 5em;*/
     /*margin-bottom: 25em;*/
+    margin: 0 auto;
 }
 
 a{
@@ -133,6 +133,10 @@ p{
 #contact-info{
     width: 50%;
     margin: auto;
+}
+
+#tag{
+
 }
 
 
