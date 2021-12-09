@@ -105,7 +105,7 @@ ul{
     font-size: .8em;
     font-weight: bold;
     display: table;
-    margin: auto;
+    margin: 0 auto;
 }
 
 
@@ -177,16 +177,21 @@ img{
     margin: 1em;
 }
 
-.container{
+.container {
     display: flex;
-    flex-direction: column;
+    /*flex-direction: column;*/
     padding: 5em;
-    width: auto;
+    width: 90%;
+    justify-content: space-evenly;
+    border: 1px solid #f2cfc4;
+    margin: 5em auto;
+
 }
 
-.container p{
-    text-align: left;
-}
+
+/*.container p{*/
+/*    text-align: left;*/
+/*}*/
 
 /*.container h3{*/
 /*    text-align: justify;*/
