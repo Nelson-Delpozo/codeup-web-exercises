@@ -23,13 +23,15 @@
     background-color: darkgrey;
     width: 100%;
     border: 1px solid black;
+    position: fixed;
+    top: 0;
 }
 
 body{
-    margin: 0 auto;
     background-color: #cbffcd;
+    margin-top: 5em;
+    /*margin-bottom: 25em;*/
 }
-
 
 a{
     text-decoration: none;
@@ -55,7 +57,6 @@ ul{
     align-items: center;
 }
 
-
 .left-side-list {
     width: 33.33%;
     font-family: 'Work Sans', sans-serif;
@@ -74,6 +75,7 @@ ul{
 
 .follow-us{
     font-family: 'Work Sans', sans-serif;
+    vertical-align: top;
 }
 
 .right-side{
@@ -84,16 +86,25 @@ ul{
 
 #footer{
     background-color: #f2cfc4;
-    position: fixed;
-    bottom: 0;
+    /*position: fixed;*/
+    /*bottom: 0;*/
     width: 100%;
     font-family: 'Work Sans', sans-serif;
+    border-radius: 10px;
+    height: fit-content;
+    font-size: .8em;
+    font-weight: bold;
+    display: table;
+
 }
 
 .column{
     float: left;
     width: 33.33%;
     padding: 25px;
+    background-color: #f2cfc4;
+    display: table-cell;
+    text-align: center;
 }
 
 #footer-header{
@@ -104,12 +115,24 @@ form input{
     width: 50%;
     background-color: #cbffcd;
     border: 1px solid blue;
+    font-family: 'Montserrat', sans-serif;
 }
 form textarea{
     width: 50%;
     resize: none;
     background-color: #cbffcd;
     border: 1px solid blue;
+    font-family: 'Montserrat', sans-serif;
+}
+
+p{
+    width: 30%;
+    text-align: center;
+}
+
+#contact-info{
+    width: 50%;
+    margin: auto;
 }
 
 
