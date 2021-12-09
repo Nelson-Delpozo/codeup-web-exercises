@@ -98,7 +98,9 @@ ul{
     background-color: #f2cfc4;
     width: 97%;
     font-family: 'Work Sans', sans-serif;
-    /*border-radius: 10em;*/
+    padding-left: 1em;
+    padding-right: 1em;
+    border-radius: 1em;
     height: fit-content;
     font-size: .8em;
     font-weight: bold;
@@ -147,6 +149,12 @@ form textarea{
 p{
     width: 30%;
     text-align: center;
+    display: inline-block;
+}
+
+#content img{
+    margin-left: 5em;
+    height: 15em;
 }
 
 img{
@@ -167,9 +175,13 @@ img{
 }
 
 #content p {
-    /*padding-left: 15px;*/
-    margin: 0 5em;
+    padding-left: 15px;
+
     /*background-color: #542212;*/
+}
+
+#content{
+    display: inline-block;
 }
 
 
