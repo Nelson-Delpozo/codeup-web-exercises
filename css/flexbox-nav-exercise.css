@@ -144,7 +144,7 @@ form textarea{
 }
 
 p{
-    width: 30%;
+    /*width: 30%;*/
     text-align: center;
     display: inline-block;
 }
@@ -182,6 +182,19 @@ img{
 
 }
 
+.container>*{
+    border: 2px solid #f2cfc4;
+}
+
+.container h4{
+    text-align: center;
+    margin: auto;
+}
+
+.container p{
+    padding: 1em;
+}
+
 .column-1{
     display: flex;
     flex-direction: column;
@@ -189,6 +202,7 @@ img{
 .column-2{
     display: flex;
     flex-direction: column;
+    /*background-color: #f2cfc4 ;*/
 }
 .column-3{
     display: flex;
