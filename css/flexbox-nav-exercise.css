@@ -153,8 +153,11 @@ p{
 }
 
 #content img{
-    margin-left: 5em;
+    /*margin-left: 5em;*/
     height: 15em;
+    /*padding: 5em;*/
+    margin: 2em;
+
 }
 
 img{
@@ -176,12 +179,14 @@ img{
 
 #content p {
     padding-left: 15px;
+    width: 33%;
 
     /*background-color: #542212;*/
 }
 
 #content{
     display: inline-block;
+    text-align: center;
 }
 
 
