@@ -31,7 +31,7 @@
 body{
     background-color: #cbffcd;
     margin: 0 auto;
-    padding-top: 5em;
+    padding-top: 3em;
 
 }
 
@@ -50,7 +50,7 @@ ul{
 
 .logo{
     width: 33.33%;
-    font-size: 3em;
+    font-size: 2em;
     padding-top: 0;
     padding-bottom: 0;
     font-family: 'Montserrat', sans-serif;
@@ -152,7 +152,7 @@ p{
     display: inline-block;
 }
 
-#content img{
+.container img{
     /*margin-left: 5em;*/
     height: 15em;
     /*padding: 5em;*/
@@ -177,17 +177,52 @@ img{
     margin: 1em;
 }
 
-#content p {
+.container p {
     padding-left: 15px;
     width: 33%;
 
     /*background-color: #542212;*/
 }
 
-#content{
-    display: inline-block;
-    text-align: center;
+.container{
+    /*display: inline-block;*/
+    /*text-align: center;*/
+    display: grid;
+    ;
+    /*margin-right: 50px;*/
+    /*margin-left: 50px;*/
+    margin: 5em auto;
+
+    /*grid-gap: .5em;*/
+    grid-template-areas:
+        "photo-one photo-two photo-three"
+        "photo-one photo-four photo-five";
+    grid-template-columns: 50% 25% 25%;
+    width: 75%;
+    justify-content: center;
+    border: .5em solid #f2cfc4 ;
 }
+
+.container>div:first-child{
+    grid-area: photo-one;
+
+}
+
+.container>div{
+    border: 5px solid #f2cfc4;
+}
+
+.outer-container{
+    display: flex;
+
+}
+
+
+
+
+
+
+
 
 
 

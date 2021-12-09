@@ -8,7 +8,7 @@ h1.fancy-header, .sub-header{
 
 #main-header{
     display: flex;
-    flex-direction: column;;
+    flex-direction: column;
 }
 
 
