@@ -14,3 +14,11 @@
 #right a {
     display: inline-block;
 }
+
+.card-footer{
+    text-align: right;
+}
+
+.card-header {
+    margin: 0;
+}
