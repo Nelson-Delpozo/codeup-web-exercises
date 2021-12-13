@@ -7,3 +7,6 @@
    background-color: rgb(245,245,245,0.5);
 }
 
+.nav-tabs *{
+    display: inline-block;
+}
