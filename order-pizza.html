@@ -10,6 +10,7 @@
           integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/custom.css">
+    <link rel="script" href="js/bootstrap.js">
     <!-- Your custom css styles go here -->
     <style>
         /*CSS is in css/custom.css*/
@@ -49,26 +50,26 @@
     <h2>Build Your Own Pizza!</h2>
     <ul class="nav nav-tabs" id="nav-tab" role="tablist">
         <li class="nav-item">
-            <a class="nav-link active" data-toggle="tab" href="#crust"><span
+            <a class="nav-link active" data-toggle="tab" href="#crust" role="tab"><span
                     class="badge badge-pill badge-secondary">1</span>&nbspSize and
                 Crust</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" data-toggle="tab" href="#cheese"><span
+            <a class="nav-link active" data-toggle="tab" href="#cheese" role="tab"><span
                     class="badge badge-pill badge-secondary">2</span>&nbspCheese and
                 Sauce</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" data-toggle="tab" href="#toppings"><span
+            <a class="nav-link active" data-toggle="tab" href="#toppings" role="tab"><span
                     class="badge badge-pill badge-secondary">3</span>&nbspToppings</a>
         </li>
     </ul>
 </div>
 
 <!--first tab-->
-<div class="tab-content ">
-    <div class="tab-content">
-        <div class="card tab-pane fade show active" id="crust" aria-labelledby="crust" role="tabpanel">
+<div class="tab-content">
+<!--    <div class="tab-content" role="tabpanel">-->
+        <div class="card tab-pane fade show active" id="crust" aria-labelledby="crust">
             <div class="card-header white bg-primary active">Choose Size and Crust</div>
             <div class="card-body">
                 <div class="card">
@@ -119,12 +120,12 @@
             </div>
 
         </div>
-    </div>
+<!--    </div>-->
     <!--end of first tab-->
 
     <!--second tab-->
     <!--<div class="tab-content">-->
-    <div class="card tab-pane active" id="cheese" role="tabpanel" aria-labelledby="cheese">
+    <div class="card tab-pane show active" id="cheese" role="tabpanel" aria-labelledby="cheese">
         <div class="card-header white bg-primary active">Choose Cheese and Sauce</div>
         <div class="card-body">
             <div class="card">
@@ -178,8 +179,8 @@
 <!--end of second tab-->
 
 <!--third tab-->
-<div class="tab-content">
-    <div class="card tab-pane active" id="toppings" aria-labelledby="toppings" role="tabpanel">
+<div class="tab-content" role="tabpanel">
+    <div class="card tab-pane fade show active" id="toppings" aria-labelledby="toppings">
         <div class="card-header white bg-primary active">Choose Toppings</div>
         <div class="card-body">
             <div class="card">
