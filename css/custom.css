@@ -10,3 +10,6 @@
 .nav-tabs *{
     display: inline-block;
 }
+
+#right a {
+    display: inline-block;
