@@ -18,6 +18,9 @@
 .card-footer{
     text-align: right;
 }
+/*.card-footer button{*/
+/*    text-align: right;*/
+/*}*/
 
 .card-header {
     /*margin: 0px;*/
@@ -26,4 +29,13 @@
 
 .form-group{
     margin: 0;
+}
+
+.form-check-input{
+    padding: 5px;
+}
+
+.form-check{
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
