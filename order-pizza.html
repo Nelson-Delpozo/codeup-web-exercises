@@ -10,13 +10,15 @@
           integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/custom.css">
-    <link rel="script" href="js/bootstrap.js">
     <!-- Your custom css styles go here -->
     <style>
         /*CSS is in css/custom.css*/
     </style>
 </head>
 <body>
+
+<!--NAVBAR-->
+
 <nav class="navbar navbar-expand-sm bg-light navbar-light">
     <ul class="navbar-nav d-flex">
         <li class="nav-item active">
@@ -28,103 +30,144 @@
         <li class="nav-item">
             <a class="nav-link" href="#">Order Online</a>
         </li>
-        <!--        <form class="form-inline" action="#">-->
-        <!--            <label for="search" class="mr-sm-2"></label>-->
-        <!--            <input type="text" class="form-control mb-2 mr-sm-2" placeholder="Enter Zip Code" id="search">-->
-        <!--            <button type="submit" class="btn-md mb-2">Search Stores Near You!</button>-->
-        <!--        </form>-->
     </ul>
+
+
+<!--    the zipcode search form-->
+
     <form class="form-inline" action="#">
         <label for="search" class="mr-sm-2"></label>
         <input type="text" class="form-control mb-2 mr-sm-2" placeholder="Enter Zip Code" id="search">
         <button type="submit" class="btn-md mb-2">Search Stores Near You!</button>
     </form>
+
+
+<!--    sign up button-->
+
     <div id="right" class="ml-auto">
         <a class="nav-link" href="#"><i class="bi bi-person"></i>&nbsp&nbspSign Up</a>
     </div>
 </nav>
+
+
+<!--END OF NAVBAR-->
+
+<!--JUMBOTRON-->
+
+
 <div class="container-fluid">
     <div class="jumbotron jumbotron-fluid">
         <h1>Welcome to Pizza World!</h1>
     </div>
     <h2>Build Your Own Pizza!</h2>
+</div>
+
+<!--    END OF JUMBOTRON-->
+
+<!--    NAVTABS-->
+
+<!--    first navtab-->
+
     <ul class="nav nav-tabs" id="nav-tab" role="tablist">
         <li class="nav-item">
             <a class="nav-link active" data-toggle="tab" href="#crust" role="tab"><span
                     class="badge badge-pill badge-secondary">1</span>&nbspSize and
                 Crust</a>
         </li>
+
+<!--        second navtab-->
+
         <li class="nav-item">
             <a class="nav-link active" data-toggle="tab" href="#cheese" role="tab"><span
                     class="badge badge-pill badge-secondary">2</span>&nbspCheese and
                 Sauce</a>
         </li>
+
+<!--        third tab-->
+
         <li class="nav-item">
             <a class="nav-link active" data-toggle="tab" href="#toppings" role="tab"><span
                     class="badge badge-pill badge-secondary">3</span>&nbspToppings</a>
         </li>
     </ul>
-</div>
+
+<!--CARD FOR SIZE AND CRUST-->
 
 <!--first tab-->
-<div class="tab-content">
-<!--    <div class="tab-content" role="tabpanel">-->
-        <div class="card tab-pane fade show active" id="crust" aria-labelledby="crust">
-            <div class="card-header white bg-primary active">Choose Size and Crust</div>
-            <div class="card-body">
-                <div class="card">
-                    <div class="card-header">Hand-Tossed</div>
-                    <div class="card-body">Garlic-Seasoned Crust with a Rich, Buttery Taste</div>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
-                                <input type="radio">
-                            </div>
-                        </div>
-                        <input type="text" class="form-control" placeholder=' Small (10")' )>
-                    </div>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
-                                <input type="radio">
-                            </div>
-                        </div>
-                        <input type="text" class="form-control" placeholder='Medium (12")'>
-                    </div>
-                </div>
-            </div>
-            <div class="card-body">
-                <div class="card">
-                    <div class="card-header">Crispy Thin</div>
-                    <div class="card-body">Thin Enough for Optimal Crispy to Crunchy Ratio</div>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
-                                <input type="radio">
-                            </div>
-                        </div>
-                        <input type="text" class="form-control" placeholder='Medium (12")'>
-                    </div>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
-                                <input type="radio">
-                            </div>
-                        </div>
-                        <input type="text" class="form-control" placeholder='Large (14")'>
-                    </div>
-                </div>
-            </div>
-            <div class="card-footer">
-                <button id="next-step" class="btn-primary btn-large">Next Step ></button>
-            </div>
+<!--HEADER-->
 
+<!--    <div class="card tab-pane fade show active" id="crust" aria-labelledby="crust">-->
+        <div class="card-header white bg-primary active">Choose Size and Crust</div>
+
+<!--        end of header-->
+
+<!--        SIZE CARD-->
+
+        <div class="card-body">
+            <div class="card">
+                <div class="card-header">Hand-Tossed</div>
+                <div class="card-body">Garlic-Seasoned Crust with a Rich, Buttery Taste</div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <input type="radio">
+                        </div>
+                    </div>
+                    <input type="text" class="form-control" placeholder=' Small (10")' )>
+                </div>
+
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <input type="radio">
+                        </div>
+                    </div>
+                    <input type="text" class="form-control" placeholder='Medium (12")'>
+                </div>
+            </div>
         </div>
+
+<!--        CRUST CARD-->
+
+        <div class="card-body">
+            <div class="card">
+                <div class="card-header">Crispy Thin</div>
+                <div class="card-body">Thin Enough for Optimal Crispy to Crunchy Ratio</div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <input type="radio">
+                        </div>
+                    </div>
+                    <input type="text" class="form-control" placeholder='Medium (12")'>
+                </div>
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">
+                            <input type="radio">
+                        </div>
+                    </div>
+                    <input type="text" class="form-control" placeholder='Large (14")'>
+                </div>
+            </div>
+        </div>
+<!--        end of crust card-->
+
+<!--        FOOTER-->
+<!--NEXT BUTTON-->
+
+        <div class="card-footer">
+            <button id="next-step" class="btn-primary btn-large">Next Step ></button>
+        </div>
+
+<!--end of footer-->
 <!--    </div>-->
+
     <!--end of first tab-->
 
-    <!--second tab-->
-    <!--<div class="tab-content">-->
+
+    <!--SECOND TAB-->
+
     <div class="card tab-pane show active" id="cheese" role="tabpanel" aria-labelledby="cheese">
         <div class="card-header white bg-primary active">Choose Cheese and Sauce</div>
         <div class="card-body">
@@ -164,82 +207,94 @@
                     </select>
                 </div>
             </div>
-<!--        </div>-->
 
+<!--NEXT AND PREVIOUS BUTTONS-->
 
-        <div class="card-footer">
-            <div class="btn-group">
-                <button class="btn-primary btn-large">< Previous Step</button>
-                <button class="btn-primary btn-large">Next Step ></button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!--end of second tab-->
-
-<!--third tab-->
-<div class="tab-content" role="tabpanel">
-    <div class="card tab-pane fade show active" id="toppings" aria-labelledby="toppings">
-        <div class="card-header white bg-primary active">Choose Toppings</div>
-        <div class="card-body">
-            <div class="card">
-                <div class="card-header">Choose Meats</div>
-                <div class="form-check">
-                    <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input" value="">Beef</label>
-                </div>
-                <div class="form-check">
-                    <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input" value="">Ham</label>
-                </div>
-                <div class="form-check">
-                    <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input" value="">Philly Steak
-                    </label>
-                </div>
-                <div class="form-check">
-                    <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input" value="">Bacon</label>
-                </div>
-
-            </div>
-        </div>
-        <div class="card-body">
-            <div class="card">
-                <div class="card-header">Choose Non-Meats</div>
-
-                <div class="form-check">
-                    <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input" value="">Green Peppers</label>
-                </div>
-                <div class="form-check">
-                    <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input" value="">Mushrooms</label>
-                </div>
-                <div class="form-check">
-                    <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input" value="">Onions</label>
-                </div>
-                <div class="form-check">
-                    <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input" value="">Jalape&#241o Peppers</label>
-                </div>
-            </div>
             <div class="card-footer">
-                <button class="btn-primary btn-large">Checkout&nbsp<i class="bi bi-cart-fill"></i></button>
+                <div class="btn-group">
+                    <button class="btn-primary btn-large">< Previous Step</button>
+                    <button class="btn-primary btn-large">Next Step ></button>
+                </div>
             </div>
         </div>
     </div>
 
-    <!--    end of third tab-->
+    <!--end of second tab-->
 
-</div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
-        crossorigin="anonymous">
-</script>
-<!-- Your custom JS goes here -->
-</div>
+    <!--third tab-->
+
+<!--TOPPINGS CARD-->
+
+        <div class="card tab-pane fade show active" id="toppings" aria-labelledby="toppings">
+            <div class="card-header white bg-primary active">Choose Toppings</div>
+
+<!--            MEATS CARD-->
+
+            <div class="card-body">
+                <div class="card">
+                    <div class="card-header">Choose Meats</div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input" value="">Beef</label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input" value="">Ham</label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input" value="">Philly Steak
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input" value="">Bacon</label>
+                    </div>
+
+                </div>
+            </div>
+
+<!--            NON MEATS CARD-->
+
+            <div class="card-body">
+                <div class="card">
+                    <div class="card-header">Choose Non-Meats</div>
+
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input" value="">Green Peppers</label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input" value="">Mushrooms</label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input" value="">Onions</label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input type="checkbox" class="form-check-input" value="">Jalape&#241o Peppers</label>
+                    </div>
+                </div>
+
+<!--                FOOTER-->
+<!--                CHECKOUT BUTTON-->
+
+                <div class="card-footer">
+                    <button class="btn-primary btn-large">Checkout&nbsp<i class="bi bi-cart-fill"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <!--    end of third tab-->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+            crossorigin="anonymous">
+    </script>
+    <!-- Your custom JS goes here -->
+
 </body>
 </html>
