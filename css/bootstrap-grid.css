@@ -1,5 +1,52 @@
-*{
+/*MAIN DOCUMENT STYLING*/
+
+* {
     box-sizing: border-box;
     color: black;
+    font-family: 'Roboto Mono', monospace;
+}
+
+body {
+    width: 100%;
+    background-color: #e0f3f5;
+    margin: 0 auto;
+}
+
+/*HEADER STYLING*/
+#main-header {
+    text-align: center;
+    padding: 1em;
+    border-top: 2px solid #a3dbe1;
+    border-right: 2px solid #a3dbe1;
+    border-left: 2px solid #a3dbe1;
+}
+
+#contact-bar {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    background-color: #f9cdc8;
+    border-top: 2px solid #a3dbe1;
+    border-right: 2px solid #a3dbe1;
+    border-left: 2px solid #a3dbe1;
+}
+
+a{
+    text-decoration: none;
+}
+
+#contact-bar h4 {
+    margin: 8px auto;
+}
+
+@media screen and (min-width: 768px) {
+
+    #contact-bar {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
 }
 
