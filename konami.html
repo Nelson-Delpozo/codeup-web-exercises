@@ -10,18 +10,24 @@
 <script>
     "use strict";
 
-    $(document).keyup(function(event){
-        console.log(event.keyCode);
-    });
-
-    // $(document).keyup(function(e){
-    //     let codeKeys = ["38", "38", "40", "40", "37", "39", "37", "39", "66", "65", "13"]
-    //     for (let i = 0; i < codeKeys.length; i++){
-    //         if (codeKeys[i].startsWith(e.value)){
-    //             alert("that's it")
-    //         }
-    //     }
+    // $(document).keyup(function(event){
+    //     console.log(event.keyCode);
     // });
+
+    $(document).keydown(konami);
+
+
+    let keys = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13];
+    let progress = 0;
+    function konami(event){
+
+
+
+    }
+
+
+
+
 </script>
 </body>
 </html>
