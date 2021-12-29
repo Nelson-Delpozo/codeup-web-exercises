@@ -27,10 +27,17 @@ $(document).ready(function() {
 
     ////////////////////////////////////////////////////
 
-    let message = $('#first-list-item').html();
-    alert(message);
+    // let message = $('#first-list-item').html();
+    // alert(message);
+    //
+    // let secondMessage = $('#main-list').html();
+    // alert(secondMessage);
 
-    let secondMessage = $('#main-list').html();
-    alert(secondMessage);
+    // $('.codeup').css('border', '1px solid red');
+
+    $("li").css('font-size', '20px');
+    $("h1, p, li").css('background-color', 'yellow');
+    // $("p").css('background-color', 'yellow');
+    // $("li").css('background-color', 'yellow');
 
 });
