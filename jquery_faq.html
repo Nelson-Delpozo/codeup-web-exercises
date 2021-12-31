@@ -18,6 +18,9 @@
         .invisible{
             visibility: hidden;
         }
+        .clicked{
+            background-color: #b4d455;
+        }
 
     </style>
 </head>
@@ -63,14 +66,21 @@
     <br>
 
     <dt>Glacier National Park</dt>
-    <dd>The Mountain Goats have learned to stay near humans for protection from predators!</dd>
+    <dd class="invisible">The Mountain Goats have learned to stay near humans for protection from predators!</dd>
     <br>
 </dl>
-
+<a href='#' id="toggle">Click to toggle definitions</a>
+<br>
+<br>
 <script>
-    $('.invisible').click(function(event) {
-        // event.preventDefault();
-        $('.invisible').toggleClass('invisible');
+    $("#toggle").click(function(event) {
+        event.preventDefault();
+        $('dd').toggleClass("invisible");
+    });
+
+    $("dt").click(function(event){
+        event.preventDefault();
+        $(this).toggleClass("clicked");
     });
 </script>
 
