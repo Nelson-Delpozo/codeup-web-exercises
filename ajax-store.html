@@ -18,7 +18,7 @@
     </thead>
     <tbody id="insertProducts"></tbody>
 </table>
-
+<h1 id="box"></h1>
 <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
 <script>
@@ -39,6 +39,24 @@
     });
 
     // TODO: Take the data from inventory.json and append it to the products table
+
+    $.ajax({
+        url: "/data/inventory.json",
+        type: "GET",
+    }).done(function populateTable(inventory) {
+        // do something with the data
+        console.log(inventory);
+        
+        inventory.forEach(function(item){
+            console.log("object title: " + item.title);
+            $('#box').append(item.title);
+            $('#insertProducts').append('<tr><td>' + item.title + '</td><td>' + item.quantity + '</td><td>' + item.price + '</td><td>' + item.categories + '</td>');
+
+        })
+    });
+
+
+    // }
     //       HINT: Your data should come back as a JSON object; use console.log() to inspect
     //             its contents and fields
     //       HINT: You will want to target #insertProducts for your new HTML elements
