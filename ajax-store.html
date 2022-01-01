@@ -10,75 +10,81 @@
 
 <table id="products" class="w3-table-all">
     <thead>
-        <tr>
-            <th>Title</th>
-            <th>Quantity</th>
-            <th>Price</th>
-            <th>Categories</th>
-        </tr>
+    <tr>
+        <th class="w3-tooltip">Title<span style="position:absolute;left:50px"
+                                          class="w3-text w3-tag">Item's name</span></th>
+
+        <th class="w3-tooltip">Quantity<span style="position:absolute;left:50px"
+                                             class="w3-text w3-tag">Item's quantity</span></th>
+        <th class="w3-tooltip">Price<span style="position:absolute; left:50px"
+                       class="w3-text w3-tag">Item's price</span></th>
+        <th class="w3-tooltip">Categories<span style="position:absolute;left:50px"
+                            class="w3-text w3-tag">Item's categories</span></th>
+    </tr>
     </thead>
     <tbody id="insertProducts"></tbody>
 </table>
 <h1 id="box"></h1>
 <button id="refresh" class="w3-circle">refresh data</button>
-<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 
 <script>
-(function() {
-    "use strict";
-    // TODO: Create an AJAX GET request for the file under data/inventory.json
+    (function () {
+        "use strict";
+        // TODO: Create an AJAX GET request for the file under data/inventory.json
 
-    // $.ajax({
-    //     url: "/data/inventory.json",
-    //     type: "GET",
-    //     // data: {
-    //     //     limit:  10,
-    //     //     offset: 20
-    //     // }
-    // }).done(function(data) {
-    //     // do something with the data
-    //     console.log(data);
-    // });
+        // $.ajax({
+        //     url: "/data/inventory.json",
+        //     type: "GET",
+        //     // data: {
+        //     //     limit:  10,
+        //     //     offset: 20
+        //     // }
+        // }).done(function(data) {
+        //     // do something with the data
+        //     console.log(data);
+        // });
 
-    // TODO: Take the data from inventory.json and append it to the products table
+        // TODO: Take the data from inventory.json and append it to the products table
 
-    $.ajax({
-        url: "/data/inventory.json",
-        type: "GET",
-    }).done(function(inventory) {
-        // do something with the data
-        console.log(inventory);
-        
-        inventory.forEach(function(item){
-            console.log("object title: " + item.title);
-            // $('#box').append(item.title);
-            $('#insertProducts').append('<tr><td>' + item.title + '</td><td>' + item.quantity + '</td><td>' + item.price + '</td><td>' + item.categories + '</td>');
-
-        })
-    });
-    $('refresh').click(function(event){
-        event.preventDefault();
         $.ajax({
             url: "/data/inventory.json",
             type: "GET",
-        }).done(function populateTable(inventory) {
+        }).done(function (inventory) {
             // do something with the data
             console.log(inventory);
 
-            inventory.forEach(function(item){
+            inventory.forEach(function (item) {
                 console.log("object title: " + item.title);
                 // $('#box').append(item.title);
                 $('#insertProducts').append('<tr><td>' + item.title + '</td><td>' + item.quantity + '</td><td>' + item.price + '</td><td>' + item.categories + '</td>');
 
             })
         });
-    });
+        $('refresh').click(function (event) {
+            event.preventDefault();
+            $.ajax({
+                url: "/data/inventory.json",
+                type: "GET",
+            }).done(function populateTable(inventory) {
+                // do something with the data
+                console.log(inventory);
 
-    // }
-    //       HINT: Your data should come back as a JSON object; use console.log() to inspect
-    //             its contents and fields
-    //       HINT: You will want to target #insertProducts for your new HTML elements
-})();
+                inventory.forEach(function (item) {
+                    console.log("object title: " + item.title);
+                    // $('#box').append(item.title);
+                    $('#insertProducts').append('<tr><td>' + item.title + '</td><td>' + item.quantity + '</td><td>' + item.price + '</td><td>' + item.categories + '</td>');
+
+                })
+            });
+        });
+
+        // }
+        //       HINT: Your data should come back as a JSON object; use console.log() to inspect
+        //             its contents and fields
+        //       HINT: You will want to target #insertProducts for your new HTML elements
+    })();
 </script>
 
 </body>
