@@ -125,7 +125,10 @@
         console.log('hello');
         $(this).next().children().css('font-weight', 'bold');
     })
-
+    $('li').click(function(event){
+        event.preventDefault();
+        $(this).parent().children().first().css('color', "blue");
+    })
 
 
 </script>
