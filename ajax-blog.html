@@ -13,15 +13,22 @@
 </div>
 <script type="text/javascript" src="js/jquery.js"></script>
 <script>
+
+    (function(){
+        "use strict";
     $.ajax({
         url: "/data/blog.json",
         type: "GET",
     }).done(function (posts) {
         // do something with the data
         console.log(posts);
+        posts.forEach(function(post){
+            $('#posts').append('<h2>' + post.title + '</h2>' + '<h5>' + post.date + '</h5>' + '<p>' + post.content + '</p><h6>' + post.categories + '</h6>');
+        })
+
 
     }
-    );
+    )}());
 
 </script>
 </body>
