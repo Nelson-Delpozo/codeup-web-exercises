@@ -11,6 +11,18 @@
 <div id="posts">
 <!--    POSTS WILL GO HERE-->
 </div>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script>
+    $.ajax({
+        url: "/data/blog.json",
+        type: "GET",
+    }).done(function (posts) {
+        // do something with the data
+        console.log(posts);
 
+    }
+    );
+
+</script>
 </body>
 </html>
