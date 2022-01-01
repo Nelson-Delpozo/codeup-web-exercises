@@ -101,6 +101,9 @@
 </ul>
 <br>
 <br>
+<button id="yellow">click to give the last li in each ul a yellow background</button>
+<br>
+
 
 <script>
     $("#toggle").click(function(event) {
@@ -112,6 +115,11 @@
         event.preventDefault();
         $(this).toggleClass("clicked");
     });
+
+    $('#yellow').click(function(event){
+        event.preventDefault();
+        $('ul li:last-child').css('background-color', 'yellow');
+    })
 </script>
 
 </body>
