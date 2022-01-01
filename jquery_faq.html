@@ -26,6 +26,34 @@
             margin: 0 auto;
             padding: 0;
         }
+        .frame{
+            height: 200px;
+            width: 200px;
+            /*background-color: #3B94D9;*/
+            border: 5px solid black;
+        }
+        #container{
+            display: flex;
+            justify-content: space-evenly;
+        }
+        #button-bar{
+            display: flex;
+            justify-content: space-evenly;
+            padding-top: 10px;
+            padding-bottom: 30px;
+        }
+        .right{
+            background-image: url("img/hipster.jpeg");
+            background-size: cover;
+        }
+        .left{
+            background-image: url("img/phone.jpeg");
+            background-size: cover;
+        }
+        .center{
+            background-image: url("img/zuck.jpeg");
+            background-size: cover;
+        }
 
     </style>
 </head>
@@ -103,9 +131,50 @@
 <br>
 <button id="yellow">click to give the last li in each ul a yellow background</button>
 <br>
+<br>
+<div id="container">
+<div id="left-frame" class="frame left">
+
+</div>
+<div id="center-frame" class="frame center">
+
+</div>
+<div id="right-frame" class="frame right">
+
+</div>
+</div>
+<div id="button-bar">
+    <button id="shuffle-left">shuffle</button>
+    <button id="shuffle-center">shuffle</button>
+    <button id="shuffle-right">shuffle</button>
+</div>
 
 
 <script>
+    $('#shuffle-left').click(function(event){
+        event.preventDefault();
+        $('#left-frame').toggleClass('left').toggleClass('center');
+        $('#center-frame').toggleClass('center').toggleClass('left');
+    })
+    $('#shuffle-right').click(function(event){
+        event.preventDefault();
+        $('#right-frame').toggleClass('right').toggleClass('center');
+        $('#center-frame').toggleClass('center').toggleClass('right');
+    })
+    $('#shuffle-center').click(function(event){
+        event.preventDefault();
+        let side = Math.floor((Math.random() * 2) + 1);
+        if(side === 1){
+            $('#right-frame').toggleClass('right').toggleClass('center');
+            $('#center-frame').toggleClass('right').toggleClass('center');
+        }else{
+            $('#left-frame').toggleClass('left').toggleClass('center');
+            $('#center-frame').toggleClass('center').toggleClass('left');
+        }
+    })
+
+
+
     $("#toggle").click(function(event) {
         event.preventDefault();
         $('dd').toggleClass("invisible");
