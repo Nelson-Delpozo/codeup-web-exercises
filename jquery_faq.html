@@ -79,21 +79,21 @@
 <br>
 
 <h3 class="national-parks-heading">Grand Canyon</h3>
-<ul id="grand-canyon">
+<ul id="grand-canyon" class="park-list">
     <li>Bigger than the State of Rhode Island</li>
     <li>Was carved over 6 million years</li>
     <li>Most dangerous animal is the Rock Squirrel</li>
     <li>The Skywalk is managed by the Hualapai Tribe</li>
 </ul>
 <h3 class="national-parks-heading">Great Sand Dunes</h3>
-<ul id="sand-dunes">
+<ul id="sand-dunes" class="park-list">
     <li>The wind through the sand grains can sound like singing</li>
     <li>Visitors can sand board or sled down the dunes</li>
     <li>Medano Creek runs right past the dunes and is popular with visitors</li>
     <li>Sand surface temps can reach 150 degrees</li>
 </ul>
 <h3 class="national-parks-heading">Yellowstone</h3>
-<ul id="yellowstone">
+<ul id="yellowstone" class="park-list">
     <li>World's first national park</li>
     <li>The park is contained in three states: 96% in Wyoming, 3% in Montana, and 1% in Idaho</li>
     <li>There are more than 290 waterfalls</li>
@@ -120,6 +120,14 @@
         event.preventDefault();
         $('ul li:last-child').css('background-color', 'yellow');
     })
+    $('h3').click(function(event){
+        event.preventDefault();
+        console.log('hello');
+        $(this).next().children().css('font-weight', 'bold');
+    })
+
+
+
 </script>
 
 </body>
