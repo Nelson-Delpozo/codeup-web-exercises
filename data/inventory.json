@@ -40,5 +40,32 @@
             "all-purpose"
         ],
         "price": 15
+    },
+    {
+        "title": "Turkey-baster",
+        "quantity": 5,
+        "categories": [
+            "juice",
+            "cooking"
+        ],
+        "price": 15
+    },
+    {
+        "title": "Nose-bleed",
+        "quantity": 5,
+        "categories": [
+            "juice",
+            "cooking"
+        ],
+        "price": 15
+    },
+    {
+        "title": "Jack-knife",
+        "quantity": 8,
+        "categories": [
+            "accident",
+            "oopsie"
+        ],
+        "price": 11
     }
 ]
