@@ -31,6 +31,7 @@ body {
     background-color: #cd9646;
     /*border: 1px solid #5f4e3b;*/
     border: none;
+    border-bottom: 1px solid #cd9646;
 }
 
 .navbar {
@@ -57,6 +58,7 @@ body {
 
 #right a {
     display: inline-block;
+    color: black;
 }
 
 .card-footer {
@@ -107,6 +109,7 @@ a:hover {
         flex-direction: column;
         align-items: center;
         background-image: url("/img/pizza.png");
+        font-weight: bold;
     }
 
     .jumbotron {
@@ -155,6 +158,9 @@ a:hover {
 @media screen and (max-width: 516px) {
 
     .nav-tabs .nav-link {
-        visibility: hidden;
+        display: none;
+    }
+    h2{
+        margin-bottom: 20px;
     }
 }
