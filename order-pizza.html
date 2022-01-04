@@ -28,12 +28,10 @@
         </li>
     </ul>
     <!--    the zipcode search form-->
-    <form class="form-inline"
-          action="https://www.google.com/maps/place/Codeup/@29.4165934,-98.4917245,14z/data=!3m1!5s0x865c5f5498a313af:0xb825fcec8efc3ab0!4m13!1m7!3m6!1s0x865c58af04d00eaf:0x856e13b10a016bc!2sSan+Antonio,+TX!3b1!8m2!3d29.4241219!4d-98.4936282!3m4!1s0x0:0xfdc2b9d926713c13!8m2!3d29.4267857!4d-98.4895763"
-          target="_blank">
+    <form class="form-inline" id="search-by-zip">
         <label for="search" class="mr-sm-2"></label>
         <input type="text" class="form-control mb-2 mr-sm-2" placeholder="Enter Zip Code" id="search">
-        <button type="submit" class="btn-md mb-2">Search Stores Near You!</button>
+        <button type="submit" class="btn-md mb-2" id="zipcode-search">Search Stores Near You!</button>
     </form>
     <!--    sign up button-->
     <div id="right" class="ml-auto">
@@ -267,16 +265,23 @@
 <!--END OF BOOTSTRAP BUNDLE-->
 
 <script>
-    $('#next-step').click(function () {
+    $('#next-step').click(function() {
         $('#profile-tab').tab('show')
     });
 
-    $('#on-to-toppings').click(function () {
+    $('#on-to-toppings').click(function() {
         $('#contact-tab').tab('show')
     });
 
-    $('#previous').click(function () {
+    $('#previous').click(function() {
         $('#home-tab').tab('show')
+    });
+
+    $('#zipcode-search').click(function() {
+        let y= $('#search').val();
+        $("#search-by-zip").attr("action", `https://google.com/maps/search/pizza+${y}`).attr("target", "_blank");
+        console.log(y)
+
     });
 
 
