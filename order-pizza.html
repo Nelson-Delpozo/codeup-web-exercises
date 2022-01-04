@@ -15,7 +15,7 @@
 <body>
 
 <!--NAVBAR-->
-<nav class="navbar navbar-expand-sm bg-light navbar-light">
+<nav class="navbar navbar-expand-sm navbar-light">
     <ul class="navbar-nav d-flex">
         <li class="nav-item active">
             <a class="nav-link" href="#">Pizza World</a>
@@ -73,7 +73,7 @@
     <div class="tab-content" id="myTabContent">
 
         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-            <div class="card-header white bg-primary active">Choose Size and Crust</div>
+            <div class="card-header active top">Choose Size and Crust</div>
             <div class="card">
                 <div class="card-body">
 
@@ -133,7 +133,7 @@
 <!--CHEESE AND SAUCE-->
         <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
 
-            <div class="card-header white bg-primary active">Choose Cheese and Sauce</div>
+            <div class="card-header active top">Choose Cheese and Sauce</div>
             <div class="card-body">
                 <div class="card">
                     <div class="card-header">Cheese</div>
@@ -182,7 +182,7 @@
 <!--TOPPINGS-->
         <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
 
-            <div class="card-header white bg-primary active">Choose Toppings</div>
+            <div class="card-header active top">Choose Toppings</div>
 
             <!--            MEATS CARD-->
 
@@ -257,17 +257,14 @@
 
 <script>
     $('#next-step').click(function(){
-
-            $('#profile-tab').tab('show')
+        $('#profile-tab').tab('show')
     });
 
     $('#on-to-toppings').click(function(){
-
         $('#contact-tab').tab('show')
     });
 
     $('#previous').click(function(){
-
         $('#home-tab').tab('show')
     });
 
