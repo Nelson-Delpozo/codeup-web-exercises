@@ -203,11 +203,12 @@
 
             <div class="card-header active top">Choose Toppings</div>
 
-                <!--            MEATS CARD-->
+            <!--            MEATS CARD-->
+            <form id="toppings">
                 <div class="card">
                     <div class="card-body">
                         <div class="card">
-                            <form id="toppings">
+
                             <div class="card-header">Choose Meats</div>
                             <div class="form-check">
                                 <label class="form-check-label">
@@ -238,7 +239,8 @@
 
                             <div class="form-check">
                                 <label class="form-check-label">
-                                    <input type="checkbox" class="form-check-input" value="peppers">Green Peppers</label>
+                                    <input type="checkbox" class="form-check-input" value="peppers">Green
+                                    Peppers</label>
                             </div>
                             <div class="form-check">
                                 <label class="form-check-label">
@@ -256,15 +258,16 @@
                         </div>
                     </div>
                     <div class="card-footer">
-                        <button class="btn-primary btn-large" id="checkout" type="button" onclick="addToppingsToOrder()">Checkout&nbsp<i
+                        <button class="btn-primary btn-large" id="checkout" type="button"
+                                onclick="addToppingsToOrder()">
+                            Checkout&nbsp<i
                                 class="bi bi-cart-fill"></i>
                         </button>
                     </div>
-
-
+                </div>
             </form>
         </div>
-    </div>
+
     <!--        END OF TOPPINGS-->
 </div>
 <!--    THIS DIV ENDS THE TAB CONTENT SECTION-->
@@ -284,59 +287,73 @@
 <!--END OF BOOTSTRAP BUNDLE-->
 
 <script>
+"use strict";
+
+let order = "Thanks! You ordered a pizza like this:<br>";
+let orderConfirmation = "<div class=order>" + order + "</div>";
+    // THESE ARE THE ORDERING FUNCTIONS
+
+    // CRUST
     function addCrustToOrder() {
-        let order = "";
+        // let order = "";
         let crust = document.forms[1]
-        // + document.forms[2] + document.forms[2];
         for (let i = 0; i < crust.length; i++) {
             if (crust[i].checked) {
-                order += crust[i].value;
+                order += 'Crust: ' + crust[i].value + '<br>';
             }
         }
         console.log(order);
     }
 
+    // CHEESE AND SAUCE
     function addCheeseToOrder() {
-        let cheese = document.forms[2]
+        // let cheese = document.forms[2]
         let x = $('#cheese-choice option:selected').val();
         console.log(x);
         let y = $('#sauce option:selected').val();
         console.log(y);
         let w = $('#sauce-amount option:selected').val();
         console.log(w);
+        order += 'Cheese: ' + x + '<br>Sauce: ' + y + '<br>Sauce amount: ' + w + '<br>Toppings: ';
+        console.log(order);
     }
 
+    // TOPPINGS
     function addToppingsToOrder() {
         let toppings = document.forms[3]
         let selected = "";
         for (let i = 0; i < toppings.length; i++) {
             if (toppings[i].checked) {
-                selected += toppings[i].value;
+                selected += toppings[i].value + ' ';
             }
-        }console.log(selected);
+        }
+        order += selected + '<br>Enjoy!';
+        console.log(order);
+        document.getElementById('giant-box').innerHTML = "<div id=order>" + order + "</div>";
     }
 
 
+
+    // FIRST NEXT BUTTON, OPENS CHEESE TAB
     $('#next-step').click(function () {
         $('#profile-tab').tab('show')
-
     });
 
+    // SECOND NEXT BUTTON, OPENS TOPPINGS TAB
     $('#on-to-toppings').click(function () {
         $('#contact-tab').tab('show')
     });
-
+    // PREVIOUS BUTTON
     $('#previous').click(function () {
         $('#home-tab').tab('show')
     });
 
+    // ZIPCODE SEARCH
     $('#zipcode-search').click(function () {
         let y = $('#search').val();
         $("#search-by-zip").attr("action", `https://google.com/maps/search/pizza+${y}`).attr("target", "_blank");
         console.log(y)
     });
-
-
 
 </script>
 
