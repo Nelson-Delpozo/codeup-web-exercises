@@ -94,7 +94,7 @@
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <div class="input-group-text">
-                                <input type="radio" name="crust" value="medium-hand-tossed" class="choice">
+                                <input type="radio" name="crust" value="medium-hand-tossed" class="choice" checked>
                             </div>
                         </div>
                         <input type="text" class="form-control" placeholder='Medium (12")' readonly>
@@ -286,16 +286,8 @@
 
     // TRYING TO GET THE FORMS TO GET TOGETHER
     $('#checkout').click(function() {
-        console.log('I\'m clicked');
-        let pizza = [];
-        $('.choice').each(function() {
-         pizza += $(this).prop('selected', true).attr('value');
-        })
-        console.log(pizza);
-    });
-
-
-
+        console.log('I\'m clicked')});
+    // HERE'S WHERE I HAVE TO GET THE FORM INFO
 
 
 </script>
