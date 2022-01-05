@@ -303,7 +303,10 @@ alert(skyStatus());
 
 //////////////////////////////////////////////
 
+// function for validating number
+// return typeof input === "number" || !isNaN(input);
 
+///////////////////////////////////////////////
 
 
 

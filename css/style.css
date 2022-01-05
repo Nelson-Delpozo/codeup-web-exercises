@@ -8,7 +8,7 @@ h1.fancy-header, .sub-header{
 
 #main-header{
     display: flex;
-    flex-direction: column;;
+    flex-direction: column;
 }
 
 
@@ -60,10 +60,10 @@ tr:nth-child(odd){
     background-color: darkseagreen;
 }
 
-a:link{
+a{
     color: #368a71;
 }
-a:visited link:{
+a:visited{
     color: darkred;
 }
 
@@ -142,7 +142,16 @@ li{
 #navbar-buttons li{
     display: inline-block;
     margin-right: 25px;
+    color: #368a71;
 }
+#navbar-buttons li a{
+    color: #368a71;
+    position: relative;
+}
+ #navbar-buttons li a:active{
+     top: 1px;
+ }
+
 
 #navbar-buttons li label{
     size: 1.5em;

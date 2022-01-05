@@ -28,11 +28,10 @@ body, html {
 
 .message{
     padding: 10px;
-    margin: .5em;
+    margin: 5px;
     border: 1px solid gray;
-    grid-gap: .5em;
     width: 35%;
-    border-radius: .5em;
+    border-radius: 10px;
     font-weight: 500;
 
 }

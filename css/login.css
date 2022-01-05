@@ -13,9 +13,10 @@ body, html {
 form {
     /* This form should be separated from other elements by 1em */
     /* There must be 1em between the content and the border of this element */
-    margin: 1em;
+    /*margin: 1em;*/
     padding: 1em;
-
+    width: 50%;
+    margin:  1em auto;
 }
 
 fieldset {
@@ -75,11 +76,11 @@ fieldset {
     margin-top: .5em;
 
     /* You'll need to use the `calc` function to make the width of this element match the width of the button */
-    width: calc(100% );
+    width: calc(100% - 4px);
 
     /* See the example at: https://developer.mozilla.org/en-US/docs/Web/CSS/calc */
     /* HINT: Examples are available at: https://glitch.com/~input-button-width */
-    //width: 100%;
+    /*//width: 100%;*/
 }
 
 

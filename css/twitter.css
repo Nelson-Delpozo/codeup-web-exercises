@@ -41,7 +41,11 @@ a {
     color: var(--main-link-color);
     font-weight: bold;
     text-decoration: none;
+    position: relative;
+}
 
+.nav-link:active{
+    top: 2px;
 }
 
 .nav-item{

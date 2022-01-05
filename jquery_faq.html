@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="/js/jquery.js"></script>
+<!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"-->
+<!--          integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">-->
+<!--    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">-->
+    <title>jQuery FAQ</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .invisible{
+            visibility: hidden;
+        }
+        .clicked{
+            background-color: #b4d455;
+        }
+        ul{
+            list-style-type: none;
+            margin: 0 auto;
+            padding: 0;
+        }
+        .frame{
+            height: 200px;
+            width: 200px;
+            /*background-color: #3B94D9;*/
+            border: 5px solid black;
+        }
+        #container{
+            display: flex;
+            justify-content: space-evenly;
+        }
+        #button-bar{
+            display: flex;
+            justify-content: space-evenly;
+            padding-top: 10px;
+            padding-bottom: 30px;
+        }
+        .right{
+            background-image: url("img/hipster.jpeg");
+            background-size: cover;
+        }
+        .left{
+            background-image: url("img/phone.jpeg");
+            background-size: cover;
+        }
+        .center{
+            background-image: url("img/zuck.jpeg");
+            background-size: cover;
+        }
+
+    </style>
+</head>
+<body>
+<h1>Ten Facts About National Parks</h1>
+<img src="img/mountains.jpeg">
+
+<dl>
+    <dt>Great Smoky Mountains National Park</dt>
+    <dd class="invisible">It's the Salamander Capital of the World</dd>
+    <br>
+
+    <dt>Grand Canyon National Park</dt>
+    <dd class="invisible">Lucky visitors could see a sea of clouds below them!</dd>
+    <br>
+
+    <dt>Rocky Mountain National Park</dt>
+    <dd class="invisible">It has the highest continuous paved highway in the US running right through it!</dd>
+    <br>
+
+    <dt>Zion National Park</dt>
+    <dd class="invisible">It has its very own secret "subway" of tunnels running below it!</dd>
+    <br>
+
+    <dt>Yellowstone National Park</dt>
+    <dd class="invisible">It once had a "bear lunch counter" where visitors could watch the bears raid the dumpsters!</dd>
+    <br>
+
+    <dt>Yosemite National Park</dt>
+    <dd class="invisible">Had a nightly "fire-fall" for over a century!</dd>
+    <br>
+
+    <dt>Acadia National Park</dt>
+    <dd class="invisible">For part of the year, its Cadillac Mountain is the first place in the US to see the sunrise!</dd>
+    <br>
+
+    <dt>Grand Tetons National Park</dt>
+    <dd class="invisible">Its name is a reference to certain female body parts!</dd>
+    <br>
+
+    <dt>Olympic National Park</dt>
+    <dd class="invisible">It's home to one of the world's few temperate rainforests!</dd>
+    <br>
+
+    <dt>Glacier National Park</dt>
+    <dd class="invisible">The Mountain Goats have learned to stay near humans for protection from predators!</dd>
+    <br>
+</dl>
+<a href='#' id="toggle">Click to toggle definitions</a>
+<br>
+<br>
+
+<h3 class="national-parks-heading">Grand Canyon</h3>
+<ul id="grand-canyon" class="park-list">
+    <li>Bigger than the State of Rhode Island</li>
+    <li>Was carved over 6 million years</li>
+    <li>Most dangerous animal is the Rock Squirrel</li>
+    <li>The Skywalk is managed by the Hualapai Tribe</li>
+</ul>
+<h3 class="national-parks-heading">Great Sand Dunes</h3>
+<ul id="sand-dunes" class="park-list">
+    <li>The wind through the sand grains can sound like singing</li>
+    <li>Visitors can sand board or sled down the dunes</li>
+    <li>Medano Creek runs right past the dunes and is popular with visitors</li>
+    <li>Sand surface temps can reach 150 degrees</li>
+</ul>
+<h3 class="national-parks-heading">Yellowstone</h3>
+<ul id="yellowstone" class="park-list">
+    <li>World's first national park</li>
+    <li>The park is contained in three states: 96% in Wyoming, 3% in Montana, and 1% in Idaho</li>
+    <li>There are more than 290 waterfalls</li>
+    <li>There are five park entrances and 466 miles of roads</li>
+</ul>
+<br>
+<br>
+<button id="yellow">click to give the last li in each ul a yellow background</button>
+<br>
+<br>
+<div id="container">
+<div id="left-frame" class="frame left">
+
+</div>
+<div id="center-frame" class="frame center">
+
+</div>
+<div id="right-frame" class="frame right">
+
+</div>
+</div>
+<div id="button-bar">
+    <button id="shuffle-left">shuffle</button>
+    <button id="shuffle-center">shuffle</button>
+    <button id="shuffle-right">shuffle</button>
+</div>
+
+
+<script>
+    $('#shuffle-left').click(function(event){
+        event.preventDefault();
+        $('#left-frame').toggleClass('left').toggleClass('center');
+        $('#center-frame').toggleClass('center').toggleClass('left');
+    })
+    $('#shuffle-right').click(function(event){
+        event.preventDefault();
+        $('#right-frame').toggleClass('right').toggleClass('center');
+        $('#center-frame').toggleClass('center').toggleClass('right');
+    })
+    $('#shuffle-center').click(function(event){
+        event.preventDefault();
+        let side = Math.floor((Math.random() * 2) + 1);
+        if(side === 1){
+            $('#right-frame').toggleClass('right').toggleClass('center');
+            $('#center-frame').toggleClass('right').toggleClass('center');
+        }else{
+            $('#left-frame').toggleClass('left').toggleClass('center');
+            $('#center-frame').toggleClass('center').toggleClass('left');
+        }
+    })
+
+
+
+    $("#toggle").click(function(event) {
+        event.preventDefault();
+        $('dd').toggleClass("invisible");
+    });
+
+    $("dt").click(function(event){
+        event.preventDefault();
+        $(this).toggleClass("clicked");
+    });
+
+    $('#yellow').click(function(event){
+        event.preventDefault();
+        $('ul li:last-child').css('background-color', 'yellow');
+    })
+    $('h3').click(function(event){
+        event.preventDefault();
+        console.log('hello');
+        $(this).next().children().css('font-weight', 'bold');
+    })
+    $('li').click(function(event){
+        event.preventDefault();
+        $(this).parent().children().first().css('color', "blue");
+    })
+
+
+</script>
+
+</body>
+</html>
