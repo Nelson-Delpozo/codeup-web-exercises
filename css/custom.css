@@ -39,6 +39,13 @@ body {
     background-color: #cd9646;
 }
 
+.navbar a{
+    position: relative;
+}
+.navbar a:active{
+    top: 2px;
+}
+
 .card-header {
     color: #9f270d;
     background-color: #cd9646;
