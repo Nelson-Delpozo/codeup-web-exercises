@@ -84,7 +84,7 @@
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <div class="input-group-text">
-                                    <input type="radio" name="crust">
+                                    <input type="radio" name="crust" value="small-hand-tossed" class="choice">
                                 </div>
                             </div>
                             <input type="text" class="form-control" placeholder=' Small (10")' readonly>
@@ -94,7 +94,7 @@
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <div class="input-group-text">
-                                <input type="radio" name="crust">
+                                <input type="radio" name="crust" value="medium-hand-tossed" class="choice">
                             </div>
                         </div>
                         <input type="text" class="form-control" placeholder='Medium (12")' readonly>
@@ -109,7 +109,7 @@
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <div class="input-group-text">
-                                    <input type="radio" name="crust">
+                                    <input type="radio" name="crust" value="medium-thin" class="choice">
                                 </div>
                             </div>
                             <input type="text" class="form-control" placeholder='Medium (12")' readonly>
@@ -117,7 +117,7 @@
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <div class="input-group-text">
-                                    <input type="radio" name="crust">
+                                    <input type="radio" name="crust" value="large-thin" class="choice">
                                 </div>
                             </div>
                             <input type="text" class="form-control" placeholder='Large (14")' readonly>
@@ -141,12 +141,12 @@
                     <div class="card">
                         <div class="card-header">Cheese</div>
                         <div class="card-body">How Much?</div>
-                        <div class="form-group">
+                        <div class="form-group" id="cheese-choice">
                             <select class="form-control">
-                                <option>Light</option>
-                                <option>Normal</option>
-                                <option>Extra</option>
-                                <option>Double</option>
+                                <option value="light-cheese">Light</option>
+                                <option value="normal-cheese">Normal</option>
+                                <option value="extra-cheese">Extra</option>
+                                <option value="dbl-cheese">Double</option>
                             </select>
                         </div>
                     </div>
@@ -240,7 +240,7 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                    <button class="btn-primary btn-large" type="submit">Checkout&nbsp<i class="bi bi-cart-fill"></i>
+                    <button class="btn-primary btn-large" id="checkout" type="submit">Checkout&nbsp<i class="bi bi-cart-fill"></i>
                     </button>
                 </div>
 
@@ -281,8 +281,21 @@
         let y= $('#search').val();
         $("#search-by-zip").attr("action", `https://google.com/maps/search/pizza+${y}`).attr("target", "_blank");
         console.log(y)
-
     });
+
+
+    // TRYING TO GET THE FORMS TO GET TOGETHER
+    $('#checkout').click(function() {
+        console.log('I\'m clicked');
+        let pizza = [];
+        $('.choice').each(function() {
+         pizza += $(this).prop('selected', true).attr('value');
+        })
+        console.log(pizza);
+    });
+
+
+
 
 
 </script>
