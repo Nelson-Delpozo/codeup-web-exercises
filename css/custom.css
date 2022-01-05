@@ -124,7 +124,7 @@ a:hover {
     align-content: center;
 }
 #send-order{
-    width: auto;
+    width: 25%;
     margin: auto;
 }
 
@@ -207,5 +207,8 @@ a:hover {
     #order{
         width: 100%;
         height: auto;
+    }
+    #send-order{
+        width: 100%;
     }
 }
