@@ -154,7 +154,7 @@
                             <div class="card-body">How Much?</div>
                             <div class="form-group" id="cheese-choice">
                                 <select class="form-control">
-                                    <option value="light-cheese" selected>Light</option>
+                                    <option value="light-cheese">Light</option>
                                     <option value="normal-cheese">Normal</option>
                                     <option value="extra-cheese">Extra</option>
                                     <option value="dbl-cheese">Double</option>
@@ -329,7 +329,7 @@ let orderConfirmation = "<div class=order>" + order + "</div>";
         }
         order += selected + '<br>Enjoy!';
         console.log(order);
-        document.getElementById('giant-box').innerHTML = "<div id='order-box'><div id=order>" + order + "</div><input type='submit' id='send-order' value='Order My Pizza'></div>";
+        document.getElementById('giant-box').innerHTML = "<div id='order-box'><div id=order>" + order + "</div><input type='submit' id='send-order' value='Order My Pizza' onclick='reload()'></div>";
     }
 
 
@@ -354,6 +354,13 @@ let orderConfirmation = "<div class=order>" + order + "</div>";
         $("#search-by-zip").attr("action", `https://google.com/maps/search/pizza+${y}`).attr("target", "_blank");
         console.log(y)
     });
+
+
+    // THIS IS TEMPORARY, IT RELOADS THE PAGE AFTER CLICKING THE FINAL ORDER BUTTON
+
+    function reload(){
+        location.reload();
+    }
 
 </script>
 
