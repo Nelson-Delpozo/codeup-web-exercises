@@ -1,5 +1,6 @@
 <!doctype html>
-<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
+      xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -84,28 +85,29 @@
             <div class="card">
                 <div class="card-body">
                     <form id="crust-choice">
-                    <div class="card">
-                        <div class="card-header">Hand-Tossed</div>
-                        <div class="card-body">Garlic-Seasoned Crust with a Rich, Buttery Taste</div>
+                        <div class="card">
+                            <div class="card-header">Hand-Tossed</div>
+                            <div class="card-body">Garlic-Seasoned Crust with a Rich, Buttery Taste</div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <input type="radio" name="crust" value="small-hand-tossed" class="choice">
+                                    </div>
+                                </div>
+                                <input type="text" class="form-control" placeholder=' Small (10")' readonly>
+                            </div>
+                        </div>
+
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <div class="input-group-text">
-                                    <input type="radio" name="crust" value="small-hand-tossed" class="choice">
+                                    <input type="radio" name="crust" value="medium-hand-tossed" class="choice" checked>
                                 </div>
                             </div>
-                            <input type="text" class="form-control" placeholder=' Small (10")' readonly>
+                            <input type="text" class="form-control" placeholder='Medium (12")' readonly>
                         </div>
-                    </div>
-
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text">
-                                <input type="radio" name="crust" value="medium-hand-tossed" class="choice" checked>
-                            </div>
-                        </div>
-                        <input type="text" class="form-control" placeholder='Medium (12")' readonly>
-                    </div>
                 </div>
+
             </div>
             <div class="card">
                 <div class="card-body">
@@ -132,7 +134,9 @@
                 </div>
             </div>
             <div class="card-footer">
-                <button id="next-step" type="button" class="btn-primary btn-large">Next Step ></button>
+                <button id="next-step" type="button" class="btn-primary btn-large" onclick="addCrustToOrder()">Next Step
+                    >
+                </button>
             </div>
             </form>
         </div>
@@ -144,19 +148,19 @@
             <div class="card-header active top">Choose Cheese and Sauce</div>
             <div class="card">
                 <div class="card-body">
-
-                    <div class="card">
-                        <div class="card-header">Cheese</div>
-                        <div class="card-body">How Much?</div>
-                        <div class="form-group" id="cheese-choice">
-                            <select class="form-control">
-                                <option value="light-cheese">Light</option>
-                                <option value="normal-cheese">Normal</option>
-                                <option value="extra-cheese">Extra</option>
-                                <option value="dbl-cheese">Double</option>
-                            </select>
+                    <form id="cheeseChoice">
+                        <div class="card">
+                            <div class="card-header">Cheese</div>
+                            <div class="card-body">How Much?</div>
+                            <div class="form-group" id="cheese-choice">
+                                <select class="form-control">
+                                    <option value="light-cheese" selected>Light</option>
+                                    <option value="normal-cheese">Normal</option>
+                                    <option value="extra-cheese">Extra</option>
+                                    <option value="dbl-cheese">Double</option>
+                                </select>
+                            </div>
                         </div>
-                    </div>
                 </div>
 
 
@@ -166,18 +170,18 @@
                         <div class="card-body">What Type?</div>
                         <div class="form-group">
                             <select class="form-control" id="sauce">
-                                <option>Tomato Sauce</option>
-                                <option>Marinara Sauce</option>
-                                <option>BBQ Sauce</option>
-                                <option>Alfredo Sauce</option>
+                                <option value="tomato">Tomato Sauce</option>
+                                <option value="marinara">Marinara Sauce</option>
+                                <option value="bbq">BBQ Sauce</option>
+                                <option value="alfredo">Alfredo Sauce</option>
                             </select>
                         </div>
                         <div class="card-body">How Much?</div>
                         <div class="form-group">
                             <select class="form-control" id="sauce-amount">
-                                <option value="light-cheese">Light</option>
-                                <option value="normal-cheese">Normal</option>
-                                <option value="extra-cheese">Extra</option>
+                                <option value="light-sauce">Light</option>
+                                <option value="normal-sauce">Normal</option>
+                                <option value="extra-sauce">Extra</option>
                             </select>
                         </div>
                     </div>
@@ -185,9 +189,12 @@
                 <div class="card-footer">
                     <div class="btn-group">
                         <button class="btn-primary btn-large" type="button" id="previous">< Previous Step</button>
-                        <button class="btn-primary btn-large" type="button" id="on-to-toppings">Next Step ></button>
+                        <button class="btn-primary btn-large" type="button" id="on-to-toppings"
+                                onclick="addCheeseToOrder()">Next Step >
+                        </button>
                     </div>
                 </div>
+                </form>
             </div>
         </div>
         <!--END OF CHEESE AND SAUCE-->
@@ -196,66 +203,71 @@
 
             <div class="card-header active top">Choose Toppings</div>
 
-            <!--            MEATS CARD-->
-            <div class="card">
-                <div class="card-body">
-                    <div class="card">
-                        <div class="card-header">Choose Meats</div>
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input type="checkbox" class="form-check-input" value="">Beef</label>
-                        </div>
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input type="checkbox" class="form-check-input" value="">Ham</label>
-                        </div>
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input type="checkbox" class="form-check-input" value="">Philly Steak
-                            </label>
-                        </div>
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input type="checkbox" class="form-check-input" value="">Bacon</label>
-                        </div>
+                <!--            MEATS CARD-->
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card">
+                            <form id="toppings">
+                            <div class="card-header">Choose Meats</div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input" value="beef">Beef</label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input" value="ham">Ham</label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input" value="philly">Philly Steak
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input" value="bacon">Bacon</label>
+                            </div>
 
-                    </div>
-                </div>
-
-                <!--            NON MEATS CARD-->
-
-                <div class="card-body">
-                    <div class="card">
-                        <div class="card-header">Choose Non-Meats</div>
-
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input type="checkbox" class="form-check-input" value="">Green Peppers</label>
-                        </div>
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input type="checkbox" class="form-check-input" value="">Mushrooms</label>
-                        </div>
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input type="checkbox" class="form-check-input" value="">Onions</label>
-                        </div>
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input type="checkbox" class="form-check-input" value="">Jalape&#241o Peppers</label>
                         </div>
                     </div>
-                </div>
-                <div class="card-footer">
-                    <button class="btn-primary btn-large" id="checkout" type="submit">Checkout&nbsp<i class="bi bi-cart-fill"></i>
-                    </button>
-                </div>
 
-            </div>
+                    <!--            NON MEATS CARD-->
+
+                    <div class="card-body">
+                        <div class="card">
+                            <div class="card-header">Choose Non-Meats</div>
+
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input" value="peppers">Green Peppers</label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input" value="mushrooms">Mushrooms</label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input" value="onions">Onions</label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input type="checkbox" class="form-check-input" value="jalapenos">Jalape&#241o
+                                    Peppers</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn-primary btn-large" id="checkout" type="button" onclick="addToppingsToOrder()">Checkout&nbsp<i
+                                class="bi bi-cart-fill"></i>
+                        </button>
+                    </div>
+
+
+            </form>
         </div>
-        <!--        END OF TOPPINGS-->
     </div>
-    <!--    THIS DIV ENDS THE TAB CONTENT SECTION-->
+    <!--        END OF TOPPINGS-->
+</div>
+<!--    THIS DIV ENDS THE TAB CONTENT SECTION-->
 </div>
 <!--    THIS ONE ENDS GIANT BOX-->
 
@@ -272,28 +284,58 @@
 <!--END OF BOOTSTRAP BUNDLE-->
 
 <script>
-    $('#next-step').click(function() {
+    function addCrustToOrder() {
+        let order = "";
+        let crust = document.forms[1]
+        // + document.forms[2] + document.forms[2];
+        for (let i = 0; i < crust.length; i++) {
+            if (crust[i].checked) {
+                order += crust[i].value;
+            }
+        }
+        console.log(order);
+    }
+
+    function addCheeseToOrder() {
+        let cheese = document.forms[2]
+        let x = $('#cheese-choice option:selected').val();
+        console.log(x);
+        let y = $('#sauce option:selected').val();
+        console.log(y);
+        let w = $('#sauce-amount option:selected').val();
+        console.log(w);
+    }
+
+    function addToppingsToOrder() {
+        let toppings = document.forms[3]
+        let selected = "";
+        for (let i = 0; i < toppings.length; i++) {
+            if (toppings[i].checked) {
+                selected += toppings[i].value;
+            }
+        }console.log(selected);
+    }
+
+
+    $('#next-step').click(function () {
         $('#profile-tab').tab('show')
+
     });
 
-    $('#on-to-toppings').click(function() {
+    $('#on-to-toppings').click(function () {
         $('#contact-tab').tab('show')
     });
 
-    $('#previous').click(function() {
+    $('#previous').click(function () {
         $('#home-tab').tab('show')
     });
 
-    $('#zipcode-search').click(function() {
-        let y= $('#search').val();
+    $('#zipcode-search').click(function () {
+        let y = $('#search').val();
         $("#search-by-zip").attr("action", `https://google.com/maps/search/pizza+${y}`).attr("target", "_blank");
         console.log(y)
     });
 
-
-    // TRYING TO GET THE FORMS TO GET TOGETHER
-
-    // HERE'S WHERE I HAVE TO GET THE FORM INFO
 
 
 </script>
