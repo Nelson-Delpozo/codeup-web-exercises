@@ -115,6 +115,7 @@ a:hover {
     margin: 75px auto;
     padding: 10px;
     background-image: url("../img/pizza-header.jpeg");
+    background-size: cover;
     color: white;
 }
 
