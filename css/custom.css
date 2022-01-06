@@ -30,7 +30,6 @@ body {
 
 .nav-tabs .nav-link.active {
     background-color: #cd9646;
-    /*border: 1px solid #5f4e3b;*/
     border: none;
     border-bottom: 1px solid #cd9646;
 }
@@ -108,13 +107,12 @@ a:hover {
 }
 
 #order{
-    background-color: #cd9646;
     width: 50%;
-    /*height: 200px;*/
-    border: 5px solid #9f270d;
+    border: 10px solid #9f270d;
     margin: 75px auto;
     padding: 10px;
-    background-image: url("/img/pizza-header.jpeg");
+    background-image: url("../img/pizza-header.jpeg");
+    background-size: cover;
     color: white;
 }
 
@@ -123,6 +121,7 @@ a:hover {
     flex-direction: column;
     align-content: center;
 }
+
 #send-order{
     width: 25%;
     margin: auto;
@@ -148,7 +147,7 @@ a:hover {
     .navbar {
         flex-direction: column;
         align-items: center;
-        background-image: url("/img/pizza.png");
+        background-image: url("../img/pizza.png");
         font-weight: bold;
     }
 
@@ -175,12 +174,7 @@ a:hover {
         text-align: center;
     }
 
-    /*#order{*/
-    /*    box-sizing: unset;*/
-    /*    margin: 0;*/
-    /*    width: revert;*/
-    /*    height: revert;*/
-    /*}*/
+
     #giant-box{
         margin: 0;
         padding: 0;
@@ -222,5 +216,12 @@ a:hover {
 
     h2 {
         margin-bottom: 20px;
+    }
+    #order{
+        width: 90%;
+        height: auto;
+    }
+    #send-order{
+        width: 100%;
     }
 }
