@@ -34,6 +34,11 @@ body {
 img{
     max-width: 90%;
 }
+
+#image{
+    text-align: center;
+
+}
 a{
     text-decoration: none;
 }
@@ -70,6 +75,7 @@ footer h4{
 }
 .col-md-4{
     padding: 15px;
+    border-bottom: 3px solid #a3dbe1;
 }
 
 #main-box{
@@ -92,6 +98,7 @@ footer h4{
     }
     .col-md-4{
         border-right: 3px solid #a3dbe1;
+        border-bottom: 0;
     }
 }
 
