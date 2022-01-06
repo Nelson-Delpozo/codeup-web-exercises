@@ -110,7 +110,11 @@ a:hover {
 #order{
     background-color: #cd9646;
     width: 50%;
+<<<<<<< HEAD
     height: 400px;
+=======
+    /*height: 200px;*/
+>>>>>>> main
     border: 5px solid #9f270d;
     margin: 75px auto;
     padding: 10px;
@@ -145,7 +149,7 @@ a:hover {
 }
 
 /*A LITTLE SMALLER*/
-@media screen and (max-width: 696px) {
+@media screen and (max-width: 700px) {
     .navbar {
         flex-direction: column;
         align-items: center;
@@ -175,6 +179,22 @@ a:hover {
     .navbar-nav {
         text-align: center;
     }
+
+    /*#order{*/
+    /*    box-sizing: unset;*/
+    /*    margin: 0;*/
+    /*    width: revert;*/
+    /*    height: revert;*/
+    /*}*/
+    #giant-box{
+        margin: 0;
+        padding: 0;
+    }
+
+    #order-box {
+        width: 100%;
+        height: 100%;
+    }
 }
 
 /*MIDDLE*/
@@ -191,6 +211,9 @@ a:hover {
 
     h2 {
         text-align: center;
+    }
+    body{
+        margin-bottom: 25px;
     }
 }
 
