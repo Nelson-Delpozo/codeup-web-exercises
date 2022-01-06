@@ -332,7 +332,31 @@
         }
         order += selected + '<br>Enjoy!';
         console.log(order);
-        document.getElementById('giant-box').innerHTML = "<div id='order-box'><div id=order>" + order + "</div><input type='submit' id='send-order' value='Order' onclick='reload()'></div>";
+            document.getElementById('giant-box').innerHTML = `<div id='order-box'><div id=order>` + order + `</div><form id="submit-form">
+    <div class="form-group">
+        <label for="exampleFormControlInput1">Name</label>
+        <input type="name" class="form-control" id="exampleFormControlInput1" placeholder="your name">
+      </div>
+    <div class="form-group">
+        <label for="exampleFormControlInput1">Email address</label>
+        <input type="email" class="form-control" id="exampleFormControlInput2" placeholder="email@something.com">
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">When Do You Want It?</label>
+        <select class="form-control" id="exampleFormControlSelect1">
+          <option>ASAP(15-20 min.)</option>
+          <option>30 min.</option>
+          <option>45 min.</option>
+          <option>1 hour</option>
+          <option>2 hours</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">Any Notes</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+      </div>
+    </form><input type='submit' id='send-order' class='order-button' value='Order' onclick='reload()'><input type='button' class='order-button' onclick='reload()' value='Reset'</div>`
     }
 
 
@@ -363,6 +387,7 @@
     function reload() {
         location.reload();
     }
+
 
 </script>
 

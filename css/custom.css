@@ -122,9 +122,10 @@ a:hover {
     align-content: center;
 }
 
-#send-order{
+.order-button{
     width: 25%;
-    margin: auto;
+    margin: 10px auto;
+
 }
 
 /*SMALLER SIZE*/
@@ -183,6 +184,10 @@ a:hover {
     #order-box {
         width: 100%;
         height: 100%;
+    }
+    #submit-form{
+        width: 75%;
+        margin: auto;
     }
 }
 
