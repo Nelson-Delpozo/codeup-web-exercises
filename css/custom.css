@@ -33,6 +33,16 @@ body {
     border: none;
     border-bottom: 1px solid #cd9646;
 }
+.nav-tabs .nav-link{
+    background-color: #D4A661;
+    margin-right: 1px;
+    color: #6A7703;
+    font-weight: bold;
+}
+.nav-tabs .nav-link:hover{
+    border: none;
+    border-bottom: 1px solid #cd9646;
+}
 
 .navbar {
     background-color: #cd9646;
@@ -131,6 +141,10 @@ a:hover {
 #submit-form{
     width: 75%;
     margin: auto;
+}
+
+.tab-pane{
+    border: 2px solid #cd9646;
 }
 
 /*SMALLER SIZE*/
