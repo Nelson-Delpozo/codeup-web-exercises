@@ -28,11 +28,12 @@ body {
     text-align: center;
     align-items: center;
     background-color: #f9cdc8;
-    border-top: 2px solid #a3dbe1;
-    border-right: 2px solid #a3dbe1;
-    border-left: 2px solid #a3dbe1;
+    border: 2px solid #a3dbe1;
 }
 
+img{
+    max-width: 90%;
+}
 a{
     text-decoration: none;
 }
@@ -40,6 +41,28 @@ a{
 #contact-bar h4 {
     margin: 8px auto;
     font-size: .7em;
+}
+
+#footer{
+    text-align: center;
+    background-color: #f9cdc8;
+    padding: 10px;
+    border: 3px solid #a3dbe1;
+    margin-top: 30px;
+}
+
+footer{
+    max-width: 100%;
+}
+
+footer h4{
+    font-size: small;
+}
+
+
+#main-box{
+    border-left: 3px solid #a3dbe1;
+    border-right: 3px solid #a3dbe1;
 }
 
 @media screen and (min-width: 768px) {
