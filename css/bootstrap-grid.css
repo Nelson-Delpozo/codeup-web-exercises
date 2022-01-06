@@ -31,15 +31,15 @@ body {
     border: 2px solid #a3dbe1;
 }
 
-img{
+img {
     max-width: 90%;
 }
 
-#image{
+#image {
     text-align: center;
-
 }
-a{
+
+a {
     text-decoration: none;
 }
 
@@ -48,7 +48,7 @@ a{
     font-size: .7em;
 }
 
-#footer{
+#footer {
     text-align: center;
     background-color: #f9cdc8;
     padding: 10px;
@@ -57,28 +57,29 @@ a{
     margin-top: 30px;
 }
 
-footer{
+footer {
     max-width: 100%;
     margin-top: 0;
 }
 
-#footer.row{
+#footer.row {
     margin-top: 0;
 }
 
-footer h4{
+footer h4 {
     font-size: small;
 }
 
-.col-md-8{
+.col-md-8 {
     padding: 15px;
 }
-.col-md-4{
+
+.col-md-4 {
     padding: 15px;
     border-bottom: 3px solid #a3dbe1;
 }
 
-#main-box{
+#main-box {
     border-left: 3px solid #a3dbe1;
     border-right: 3px solid #a3dbe1;
 }
@@ -90,13 +91,16 @@ footer h4{
         flex-wrap: wrap;
         justify-content: space-evenly;
     }
-    #contact-bar h4{
+
+    #contact-bar h4 {
         font-size: inherit;
     }
-    footer h4{
+
+    footer h4 {
         font-size: large;
     }
-    .col-md-4{
+
+    .col-md-4 {
         border-right: 3px solid #a3dbe1;
         border-bottom: 0;
     }
