@@ -16,9 +16,13 @@
 </ul>
 <h2 id="sub-header">Hello Again.</h2>
 <p class="sub-paragraph">
-    Right, okay, so right around 9:00 she's gonna get very angry with me. This is more serious than I thought. Apparently your mother is amorously infatuated with you instead of your father. Not a word, not a word, not a word now. Quiet, uh, donations, you want me to make a donation to the coast guard youth auxiliary? What's that thing he's on? Sam, here's the young man you hit with your car out there. He's alright, thank god.
+    Right, okay, so right around 9:00 she's gonna get very angry with me. This is more serious than I thought.
+    Apparently your mother is amorously infatuated with you instead of your father. Not a word, not a word, not a word
+    now. Quiet, uh, donations, you want me to make a donation to the coast guard youth auxiliary? What's that thing he's
+    on? Sam, here's the young man you hit with your car out there. He's alright, thank god.
 
-    Okay, okay you guys, oh ha ha ha very funny. Hey you guys are being real mature. Good, you could start by sweeping the floor. Why is she gonna get angry with you? George, aren't you gonna kiss me? Yet.
+    Okay, okay you guys, oh ha ha ha very funny. Hey you guys are being real mature. Good, you could start by sweeping
+    the floor. Why is she gonna get angry with you? George, aren't you gonna kiss me? Yet.
 </p>
 <button id="btn1">Click me to change the header</button>
 <button id="btn2">Click me to change the color of the sub-header</button>
@@ -28,36 +32,36 @@
 
 
 <script>
-    (function() {
+    (function () {
         "use strict";
         // TODO: Uncomment next line and get the main header element by id
-        var mainHeader = document.getElementById("main-header");
+        let mainHeader = document.getElementById("main-header");
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
 
-        let newHeader = function(event) {
+        let newHeader = function (event) {
             mainHeader.innerHTML = "Javascript is Cool";
         }
         document.getElementById('btn1').addEventListener('click', newHeader);
 
 
         // TODO: Uncomment the next line and get the sub header element by id
-        var subHeader = document.getElementById("sub-header");
+        let subHeader = document.getElementById("sub-header");
 
         // TODO: Set the text color of subHeader to blue
 
-        let newSubHeaderColor = function(event) {
+        let newSubHeaderColor = function (event) {
             subHeader.style.backgroundColor = "aqua";
         }
         document.getElementById('btn2').addEventListener('click', newSubHeaderColor);
 
 
         // TODO: Uncomment the next line and get all list items
-        var listItems = document.getElementsByTagName("li");
+        let listItems = document.getElementsByTagName("li");
         console.log(listItems);
         // TODO: Set text color on every other list item to grey
 
-        let changeEveryOtherListItemColor = function(event) {
+        let changeEveryOtherListItemColor = function (event) {
 
             for (let i = 0; i < listItems.length; i += 2) {
                 listItems[i].style.color = "#808080";
@@ -66,7 +70,7 @@
         document.getElementById('btn3').addEventListener('click', changeEveryOtherListItemColor);
 
         // TODO: Set text color of li with dbid = 1 to blue
-        let changeListItemWithDataIDOf1 = function(event) {
+        let changeListItemWithDataIDOf1 = function (event) {
 
             for (let z = 0; z < listItems.length; z++) {
                 let attribute = listItems[z].getAttribute("data-dbid");
@@ -79,13 +83,12 @@
 
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
-        var subParagraphs = document.getElementsByClassName('sub-paragraph');
-
+        let subParagraphs = document.getElementsByClassName('sub-paragraph');
 
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
 
-        let changeFirstSubParagraph = function(event) {
+        let changeFirstSubParagraph = function (event) {
 
             subParagraphs[0].innerHTML = "Mission Accomplished!";
 
