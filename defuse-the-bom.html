@@ -3,11 +3,33 @@
 <head>
     <meta charset="utf-8">
     <title>Defuse the BOM</title>
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            max-width: 500px;
+            margin: 200px auto;
+            background-color: #a3dbe1;
+        }
+        img{
+            max-width: 100%;
+            margin-top: 50px;
+        }
+        .hidden{
+            display: none;
+        }
+
+    </style>
 </head>
 <body>
 
 <h2 id="message">This BOM will self-destruct in <span id="timer">5</span> seconds...</h2>
 <button id="defuser">Defuse the BOM</button>
+<div id="bomb-container" class="hidden">
+    <img src="img/bomb.jpeg">
+</div>
+
 
 <script>
     (function () {
