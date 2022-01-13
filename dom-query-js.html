@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>DOM: Query and Modify</title>
 </head>
-<body>
+<body id="body">
 
 <h1 id="main-header">Hello World!</h1>
 <ul>
@@ -29,6 +29,8 @@
 <button id="btn3">Click me to change the color of every other list item</button>
 <button id="btn4">Click me to change the first list item to blue</button>
 <button id="btn5">Click me to change the paragraph</button>
+<br>
+<button id="change-color">Click me for a surprise</button>
 
 
 <script>
@@ -94,6 +96,13 @@
 
         }
         document.getElementById('btn5').addEventListener('click', changeFirstSubParagraph);
+
+
+        function changeBackground(){
+            let colors = ['red', 'blue', 'yellow', 'lightblue', 'pink', 'green']
+            document.getElementById('body').style.backgroundColor = colors[Math.floor(Math.random() * 7)];
+        }
+        document.getElementById('change-color').addEventListener('click', changeBackground);
 
     })();
 
