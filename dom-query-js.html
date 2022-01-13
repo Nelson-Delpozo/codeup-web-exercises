@@ -100,12 +100,23 @@
         document.getElementById('btn5').addEventListener('click', changeFirstSubParagraph);
 
 
+
+
+
         function changeBackground() {
-            let colors = ['red', 'blue', 'yellow', 'lightblue', 'pink', 'green']
-            document.getElementById('body').style.backgroundColor = colors[Math.floor(Math.random() * 7)];
+            let colors = ['red', 'blue', 'yellow', 'lightblue', 'pink', 'green', 'orange']
+            document.getElementById('body').style.backgroundColor = colors[Math.floor(Math.random() * (colors.length + 1))];
         }
 
         document.getElementById('change-color').addEventListener('click', changeBackground);
+
+
+
+
+
+
+
+
 
     })();
 
