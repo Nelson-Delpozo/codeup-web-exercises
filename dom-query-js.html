@@ -104,8 +104,9 @@
 
 
         function changeBackground() {
-            let colors = ['red', 'blue', 'yellow', 'lightblue', 'pink', 'green', 'orange']
+            let colors = ['red', 'blue', 'yellow', 'lightblue', 'pink', 'green', 'orange', 'purple']
             document.getElementById('body').style.backgroundColor = colors[Math.floor(Math.random() * (colors.length + 1))];
+
         }
 
         document.getElementById('change-color').addEventListener('click', changeBackground);
