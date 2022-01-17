@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Weather Map API</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+</head>
+<body>
+<h1>Hello, world!</h1>
+
+
+
+<script>
+    // $.get("http://api.openweathermap.org/data/2.5/weather", {
+    //     APPID: "92f38058292f35435f6f74b0304dcfd4",
+    //     q:     "Boulder, US",
+    //     units: "imperial"
+    // }).done(function(data) {
+    //     console.log('current weather', data);
+    // });
+    //
+    // $.get("http://api.openweathermap.org/data/2.5/forecast", {
+    //     APPID: "92f38058292f35435f6f74b0304dcfd4",
+    //     q:     "Boulder, US",
+    //     units: "imperial"
+    // }).done(function(data) {
+    //     console.log('5 day forecast', data);
+    // });
+
+    $.get("http://api.openweathermap.org/data/2.5/onecall", {
+        APPID: "92f38058292f35435f6f74b0304dcfd4",
+        lat:  40.014984,
+        lon: -105.270546,
+        units: "imperial"
+    }).done(function(data) {
+        console.log('The entire response:', data);
+        console.log('Diving in - here is current information: ', data.current);
+        console.log('A step further - information for tomorrow: ', data.daily[1]);
+    });
+
+
+</script>
+
+
+
+
+
+
+
+
+</body>
+</html>
