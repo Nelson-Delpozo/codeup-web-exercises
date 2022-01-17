@@ -51,15 +51,15 @@
     let places = [
         {address: "12910 Zuni St #1300, Westminster, CO 80234",
             popupHTML: "<p>Frolic Brewing Co.-Best cold beer and pizza in town!</p>",
-            web: "https://www.frolicbrewing.com/"
+            web: "<a href='https://www.frolicbrewing.com/' target='_blank'>frolicbrewing.com</a>"
         },
         {address: "13801 Grant St Unit 572, Thornton, CO 80023",
             popupHTML: "<p>Satire Brewing Co.-4000 Square Feet of Old World Charm</p>",
-            web: "https://satirebrewingcompany.com/"
+            web: "<a href='https://www.satirebrewingcompany.com/' target='_blank'>satirebrewingcompany.com</a>"
         },
         {address: "14694 Orchard Pkwy Suite 400, Westminster, CO 80023",
             popupHTML: "<p>Try the Roasted Garlic & White Bean Hummus w/ Herb Goat Cheese!</p>",
-            web: "https://windfallbrewing.co/food/"
+            web: "<a href='https://www.windfallbrewing.co/' target='_blank'>windfallbrewing.co</a>"
         }
     ]
 
@@ -70,7 +70,7 @@
     function placeMarkerAndPopup(info, token, map) {
         geocode(info.address, token).then(function(coordinates) {
             let popup = new mapboxgl.Popup()
-                .setHTML(info.popupHTML);
+                .setHTML(info.popupHTML + info.web);
             let marker = new mapboxgl.Marker()
                 .setLngLat(coordinates)
                 .addTo(map)
