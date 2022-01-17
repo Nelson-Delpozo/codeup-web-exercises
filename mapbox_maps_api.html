@@ -24,15 +24,57 @@
 <!-- Mapbox JS -->
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
 
+<!-- Mapbox Geocoder Util Methods -->
+<script src="js/mapbox-geocoder-utils.js"></script>
+
+
 <!-- Custom JS -->
 <script>
+    const accessToken = 'pk.eyJ1IjoibmVsZGVscG96byIsImEiOiJja3licjBodWcwaTU0Mm9wbTlreHgybXJ6In0.Y0YKAs4Kl1_KoKhZ3IUiJA';
+
+    mapboxgl.accessToken = accessToken;
+
+
     mapboxgl.accessToken = 'pk.eyJ1IjoibmVsZGVscG96byIsImEiOiJja3licjBodWcwaTU0Mm9wbTlreHgybXJ6In0.Y0YKAs4Kl1_KoKhZ3IUiJA';
     let map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v9',
-        zoom: 10,
+        zoom: 20,
         center: [-105.0867, 39.9205]
     });
+
+    let frolicInfo = {
+        address: "12910 Zuni St #1300, Westminster, CO 80234",
+        popupHTML: "<p>Frolic Brewing Co.-Best cold beer and pizza in town!</p>"
+    };
+
+    function placeMarkerAndPopup(info, token, map) {
+        geocode(info.address, token).then(function(coordinates) {
+            let popup = new mapboxgl.Popup()
+                .setHTML(info.popupHTML);
+            let marker = new mapboxgl.Marker()
+                .setLngLat(coordinates)
+                .addTo(map)
+                .setPopup(popup);
+            popup.addTo(map);
+            map.setZoom(15);
+            map.setCenter(coordinates);
+        });
+    }
+
+    placeMarkerAndPopup(frolicInfo, accessToken, map);
+
+
+
+
+
+
+    // // the  geocode method from mapbox-geocoder-utils.js
+    // geocode("12910 Zuni St #1300, Westminster, CO 80234", 'pk.eyJ1IjoibmVsZGVscG96byIsImEiOiJja3licjBodWcwaTU0Mm9wbTlreHgybXJ6In0.Y0YKAs4Kl1_KoKhZ3IUiJA').then(function(result) {
+    //     console.log(result);
+    //     map.setCenter(result);
+    //     map.setZoom(20);
+    // });
 </script>
 </body>
 </html>
