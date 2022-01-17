@@ -10,7 +10,7 @@
         #map {
             /* the width and height may be set to any size */
             width: 50%;
-            height: 300px;
+            height: 500px;
         }
     </style>
 </head>
@@ -40,7 +40,7 @@
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v9',
         zoom: 20,
-        center: [-105.090056, 39.958452]
+        center: [-104.9926, 39.9622]
     });
 
     let frolicInfo = {
@@ -75,7 +75,7 @@
                 .setLngLat(coordinates)
                 .addTo(map)
                 .setPopup(popup);
-            popup.addTo(map);
+            // popup.addTo(map);
             map.setZoom(12);
             // map.setCenter(coordinates);
         });
