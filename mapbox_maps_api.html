@@ -40,13 +40,32 @@
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v9',
         zoom: 20,
-        center: [-105.0867, 39.9205]
+        center: [-105.090056, 39.958452]
     });
 
     let frolicInfo = {
         address: "12910 Zuni St #1300, Westminster, CO 80234",
         popupHTML: "<p>Frolic Brewing Co.-Best cold beer and pizza in town!</p>"
     };
+
+    let places = [
+        {address: "12910 Zuni St #1300, Westminster, CO 80234",
+            popupHTML: "<p>Frolic Brewing Co.-Best cold beer and pizza in town!</p>",
+            web: "https://www.frolicbrewing.com/"
+        },
+        {address: "13801 Grant St Unit 572, Thornton, CO 80023",
+            popupHTML: "<p>Satire Brewing Co.-4000 Square Feet of Old World Charm</p>",
+            web: "https://satirebrewingcompany.com/"
+        },
+        {address: "14694 Orchard Pkwy Suite 400, Westminster, CO 80023",
+            popupHTML: "<p>Try the Roasted Garlic & White Bean Hummus w/ Herb Goat Cheese!</p>",
+            web: "https://windfallbrewing.co/food/"
+        }
+    ]
+
+        places.forEach(function(place){
+            placeMarkerAndPopup(place,accessToken, map)
+        })
 
     function placeMarkerAndPopup(info, token, map) {
         geocode(info.address, token).then(function(coordinates) {
@@ -57,12 +76,12 @@
                 .addTo(map)
                 .setPopup(popup);
             popup.addTo(map);
-            map.setZoom(15);
-            map.setCenter(coordinates);
+            map.setZoom(12);
+            // map.setCenter(coordinates);
         });
     }
 
-    placeMarkerAndPopup(frolicInfo, accessToken, map);
+    // placeMarkerAndPopup(frolicInfo, accessToken, map);
 
 
 
