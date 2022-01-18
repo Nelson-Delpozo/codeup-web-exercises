@@ -20,24 +20,26 @@
     //     console.log('current weather', data);
     // });
     //
+
+
     $.get("http://api.openweathermap.org/data/2.5/forecast", {
         APPID: "92f38058292f35435f6f74b0304dcfd4",
         q:     "Boulder, US",
-        units: "imperial"
+        units: "imperial",
     }).done(function(data) {
         console.log('5 day forecast', data);
     });
 
-    $.get("http://api.openweathermap.org/data/2.5/onecall", {
-        APPID: "92f38058292f35435f6f74b0304dcfd4",
-        lat:  40.014984,
-        lon: -105.270546,
-        units: "imperial"
-    }).done(function(data) {
-        console.log('The entire response:', data);
-        console.log('Diving in - here is current information: ', data.current);
-        console.log('A step further - information for tomorrow: ', data.daily[1]);
-    });
+    // $.get("http://api.openweathermap.org/data/2.5/onecall", {
+    //     APPID: "92f38058292f35435f6f74b0304dcfd4",
+    //     lat:  40.014984,
+    //     lon: -105.270546,
+    //     units: "imperial"
+    // }).done(function(data) {
+    //     console.log('The entire response:', data);
+    //     console.log('Diving in - here is current information: ', data.current);
+    //     console.log('A step further - information for tomorrow: ', data.daily[1]);
+    // });
 
 
 </script>
