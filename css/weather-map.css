@@ -1,0 +1,9 @@
+#top-bar{
+    display: flex;
+    justify-content: space-around;
+    background-color: #a3dbe1;
+}
+#top-bar h2{
+    display: flex;
+    align-items: center;
+}
