@@ -42,11 +42,11 @@ function getWeather(q) {
         units: "imperial"
     }).done(function (data) {
         console.log("Five Day Forecast:");
-        console.log(data.list[6].dt_txt.substring(0, 10), data.list[6].main.temp_max, data.list[6].weather[0].main, data.list[6].weather[0].description);
-        console.log(data.list[14].dt_txt.substring(0, 10), data.list[14].main.temp_max, data.list[14].weather[0].main, data.list[14].weather[0].description);
-        console.log(data.list[22].dt_txt.substring(0, 10), data.list[22].main.temp_max, data.list[22].weather[0].main, data.list[22].weather[0].description);
-        console.log(data.list[30].dt_txt.substring(0, 10), data.list[30].main.temp_max, data.list[30].weather[0].main, data.list[30].weather[0].description);
-        console.log(data.list[38].dt_txt.substring(0, 10), data.list[38].main.temp_max, data.list[38].weather[0].main, data.list[38].weather[0].description);
+        console.log(data.list[6].dt_txt.substring(0, 10), data.list[6].main.temp_max, data.list[6].weather[0].description);
+        console.log(data.list[14].dt_txt.substring(0, 10), data.list[14].main.temp_max, data.list[14].weather[0].description);
+        console.log(data.list[22].dt_txt.substring(0, 10), data.list[22].main.temp_max, data.list[22].weather[0].description);
+        console.log(data.list[30].dt_txt.substring(0, 10), data.list[30].main.temp_max, data.list[30].weather[0].description);
+        console.log(data.list[38].dt_txt.substring(0, 10), data.list[38].main.temp_max, data.list[38].weather[0].description);
 
         // console.log(data);
         // console.log(data.list[6].dt_txt);
