@@ -27,7 +27,8 @@
         q:     "Boulder, US",
         units: "imperial",
     }).done(function(data) {
-        console.log('5 day forecast', data);
+        // console.log('5 day forecast', data.list[1].weather[0].description);
+        console.log(data);
     });
 
     // $.get("http://api.openweathermap.org/data/2.5/onecall", {
