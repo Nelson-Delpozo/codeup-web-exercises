@@ -19,6 +19,10 @@
     <input type="text" id="search" placeholder="enter a city">
 </div>
 
+<div id="forecasts">
+<!--    FORECASTS WILL GO HERE-->
+</div>
+
 
 
 
@@ -31,14 +35,20 @@
 
 
 <script>
+function getWeather() {
     $.get("http://api.openweathermap.org/data/2.5/forecast", {
         APPID: "92f38058292f35435f6f74b0304dcfd4",
-        q:     "Boulder, US",
-        units: "imperial",
-    }).done(function(data) {
-        // console.log('5 day forecast', data.list[1].weather[0].description);
+        q: "Boulder, US",
+        units: "imperial"
+    }).done(function (data) {
+        console.log('5 day forecast', data.list[6].main.temp_max, data.list[6].weather[0].main, data.list[6].weather[0].description);
+        // console.log(data);
         console.log(data);
     });
+}
+getWeather();
+
+
 </script>
 </body>
 </html>

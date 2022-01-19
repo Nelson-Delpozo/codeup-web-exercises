@@ -18,3 +18,8 @@
     padding: 5px 15px;
     background-color: coral;
 }
+#forecasts{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
