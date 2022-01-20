@@ -35,54 +35,61 @@
     mapboxgl.accessToken = accessToken;
 
 
-    mapboxgl.accessToken = 'pk.eyJ1IjoibmVsZGVscG96byIsImEiOiJja3licjBodWcwaTU0Mm9wbTlreHgybXJ6In0.Y0YKAs4Kl1_KoKhZ3IUiJA';
-    let map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v9',
-        zoom: 20,
-        center: [-104.9926, 39.9622]
+    // mapboxgl.accessToken = 'pk.eyJ1IjoibmVsZGVscG96byIsImEiOiJja3licjBodWcwaTU0Mm9wbTlreHgybXJ6In0.Y0YKAs4Kl1_KoKhZ3IUiJA';
+    // let map = new mapboxgl.Map({
+    //     container: 'map',
+    //     style: 'mapbox://styles/mapbox/streets-v9',
+    //     zoom: 20,
+    //     center: [-104.9926, 39.9622]
+    // });
+    //
+    // let frolicInfo = {
+    //     address: "12910 Zuni St #1300, Westminster, CO 80234",
+    //     popupHTML: "<p>Frolic Brewing Co.-Best cold beer and pizza in town!</p>"
+    // };
+    //
+    // let places = [
+    //     {address: "12910 Zuni St #1300, Westminster, CO 80234",
+    //         popupHTML: "<p>Frolic Brewing Co.-Best cold beer and pizza in town!</p>",
+    //         web: "<a href='https://www.frolicbrewing.com/' target='_blank'>frolicbrewing.com</a>",
+    //         image: "<img width='100px' height='100px' src='https://static.wixstatic.com/media/e81a73_7ea449b8914b441fa582aa0d1cf87746~mv2.jpg/v1/crop/x_0,y_393,w_3024,h_1940/fill/w_1956,h_1244,al_c,q_90,usm_0.66_1.00_0.01/IMG_4347_JPG.webp'>"
+    //     },
+    //     {address: "13801 Grant St Unit 572, Thornton, CO 80023",
+    //         popupHTML: "<p>Satire Brewing Co.-4000 Square Feet of Old World Charm</p>",
+    //         web: "<a href='https://www.satirebrewingcompany.com/' target='_blank'>satirebrewingcompany.com</a>",
+    //         image: "<img width='100px' height='100px' src='https://408655.smushcdn.com/1122923/wp-content/uploads/2020/07/beer-gallery03.jpg?lossy=1&strip=1&webp=1'>"
+    //     },
+    //     {address: "14694 Orchard Pkwy Suite 400, Westminster, CO 80023",
+    //         popupHTML: "<p>Try the Roasted Garlic & White Bean Hummus w/ Herb Goat Cheese!</p>",
+    //         web: "<a href='https://www.windfallbrewing.co/' target='_blank'>windfallbrewing.co</a>",
+    //         image: "<img width='100px' height='100px' src='https://static.scientificamerican.com/sciam/cache/file/F27ED9D2-18FC-4836-BC4F2F5CE6630BB4_source.jpg'>"
+    //     }
+    // ]
+    //
+    //     places.forEach(function(place){
+    //         placeMarkerAndPopup(place,accessToken, map)
+    //     })
+    //
+    // function placeMarkerAndPopup(info, token, map) {
+    //     geocode(info.address, token).then(function(coordinates) {
+    //         let popup = new mapboxgl.Popup()
+    //             .setHTML(info.popupHTML + info.web + info.image);
+    //         let marker = new mapboxgl.Marker()
+    //             .setLngLat(coordinates)
+    //             .addTo(map)
+    //             .setPopup(popup);
+    //         // popup.addTo(map);
+    //         map.setZoom(12);
+    //         // map.setCenter(coordinates);
+    //     });
+    // }
+
+    geocode("Los Angeles, CA, US", accessToken).then(function(result) {
+        console.log(result[0]);
+        console.log(result[1]);
+        // map.setCenter(result);
+        // map.setZoom(20);
     });
-
-    let frolicInfo = {
-        address: "12910 Zuni St #1300, Westminster, CO 80234",
-        popupHTML: "<p>Frolic Brewing Co.-Best cold beer and pizza in town!</p>"
-    };
-
-    let places = [
-        {address: "12910 Zuni St #1300, Westminster, CO 80234",
-            popupHTML: "<p>Frolic Brewing Co.-Best cold beer and pizza in town!</p>",
-            web: "<a href='https://www.frolicbrewing.com/' target='_blank'>frolicbrewing.com</a>",
-            image: "<img width='100px' height='100px' src='https://static.wixstatic.com/media/e81a73_7ea449b8914b441fa582aa0d1cf87746~mv2.jpg/v1/crop/x_0,y_393,w_3024,h_1940/fill/w_1956,h_1244,al_c,q_90,usm_0.66_1.00_0.01/IMG_4347_JPG.webp'>"
-        },
-        {address: "13801 Grant St Unit 572, Thornton, CO 80023",
-            popupHTML: "<p>Satire Brewing Co.-4000 Square Feet of Old World Charm</p>",
-            web: "<a href='https://www.satirebrewingcompany.com/' target='_blank'>satirebrewingcompany.com</a>",
-            image: "<img width='100px' height='100px' src='https://408655.smushcdn.com/1122923/wp-content/uploads/2020/07/beer-gallery03.jpg?lossy=1&strip=1&webp=1'>"
-        },
-        {address: "14694 Orchard Pkwy Suite 400, Westminster, CO 80023",
-            popupHTML: "<p>Try the Roasted Garlic & White Bean Hummus w/ Herb Goat Cheese!</p>",
-            web: "<a href='https://www.windfallbrewing.co/' target='_blank'>windfallbrewing.co</a>",
-            image: "<img width='100px' height='100px' src='https://static.scientificamerican.com/sciam/cache/file/F27ED9D2-18FC-4836-BC4F2F5CE6630BB4_source.jpg'>"
-        }
-    ]
-
-        places.forEach(function(place){
-            placeMarkerAndPopup(place,accessToken, map)
-        })
-
-    function placeMarkerAndPopup(info, token, map) {
-        geocode(info.address, token).then(function(coordinates) {
-            let popup = new mapboxgl.Popup()
-                .setHTML(info.popupHTML + info.web + info.image);
-            let marker = new mapboxgl.Marker()
-                .setLngLat(coordinates)
-                .addTo(map)
-                .setPopup(popup);
-            // popup.addTo(map);
-            map.setZoom(12);
-            // map.setCenter(coordinates);
-        });
-    }
 
     // placeMarkerAndPopup(frolicInfo, accessToken, map);
 
