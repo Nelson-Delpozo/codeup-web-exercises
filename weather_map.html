@@ -17,10 +17,10 @@
 </header>
 
 <div id="search-bar">
-    <form>
+    <form onsubmit="return false" id="submit-form">
         <label for="search">Place:&nbsp;</label>
         <input type="text" id="search" placeholder="enter a city">
-        <input type="button" value="search" onclick="getWeather()">
+        <input type="submit" value="search" onclick="getWeather()">
     </form>
 </div>
 
@@ -38,14 +38,11 @@
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
 <script src="js/mapbox-geocoder-utils.js"></script>
 <script>
-
-
     let searchBox = document.getElementById('search');
     let currentCity = document.getElementById('current-city');
     let forecastGrid = document.getElementById('forecasts');
-
-
-
+    let form = document.getElementById('submit-form');
+    console.log(form[1]);
     // // THE MAP
     const accessToken = 'pk.eyJ1IjoibmVsZGVscG96byIsImEiOiJja3licjBodWcwaTU0Mm9wbTlreHgybXJ6In0.Y0YKAs4Kl1_KoKhZ3IUiJA';
     mapboxgl.accessToken = accessToken;
@@ -58,9 +55,10 @@
         center: [-105.2705, 40.0150]
     });
 
+    // GET THE WEATHER FORECAST
     function getWeather(q) {
         currentCity.innerText = searchBox.value;
-        geocode(searchBox.value, accessToken).then(function(result) {
+        geocode(searchBox.value, accessToken).then(function (result) {
             console.log(result);
             console.log(searchBox.value)
             map.setCenter(result);
@@ -136,26 +134,8 @@
 
             forecastGrid.innerHTML = '<div class=day><div class="date">' + forecast[0].date + '</div><div class="temp">' + forecast[0].temp + '&deg;F</div><div class="icon"><img src="' + forecast[0].iconURL + '"></div><div class="description">Description: ' + forecast[0].description + '</div><div class="humidity">Humidity: ' + forecast[0].humidity + '</div><hr><div class="wind">Wind: ' + forecast[0].wind + '</div><hr><div class="pressure">Pressure: ' + forecast[0].pressure + '</div></div>' + '<div class=day><div class="date">' + forecast[1].date + '</div><div class="temp">' + forecast[1].temp + '&deg;F</div><div class="icon"><img src="' + forecast[1].iconURL + '"></div><div class="description">Description: ' + forecast[1].description + '</div><div class="humidity">Humidity: ' + forecast[1].humidity + '</div><hr><div class="wind">Wind: ' + forecast[1].wind + '</div><hr><div class="pressure">Pressure: ' + forecast[1].pressure + '</div></div>' + '<div class=day><div class="date">' + forecast[2].date + '</div><div class="temp">' + forecast[2].temp + '&deg;F</div><div class="icon"><img src="' + forecast[2].iconURL + '"></div><div class="description">Description: ' + forecast[2].description + '</div><div class="humidity">Humidity: ' + forecast[2].humidity + '</div><hr><div class="wind">Wind: ' + forecast[2].wind + '</div><hr><div class="pressure">Pressure: ' + forecast[2].pressure + '</div></div>' + '<div class=day><div class="date">' + forecast[3].date + '</div><div class="temp">' + forecast[3].temp + '&deg;F</div><div class="icon"><img src="' + forecast[3].iconURL + '"></div><div class="description">Description: ' + forecast[3].description + '</div><div class="humidity">Humidity: ' + forecast[3].humidity + '</div><hr><div class="wind">Wind: ' + forecast[3].wind + '</div><hr><div class="pressure">Pressure: ' + forecast[3].pressure + '</div></div>' + '<div class=day><div class="date">' + forecast[4].date + '</div><div class="temp">' + forecast[4].temp + '&deg;F</div><div class="icon"><img src="' + forecast[4].iconURL + '"></div><div class="description">Description: ' + forecast[4].description + '</div><div class="humidity">Humidity: ' + forecast[4].humidity + '</div><hr><div class="wind">Wind: ' + forecast[4].wind + '</div><hr><div class="pressure">Pressure: ' + forecast[4].pressure + '</div></div>';
         });
+        form.reset();
     }
-
-    // // THE MAP
-    // const accessToken = 'pk.eyJ1IjoibmVsZGVscG96byIsImEiOiJja3licjBodWcwaTU0Mm9wbTlreHgybXJ6In0.Y0YKAs4Kl1_KoKhZ3IUiJA';
-    // mapboxgl.accessToken = accessToken;
-    //
-    // mapboxgl.accessToken = 'pk.eyJ1IjoibmVsZGVscG96byIsImEiOiJja3licjBodWcwaTU0Mm9wbTlreHgybXJ6In0.Y0YKAs4Kl1_KoKhZ3IUiJA';
-    // let map = new mapboxgl.Map({
-    //     container: 'map',
-    //     style: 'mapbox://styles/mapbox/streets-v9',
-    //     zoom: 20,
-    //     center: [-105.2705, 40.0150]
-    // });
-    // geocode(searchBox.value, accessToken).then(function(result) {
-    //     console.log(result);
-    //     // map.setCenter(result);
-    //     // map.setZoom(20);
-    // });
-
-
 
 </script>
 </body>
