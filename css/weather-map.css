@@ -1,5 +1,5 @@
 body{
-    background-color: #ffe285;
+    background-color: #57C4E5;
 }
 
 
@@ -26,7 +26,7 @@ body{
     margin-top: 10px;
     margin-bottom: 10px;
     padding: 5px 15px;
-    background-color: coral;
+    background-color: #217591;
     border-radius: 5px;
 
 }
@@ -41,14 +41,14 @@ body{
 }
 
 .day {
-    padding: 5px;
-    border: 1px solid #a3dbe1;
+    padding: 10px;
+    border: 1px solid #217591;
     width: 250px;
     display: flex;
     flex-direction: column;
-    background-color: #FFD2C1;
+    background-color: #CAECF7;
     border-radius: 5px;
-    box-shadow: 5px 5px 5px coral;
+    box-shadow: 5px 5px 5px #217591;
 }
 
 hr {
@@ -83,7 +83,8 @@ hr {
     height: 500px;
     margin: 25px auto;
     border-radius: 10px;
-    border: 5px solid coral;
+    border: 5px solid #217591;
+    box-shadow: 5px 5px 5px #217591;
 
 }
 
