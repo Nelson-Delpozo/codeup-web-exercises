@@ -16,8 +16,11 @@
 </header>
 
 <div id="search-bar">
+    <form>
     <label for="search">Place:&nbsp;</label>
     <input type="text" id="search" placeholder="enter a city">
+    <input type="button" value="search" onclick="getWeather()">
+    </form>
 </div>
 
 <div id="forecasts">
@@ -26,10 +29,18 @@
 
 
 <script>
+    let searchBox = document.getElementById('search');
+    // function test(){
+    //     console.log(searchBox)
+    //     console.log(searchBox.value)
+    // }
+
+
+
     function getWeather(q) {
         $.get("http://api.openweathermap.org/data/2.5/forecast", {
             APPID: "92f38058292f35435f6f74b0304dcfd4",
-            q: q,
+            q: searchBox.value,
             units: "imperial"
         }).done(function (data) {
             console.log("Five Day Forecast:");
@@ -47,7 +58,9 @@
             dayOne.humidity = data.list[6].main.humidity;
             dayOne.wind = data.list[6].wind.speed;
             dayOne.pressure = data.list[6].main.pressure;
+
             forecast.push(dayOne);
+
 
             dayTwo.date = data.list[14].dt_txt.substring(0, 10);
             dayTwo.temp = data.list[14].main.temp_max;
@@ -56,6 +69,7 @@
             dayTwo.humidity = data.list[14].main.humidity;
             dayTwo.wind = data.list[14].wind.speed;
             dayTwo.pressure = data.list[14].main.pressure;
+
             forecast.push(dayTwo);
 
             dayThree.date = data.list[22].dt_txt.substring(0, 10);
@@ -65,6 +79,7 @@
             dayThree.humidity = data.list[22].main.humidity;
             dayThree.wind = data.list[22].wind.speed;
             dayThree.pressure = data.list[22].main.pressure;
+
             forecast.push(dayThree);
 
             dayFour.date = data.list[30].dt_txt.substring(0, 10);
@@ -74,6 +89,7 @@
             dayFour.humidity = data.list[30].main.humidity;
             dayFour.wind = data.list[30].wind.speed;
             dayFour.pressure = data.list[30].main.pressure;
+
             forecast.push(dayFour);
 
             dayFive.date = data.list[38].dt_txt.substring(0, 10);
@@ -83,6 +99,7 @@
             dayFive.humidity = data.list[38].main.humidity;
             dayFive.wind = data.list[38].wind.speed;
             dayFive.pressure = data.list[38].main.pressure;
+
             forecast.push(dayFive);
 
             // console.log(dayFour);
@@ -91,7 +108,9 @@
         });
     }
 
-    getWeather("Macon, GA, US");
+
+    // getWeather("Macon, GA, US");
+
 
 
 </script>
