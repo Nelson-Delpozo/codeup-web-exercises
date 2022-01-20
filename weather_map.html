@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Weather Map API</title>
     <link rel="stylesheet" href="css/weather-map.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 </head>
 <body>
 <header id="top-bar">
@@ -20,39 +21,30 @@
 </div>
 
 <div id="forecasts">
-<!--    FORECASTS WILL GO HERE-->
+    <!--    FORECASTS WILL GO HERE-->
 </div>
 
 
-
-
-
-
-
-
-
-
-
-
 <script>
-function getWeather(q) {
-    $.get("http://api.openweathermap.org/data/2.5/forecast", {
-        APPID: "92f38058292f35435f6f74b0304dcfd4",
-        q: q,
-        units: "imperial"
-    }).done(function (data) {
-        console.log("Five Day Forecast:");
-        console.log(data.list[6].dt_txt.substring(0, 10), data.list[6].main.temp_max, data.list[6].weather[0].description);
-        console.log(data.list[14].dt_txt.substring(0, 10), data.list[14].main.temp_max, data.list[14].weather[0].description);
-        console.log(data.list[22].dt_txt.substring(0, 10), data.list[22].main.temp_max, data.list[22].weather[0].description);
-        console.log(data.list[30].dt_txt.substring(0, 10), data.list[30].main.temp_max, data.list[30].weather[0].description);
-        console.log(data.list[38].dt_txt.substring(0, 10), data.list[38].main.temp_max, data.list[38].weather[0].description);
+    function getWeather(q) {
+        $.get("http://api.openweathermap.org/data/2.5/forecast", {
+            APPID: "92f38058292f35435f6f74b0304dcfd4",
+            q: q,
+            units: "imperial"
+        }).done(function (data) {
+            console.log("Five Day Forecast:");
+            console.log(data.list[6].dt_txt.substring(0, 10), "High Temp:", data.list[6].main.temp_max, data.list[6].weather[0].icon, "Description:", data.list[6].weather[0].description, "Humidity:", data.list[6].main.humidity, "Wind:", data.list[6].wind.speed, "Pressure:", data.list[6].main.pressure);
+            console.log(data.list[14].dt_txt.substring(0, 10), "High Temp:", data.list[14].main.temp_max, data.list[14].weather[0].icon, "Description:", data.list[14].weather[0].description, "Humidity:", data.list[14].main.humidity, "Wind:", data.list[14].wind.speed, "Pressure:", data.list[14].main.pressure);
+            console.log(data.list[22].dt_txt.substring(0, 10), "High Temp:", data.list[22].main.temp_max, data.list[22].weather[0].icon, "Description:", data.list[22].weather[0].description, "Humidity:", data.list[22].main.humidity, "Wind:", data.list[22].wind.speed, "Pressure:", data.list[22].main.pressure);
+            console.log(data.list[30].dt_txt.substring(0, 10), "High Temp:", data.list[30].main.temp_max, data.list[30].weather[0].icon, "Description:", data.list[30].weather[0].description, "Humidity:", data.list[30].main.humidity, "Wind:", data.list[30].wind.speed, "Pressure:", data.list[30].main.pressure);
+            console.log(data.list[38].dt_txt.substring(0, 10), "High Temp:", data.list[38].main.temp_max, data.list[38].weather[0].icon, "Description:", data.list[38].weather[0].description, "Humidity:", data.list[38].main.humidity, "Wind:", data.list[38].wind.speed, "Pressure:", data.list[38].main.pressure);
 
-        // console.log(data);
-        // console.log(data.list[6].dt_txt);
-    });
-}
-getWeather("Macon, GA, US");
+            console.log(data);
+            // console.log(data.list[6].dt_txt);
+        });
+    }
+
+    getWeather("Macon, GA, US");
 
 
 </script>
