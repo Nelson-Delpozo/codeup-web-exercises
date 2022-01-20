@@ -33,13 +33,60 @@
             units: "imperial"
         }).done(function (data) {
             console.log("Five Day Forecast:");
-            console.log(data.list[6].dt_txt.substring(0, 10), "High Temp:", data.list[6].main.temp_max, data.list[6].weather[0].icon, "Description:", data.list[6].weather[0].description, "Humidity:", data.list[6].main.humidity, "Wind:", data.list[6].wind.speed, "Pressure:", data.list[6].main.pressure);
-            console.log(data.list[14].dt_txt.substring(0, 10), "High Temp:", data.list[14].main.temp_max, data.list[14].weather[0].icon, "Description:", data.list[14].weather[0].description, "Humidity:", data.list[14].main.humidity, "Wind:", data.list[14].wind.speed, "Pressure:", data.list[14].main.pressure);
-            console.log(data.list[22].dt_txt.substring(0, 10), "High Temp:", data.list[22].main.temp_max, data.list[22].weather[0].icon, "Description:", data.list[22].weather[0].description, "Humidity:", data.list[22].main.humidity, "Wind:", data.list[22].wind.speed, "Pressure:", data.list[22].main.pressure);
-            console.log(data.list[30].dt_txt.substring(0, 10), "High Temp:", data.list[30].main.temp_max, data.list[30].weather[0].icon, "Description:", data.list[30].weather[0].description, "Humidity:", data.list[30].main.humidity, "Wind:", data.list[30].wind.speed, "Pressure:", data.list[30].main.pressure);
-            console.log(data.list[38].dt_txt.substring(0, 10), "High Temp:", data.list[38].main.temp_max, data.list[38].weather[0].icon, "Description:", data.list[38].weather[0].description, "Humidity:", data.list[38].main.humidity, "Wind:", data.list[38].wind.speed, "Pressure:", data.list[38].main.pressure);
+            let forecast = [];
+            let dayOne = {};
+            let dayTwo = {};
+            let dayThree = {};
+            let dayFour = {};
+            let dayFive = {};
 
-            console.log(data);
+            dayOne.date = data.list[6].dt_txt.substring(0, 10);
+            dayOne.temp = data.list[6].main.temp_max;
+            dayOne.icon = data.list[6].weather[0].icon;
+            dayOne.description = data.list[6].weather[0].description;
+            dayOne.humidity = data.list[6].main.humidity;
+            dayOne.wind = data.list[6].wind.speed;
+            dayOne.pressure = data.list[6].main.pressure;
+            forecast.push(dayOne);
+
+            dayTwo.date = data.list[14].dt_txt.substring(0, 10);
+            dayTwo.temp = data.list[14].main.temp_max;
+            dayTwo.icon = data.list[14].weather[0].icon;
+            dayTwo.description = data.list[14].weather[0].description;
+            dayTwo.humidity = data.list[14].main.humidity;
+            dayTwo.wind = data.list[14].wind.speed;
+            dayTwo.pressure = data.list[14].main.pressure;
+            forecast.push(dayTwo);
+
+            dayThree.date = data.list[22].dt_txt.substring(0, 10);
+            dayThree.temp = data.list[22].main.temp_max;
+            dayThree.icon = data.list[22].weather[0].icon;
+            dayThree.description = data.list[22].weather[0].description;
+            dayThree.humidity = data.list[22].main.humidity;
+            dayThree.wind = data.list[22].wind.speed;
+            dayThree.pressure = data.list[22].main.pressure;
+            forecast.push(dayThree);
+
+            dayFour.date = data.list[30].dt_txt.substring(0, 10);
+            dayFour.temp = data.list[30].main.temp_max;
+            dayFour.icon = data.list[30].weather[0].icon;
+            dayFour.description = data.list[30].weather[0].description;
+            dayFour.humidity = data.list[30].main.humidity;
+            dayFour.wind = data.list[30].wind.speed;
+            dayFour.pressure = data.list[30].main.pressure;
+            forecast.push(dayFour);
+
+            dayFive.date = data.list[38].dt_txt.substring(0, 10);
+            dayFive.temp = data.list[38].main.temp_max;
+            dayFive.icon = data.list[38].weather[0].icon;
+            dayFive.description = data.list[38].weather[0].description;
+            dayFive.humidity = data.list[38].main.humidity;
+            dayFive.wind = data.list[38].wind.speed;
+            dayFive.pressure = data.list[38].main.pressure;
+            forecast.push(dayFive);
+
+            // console.log(dayFour);
+            console.log(forecast);
             // console.log(data.list[6].dt_txt);
         });
     }
