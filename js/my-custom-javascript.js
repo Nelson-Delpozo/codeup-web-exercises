@@ -1,6 +1,6 @@
 "use strict";
 
-$(document).ready(function() {
+$(document).ready(function () {
 
     // INSERT JAVASCRIPT CODE SAMPLE HERE
 //     alert("The DOM has finished loading!");
@@ -42,18 +42,18 @@ $(document).ready(function() {
 
     ////////////////////////////////////////////////////
 
-    $("h1").click(function(){
+    $("h1").click(function () {
         $(this).css('background-color', 'lightblue');
     })
-    $("p").dblclick(function(){
+    $("p").dblclick(function () {
         $(this).css('font-size', '18px');
     })
-    $('li').hover(function(){
-        $(this).css('background-color', 'red');
-    },
-        function(){
-        $(this).css('background-color', 'inherit');
-    })
+    $('li').hover(function () {
+            $(this).css('background-color', 'red');
+        },
+        function () {
+            $(this).css('background-color', 'inherit');
+        })
 
 
 });
