@@ -2,12 +2,31 @@
 <html>
 <head>
     <title>Konami Code</title>
+    <style>
+        *{
+            text-align: center;
+        }
+
+        #box{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: #a3dbe1;
+        }
+
+        img{
+            width: 100%;
+        }
+    </style>
 
 </head>
 <body>
+<div id="box">
 <h1>Konami Code</h1>
 <h2 id="alert"></h2>
 <div id="baby"></div>
+<div id="new-thing"></div>
+</div>
 
 <script src="/js/jquery.js"></script>
 <script>
@@ -33,6 +52,7 @@
             $("body").css("background-color", "gold");
             $("#alert").html("You cracked the code!");
             $("#baby").append('<img src="/assets/babygif.gif" alt="dancing baby">');
+            $('#new-thing').append('<img src="img/thichnhathanh1-2x.jpeg">')
             sound.play();
             // alert("you unlocked the konami code");
         }
