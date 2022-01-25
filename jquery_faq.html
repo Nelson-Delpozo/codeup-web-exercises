@@ -147,6 +147,7 @@
 <br>
 <br>
 <div id="dog"></div>
+<div id="kanye"></div>
 <div id="container">
     <div id="left-frame" class="frame left">
 
@@ -218,9 +219,17 @@
     let dog = $.get("https://dog.ceo/api/breeds/image/random", {
 
     }).done(function (data) {
-        console.log("dog:", data);
+        console.log("dog:", data.message);
         document.getElementById('dog').innerHTML = '<img src="' + data.message + '">'
     });
+
+    let kanye = $.get("https://api.kanye.rest/", {
+
+    }).done(function (data) {
+        console.log("today's Kanye quote:", data.quote);
+        document.getElementById('kanye').innerHTML = '<h2>' + data.quote + '</h2>'
+    });
+
 
 </script>
 
