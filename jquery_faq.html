@@ -216,10 +216,12 @@
         $(this).parent().children().first().css('color', "blue");
     })
 
-    $.get("https://dog.ceo/api/breeds/image/random", {}).done(function (data) {
+    let dog = $.get("https://dog.ceo/api/breeds/image/random", {}).done(function (data) {
         console.log("dog:", data.message);
-        document.getElementById('dog').innerHTML = '<img src="' + data.message + '">'
+        dog = data.message;
+        document.getElementById('dog').innerHTML = '<img src="' + dog + '">'
     });
+    console.log(dog);
 
     $.get("https://api.kanye.rest/", {}).done(function (data) {
         console.log("today's Kanye quote:", data.quote);
@@ -232,9 +234,6 @@
             console.log(album.title)
         });
     });
-
-
-
 
 
 </script>
