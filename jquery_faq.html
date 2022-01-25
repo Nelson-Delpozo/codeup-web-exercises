@@ -216,18 +216,21 @@
         $(this).parent().children().first().css('color', "blue");
     })
 
-    let dog = $.get("https://dog.ceo/api/breeds/image/random", {
-
-    }).done(function (data) {
+    $.get("https://dog.ceo/api/breeds/image/random", {}).done(function (data) {
         console.log("dog:", data.message);
         document.getElementById('dog').innerHTML = '<img src="' + data.message + '">'
     });
 
-    let kanye = $.get("https://api.kanye.rest/", {
-
-    }).done(function (data) {
+    $.get("https://api.kanye.rest/", {}).done(function (data) {
         console.log("today's Kanye quote:", data.quote);
         document.getElementById('kanye').innerHTML = '<h2>' + data.quote + '</h2>'
+    });
+
+    $.get("https://jsonplaceholder.typicode.com/albums", {}).done(function (data) {
+        console.log("albums:", data);
+        data.forEach(function (album) {
+            console.log(album.title)
+        });
     });
 
 
