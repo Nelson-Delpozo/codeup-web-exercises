@@ -216,6 +216,9 @@
         $(this).parent().children().first().css('color', "blue");
     })
 
+
+    // AJAX API REQUESTS
+
     let dog = $.get("https://dog.ceo/api/breeds/image/random", {}).done(function (data) {
         console.log("dog:", data.message);
         dog = data.message;
