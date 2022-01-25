@@ -146,6 +146,7 @@
 <button id="yellow">click to give the last li in each ul a yellow background</button>
 <br>
 <br>
+<div id="dog"></div>
 <div id="container">
     <div id="left-frame" class="frame left">
 
@@ -214,6 +215,12 @@
         $(this).parent().children().first().css('color', "blue");
     })
 
+    let dog = $.get("https://dog.ceo/api/breeds/image/random", {
+
+    }).done(function (data) {
+        console.log("dog:", data);
+        document.getElementById('dog').innerHTML = '<img src="' + data.message + '">'
+    });
 
 </script>
 
