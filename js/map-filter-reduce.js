@@ -49,4 +49,15 @@ console.log(threeLanguages);
 
 // Use .map to create an array of strings where each element is a user's email address
 
+let emails = users.map(function(user){
+    return user.email;
+})
+console.log(emails);
+
+// Use .reduce to get the total years of experience from the list of users. Once you get the total of years you can use the result to calculate the average.
+
+let sumOfExperience = users.reduce((total, current) => {
+    return (total + current.yearsOfExperience) / users.length;
+}, 0)
+console.log(sumOfExperience);
 
