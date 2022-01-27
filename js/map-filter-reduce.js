@@ -1,3 +1,5 @@
+// Create a file named map-filter-reduce.js in your js directory and copy the users data below into it.
+
 "use strict";
 
 const users = [
@@ -37,4 +39,14 @@ const users = [
         yearsOfExperience: 9
     }
 ];
+
+// Use .filter to create an array of user objects where each user object has at least 3 languages in the languages array.
+
+let threeLanguages = users.filter(function(user){
+    return user.languages.length >= 3
+});
+console.log(threeLanguages);
+
+// Use .map to create an array of strings where each element is a user's email address
+
 
