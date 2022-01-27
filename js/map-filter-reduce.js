@@ -61,3 +61,4 @@ let sumOfExperience = users.reduce((total, current) => {
 }, 0)
 console.log(sumOfExperience);
 
+// Use .reduce to get the longest email from the list of users.
