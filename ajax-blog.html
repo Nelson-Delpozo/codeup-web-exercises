@@ -69,7 +69,7 @@
                 // do something with the data
                 console.log(posts);
                 posts.forEach(function (post) {
-                    $('#posts').append('<div class="post"><h2>' + post.title + '</h2>' + '<h5>' + post.date + '</h5>' + '<p>' + post.content + '</p><h6>' + post.categories + '</h6></div>');
+                    $('#posts').append('<div class="post"><h2>' + post.title + '</h2>' + '<h5>' + post.date + '</h5>' + '<p>' + post.content + '</p><h6>' + post.categories.join(', ') + '</h6></div>');
                 })
             }
         )
