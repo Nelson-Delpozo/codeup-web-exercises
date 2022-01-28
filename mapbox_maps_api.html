@@ -42,20 +42,12 @@
     const accessToken = 'pk.eyJ1IjoibmVsZGVscG96byIsImEiOiJja3licjBodWcwaTU0Mm9wbTlreHgybXJ6In0.Y0YKAs4Kl1_KoKhZ3IUiJA';
 
     mapboxgl.accessToken = accessToken;
-
-
-    mapboxgl.accessToken = 'pk.eyJ1IjoibmVsZGVscG96byIsImEiOiJja3licjBodWcwaTU0Mm9wbTlreHgybXJ6In0.Y0YKAs4Kl1_KoKhZ3IUiJA';
     let map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/streets-v9',
-        zoom: 20,
+        zoom: 10,
         center: [-104.9926, 39.9622]
     });
-
-    let frolicInfo = {
-        address: "12910 Zuni St #1300, Westminster, CO 80234",
-        popupHTML: "<p>Frolic Brewing Co.-Best cold beer and pizza in town!</p>"
-    };
 
     let places = [
         {
@@ -91,7 +83,7 @@
                 .addTo(map)
                 .setPopup(popup);
             // popup.addTo(map);
-            map.setZoom(12);
+            // map.setZoom(12);
             // map.setCenter(coordinates);
         });
     }
