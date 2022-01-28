@@ -87,3 +87,11 @@ allLangs.forEach((array =>{
     newArray = [...newArray, ...array];
 }))
 console.log(newArray);
+let unique = newArray.reduce((unique, lang) => {
+  return unique.includes(lang) ? unique: [...unique, lang];
+
+}, []);
+console.log(unique);
+
+// END OF EXERCISES
+
