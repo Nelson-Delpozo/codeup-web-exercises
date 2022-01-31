@@ -68,7 +68,7 @@
 <script>
     const accessToken = 'pk.eyJ1IjoibmVsZGVscG96byIsImEiOiJja3licjBodWcwaTU0Mm9wbTlreHgybXJ6In0.Y0YKAs4Kl1_KoKhZ3IUiJA';
 
-        // THE MAP
+    // THE MAP
     mapboxgl.accessToken = accessToken;
     let map = new mapboxgl.Map({
         container: 'map',
@@ -126,19 +126,20 @@
     // SEARCH A NEW LOCATION
     let searchBox = document.getElementById('search');
     let form = document.getElementById('submit-form');
+
     function changeLocation() {
         geocode(searchBox.value, accessToken).then(function (result) {
-            console.log(result);
-            console.log(searchBox.value)
             map.setCenter(result);
             map.setZoom(15);
-            form.reset()
-            let popup = new mapboxgl.Popup()
+            form.reset();
+            let popup2 = new mapboxgl.Popup()
+                .setHTML('this is the place you searched for');
             let markerChoice = new mapboxgl.Marker()
                 .setLngLat(result)
                 .addTo(map)
-                .setPopup(popup);
-        })}
+                .setPopup(popup2);
+        })
+    }
 
 </script>
 </body>
