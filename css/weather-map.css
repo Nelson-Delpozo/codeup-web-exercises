@@ -1,5 +1,6 @@
 body{
-    background-color: #57C4E5;
+    background-image: url("/img/rain.webp");
+    background-attachment: fixed;
 }
 
 
@@ -43,7 +44,7 @@ body{
 .day {
     padding: 10px;
     border: 1px solid #217591;
-    width: 250px;
+    width: 200px;
     display: flex;
     flex-direction: column;
     background-color: #CAECF7;
