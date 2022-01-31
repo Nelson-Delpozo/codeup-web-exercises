@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Weather Map API</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/weather-map.css">
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet'/>
     <script src="https://code.jquery.com/jquery-3.6.0.js"
@@ -12,7 +15,7 @@
 <body>
 <!--TOP HEADER-->
 <header id="top-bar">
-    <h1>Weather App</h1>
+    <h1>Interactive Five-Day Forecast</h1>
     <h3>Current City:&nbsp; </h3>
     <h4 id="current-city">Boulder, CO</h4>
 </header>
@@ -30,8 +33,12 @@
 <div id="forecasts"></div>
 
 <!--    THE MAP-->
-<div id="map"></div>
-
+<figure>
+    <div id="map"></div>
+    <figcaption>
+        drag pin to update map and weather forecast
+    </figcaption>
+</figure>
 <!--    FOOTER-->
 <div id="footer">
     <footer>
@@ -68,6 +75,7 @@
 
     // RE-CENTERS MAP WHEN YOU MOVE THE PIN
     let newSpot = "";
+
     function onDragEnd() {
         const lngLat = marker.getLngLat();
         console.log(lngLat.lng);
@@ -145,6 +153,7 @@
             })
         });
     }
+
     marker.on('dragend', onDragEnd);
     // STILL NEED TO ADD NEW WEATHER FORECAST AFTER PIN DROP
 
@@ -158,8 +167,7 @@
             map.setCenter(result);
             map.setZoom(10);
             let markers = document.querySelectorAll('.mapboxgl-marker');
-            const marker = new mapboxgl.Marker({
-            }).setLngLat(result)
+            const marker = new mapboxgl.Marker({}).setLngLat(result)
                 .addTo(map);
             markers[1].remove();
         });
