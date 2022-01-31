@@ -8,7 +8,10 @@
     <!-- Custom CSS -->
     <style>
         body {
-            background-color: #a3dbe1;
+            background-color: dimgray;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         #map {
@@ -16,10 +19,19 @@
             width: 75%;
             height: 500px;
             margin: 25px auto;
+            border-radius: 10px;
+            border: 5px solid gray;
         }
 
         h1 {
-            text-align: center;
+            color: white;
+        }
+
+        .popup {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
         }
     </style>
 </head>
@@ -32,11 +44,8 @@
 
 <!-- Mapbox JS -->
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
-
 <!-- Mapbox Geocoder Util Methods -->
 <script src="js/mapbox-geocoder-utils.js"></script>
-
-
 <!-- Custom JS -->
 <script>
     const accessToken = 'pk.eyJ1IjoibmVsZGVscG96byIsImEiOiJja3licjBodWcwaTU0Mm9wbTlreHgybXJ6In0.Y0YKAs4Kl1_KoKhZ3IUiJA';
@@ -54,7 +63,7 @@
             address: "12910 Zuni St #1300, Westminster, CO 80234",
             popupHTML: "<p>Frolic Brewing Co.-Best cold beer and pizza in town!</p>",
             web: "<a href='https://www.frolicbrewing.com/' target='_blank'>frolicbrewing.com</a>",
-            image: "<img width='100px' height='100px' src='https://static.wixstatic.com/media/e81a73_7ea449b8914b441fa582aa0d1cf87746~mv2.jpg/v1/crop/x_0,y_393,w_3024,h_1940/fill/w_1956,h_1244,al_c,q_90,usm_0.66_1.00_0.01/IMG_4347_JPG.webp'>"
+            image: "<img width='100' height='100' src='https://static.wixstatic.com/media/e81a73_7ea449b8914b441fa582aa0d1cf87746~mv2.jpg/v1/crop/x_0,y_393,w_3024,h_1940/fill/w_1956,h_1244,al_c,q_90,usm_0.66_1.00_0.01/IMG_4347_JPG.webp'>"
         },
         {
             address: "13801 Grant St Unit 572, Thornton, CO 80023",
@@ -77,14 +86,11 @@
     function placeMarkerAndPopup(info, token, map) {
         geocode(info.address, token).then(function (coordinates) {
             let popup = new mapboxgl.Popup()
-                .setHTML(info.popupHTML + info.web + info.image);
+                .setHTML('<div class="popup">' + info.popupHTML + info.web + info.image + '</div>');
             let marker = new mapboxgl.Marker()
                 .setLngLat(coordinates)
                 .addTo(map)
                 .setPopup(popup);
-            // popup.addTo(map);
-            // map.setZoom(12);
-            // map.setCenter(coordinates);
         });
     }
 
