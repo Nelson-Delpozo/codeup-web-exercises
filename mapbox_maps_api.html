@@ -41,6 +41,14 @@
 
 <!-- The HTML element that serves as the Mapbox container -->
 <div id='map'></div>
+<br>
+<div id="search-form">
+    <form onsubmit="return false" id="submit-form">
+        <label for="search">Place:&nbsp;</label>
+        <input type="text" id="search" placeholder="enter a city">
+        <input type="submit" value="search" onclick="changeLocation()">
+    </form>
+</div>
 
 <!-- Mapbox JS -->
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
@@ -48,8 +56,8 @@
 <script src="js/mapbox-geocoder-utils.js"></script>
 <!-- Custom JS -->
 <script>
+    // THE MAP
     const accessToken = 'pk.eyJ1IjoibmVsZGVscG96byIsImEiOiJja3licjBodWcwaTU0Mm9wbTlreHgybXJ6In0.Y0YKAs4Kl1_KoKhZ3IUiJA';
-
     mapboxgl.accessToken = accessToken;
     let map = new mapboxgl.Map({
         container: 'map',
@@ -58,6 +66,7 @@
         center: [-104.9926, 39.9622]
     });
 
+    // THE PLACES
     let places = [
         {
             address: "12910 Zuni St #1300, Westminster, CO 80234",
@@ -79,10 +88,12 @@
         }
     ]
 
+    // THE LOOP
     places.forEach(function (place) {
         placeMarkerAndPopup(place, accessToken, map)
     })
 
+    // THE MARKERS AND POPUPS
     function placeMarkerAndPopup(info, token, map) {
         geocode(info.address, token).then(function (coordinates) {
             let popup = new mapboxgl.Popup()
@@ -93,6 +104,16 @@
                 .setPopup(popup);
         });
     }
+
+    // SEARCH A NEW LOCATION
+    let searchBox = document.getElementById('search');
+    function changeLocation() {
+        geocode(searchBox.value, accessToken).then(function (result) {
+            console.log(result);
+            console.log(searchBox.value)
+            map.setCenter(result);
+            map.setZoom(10);
+        })}
 
 </script>
 </body>
