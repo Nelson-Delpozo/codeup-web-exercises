@@ -125,13 +125,21 @@
 
     // SEARCH A NEW LOCATION
     let searchBox = document.getElementById('search');
+    let form = document.getElementById('submit-form');
     function changeLocation() {
         geocode(searchBox.value, accessToken).then(function (result) {
             console.log(result);
             console.log(searchBox.value)
             map.setCenter(result);
-            map.setZoom(10);
+            map.setZoom(15);
+            form.reset()
+            let popup = new mapboxgl.Popup()
+            let markerChoice = new mapboxgl.Marker()
+                .setLngLat(result)
+                .addTo(map)
+                .setPopup(popup);
         })}
+
 </script>
 </body>
 </html>
