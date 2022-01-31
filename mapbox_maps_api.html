@@ -44,15 +44,17 @@
 <br>
 <div id="search-form">
     <form onsubmit="return false" id="submit-form">
-        <label for="search">Place:&nbsp;</label>
+        <label for="search">place:&nbsp;</label>
         <input type="text" id="search" placeholder="enter a city">
         <input type="submit" value="search" onclick="changeLocation()">
     </form>
 </div>
+<br>
 <div id="zoom-level">
-    <select id="choose-zoom">
+    <label for="choose-zoom">zoom: </label>
+    <select id="choose-zoom" onchange="changeZoom()">
         <option value="5">5</option>
-        <option value="10">10</option>
+        <option value="10" selected>10</option>
         <option value="15">15</option>
         <option value="20">20</option>
     </select>
@@ -64,8 +66,9 @@
 <script src="js/mapbox-geocoder-utils.js"></script>
 <!-- Custom JS -->
 <script>
-    // THE MAP
     const accessToken = 'pk.eyJ1IjoibmVsZGVscG96byIsImEiOiJja3licjBodWcwaTU0Mm9wbTlreHgybXJ6In0.Y0YKAs4Kl1_KoKhZ3IUiJA';
+
+        // THE MAP
     mapboxgl.accessToken = accessToken;
     let map = new mapboxgl.Map({
         container: 'map',
@@ -73,6 +76,13 @@
         zoom: 10,
         center: [-104.9926, 39.9622]
     });
+
+    // CHOOSE A ZOOM
+    function changeZoom() {
+        let zoom = document.getElementById('choose-zoom');
+        console.log(zoom.value);
+        map.setZoom(zoom.value);
+    }
 
     // THE PLACES
     let places = [
@@ -122,7 +132,6 @@
             map.setCenter(result);
             map.setZoom(10);
         })}
-
 </script>
 </body>
 </html>
