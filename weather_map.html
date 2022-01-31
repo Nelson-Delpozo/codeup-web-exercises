@@ -61,7 +61,29 @@
         center: [-105.2705, 40.0150]
     });
 
-    // GET THE WEATHER FORECAST
+    const marker = new mapboxgl.Marker({
+        draggable: true
+    }).setLngLat([-105.2705, 40.0150])
+        .addTo(map);
+
+    // RE-CENTERS MAP WHEN YOU MOVE THE PIN
+    let newSpot = "";
+    function onDragEnd() {
+        const lngLat = marker.getLngLat();
+        console.log(lngLat.lng);
+        console.log(lngLat.lat);
+        map.setCenter([lngLat.lng, lngLat.lat]);
+        reverseGeocode({lng: lngLat.lng, lat: lngLat.lat}, accessToken).then(function (results) {
+            newSpot = results.substr(results.indexOf(',') + 1);
+            console.log(newSpot);
+            console.log(typeof newSpot)
+        })
+    }
+    marker.on('dragend', onDragEnd);
+    // STILL NEED TO ADD NEW WEATHER FORECAST AFTER PIN DROP
+
+
+    // RE-CENTER THE MAP ON SEARCH
     function getWeather(q) {
         currentCity.innerText = searchBox.value;
         geocode(searchBox.value, accessToken).then(function (result) {
@@ -70,7 +92,7 @@
             map.setCenter(result);
             map.setZoom(10);
         });
-        // GET THE NEW MAP ALONG WITH IT
+        // AND GET THE FORECAST ALONG WITH IT
         $.get("https://api.openweathermap.org/data/2.5/forecast", {
             APPID: "92f38058292f35435f6f74b0304dcfd4",
             q: searchBox.value,
@@ -140,11 +162,11 @@
         form.reset();
     }
 
-    // LOAD THE INITIAL MAP
+    // LOAD THE INITIAL FORECAST
     function initial(q) {
         $.get("https://api.openweathermap.org/data/2.5/forecast", {
             APPID: "92f38058292f35435f6f74b0304dcfd4",
-            q: "Boulder, CO, US",
+            q: "Lafayette, Colorado 80023, United States",
             units: "imperial"
         }).done(function (data) {
             let forecast = [];
