@@ -77,6 +77,13 @@
             newSpot = results.substr(results.indexOf(',') + 1);
             console.log(newSpot);
             console.log(typeof newSpot)
+        });
+        $.get("https://api.openweathermap.org/data/2.5/forecast", {
+            APPID: "92f38058292f35435f6f74b0304dcfd4",
+            q: "Lafayette, Colorado 80023, United States",
+            units: "imperial"
+        }).done(function(data){
+            console.log(data)
         })
     }
     marker.on('dragend', onDragEnd);
