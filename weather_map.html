@@ -47,6 +47,9 @@
         <p>Copyright &copy;2022 Nelson Delpozo Sirius Cohort</p>
     </footer>
 </div>
+<div id="back-to-top">
+    <a href="#top-bar">back to top</a>
+</div>
 
 <!--API SCRIPT TAGS-->
 <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
@@ -128,7 +131,7 @@
                     } else {
                         html += '<div class="day nasty">'
                     }
-                    html += '<div class="date">' + forecast[i].date + '</div><div class="temp">' + forecast[i].temp + '&deg;F</div><div class="icon"><img src="' + forecast[i].iconURL + '"></div><div>' + forecast[i].main + '</div><div class="description">Description: ' + forecast[i].description + '</div><hr><div class="humidity">Humidity: ' + forecast[i].humidity + '</div><hr><div class="wind">Wind: ' + forecast[i].wind + '</div><hr><div class="pressure">Pressure: ' + forecast[i].pressure + '</div></div>'
+                    html += '<div class="date">' + forecast[i].date + '</div><div class="temp">' + forecast[i].temp + '&deg;F</div><div class="icon"><img src="' + forecast[i].iconURL + '"></div><div>' + forecast[i].main + '<hr></div><div class="description">Description: ' + forecast[i].description + '</div><hr><div class="humidity">Humidity: ' + forecast[i].humidity + '%</div><hr><div class="wind">Wind: ' + forecast[i].wind + '</div><hr><div class="pressure">Pressure: ' + forecast[i].pressure + '</div></div>'
                 }
                 forecastGrid.innerHTML = html;
             })
@@ -191,7 +194,7 @@
                 } else {
                     html += '<div class="day nasty">'
                 }
-                html += '<div class="date">' + forecast[i].date + '</div><div class="temp">' + forecast[i].temp + '&deg;F</div><div class="icon"><img src="' + forecast[i].iconURL + '"></div><div>' + forecast[i].main + '</div><div class="description">Description: ' + forecast[i].description + '</div><hr><div class="humidity">Humidity: ' + forecast[i].humidity + '</div><hr><div class="wind">Wind: ' + forecast[i].wind + '</div><hr><div class="pressure">Pressure: ' + forecast[i].pressure + '</div></div>'
+                html += '<div class="date">' + forecast[i].date + '</div><div class="temp">' + forecast[i].temp + '&deg;F</div><div class="icon"><img src="' + forecast[i].iconURL + '"></div><div>' + forecast[i].main + '<hr></div><div class="description">Description: ' + forecast[i].description + '</div><hr><div class="humidity">Humidity: ' + forecast[i].humidity + '%</div><hr><div class="wind">Wind: ' + forecast[i].wind + '</div><hr><div class="pressure">Pressure: ' + forecast[i].pressure + '</div></div>'
             }
             forecastGrid.innerHTML = html;
         });
@@ -250,7 +253,7 @@
                 } else {
                     html += '<div class="day nasty">'
                 }
-                html += '<div class="date">' + forecast[i].date + '</div><div class="temp">' + forecast[i].temp + '&deg;F</div><div class="icon"><img src="' + forecast[i].iconURL + '"></div><div>' + forecast[i].main + '</div><div class="description">Description: ' + forecast[i].description + '</div><hr><div class="humidity">Humidity: ' + forecast[i].humidity + '</div><hr><div class="wind">Wind: ' + forecast[i].wind + ' mph</div><hr><div class="pressure">Pressure: ' + forecast[i].pressure + ' mb</div></div>'
+                html += '<div class="date">' + forecast[i].date + '</div><div class="temp">' + forecast[i].temp + '&deg;F</div><div class="icon"><img src="' + forecast[i].iconURL + '"></div><div>' + forecast[i].main + '<hr></div><div class="description">Description: ' + forecast[i].description + '</div><hr><div class="humidity">Humidity: ' + forecast[i].humidity + '%</div><hr><div class="wind">Wind: ' + forecast[i].wind + ' mph</div><hr><div class="pressure">Pressure: ' + forecast[i].pressure + ' mb</div></div>'
             }
 
             forecastGrid.innerHTML = html;
