@@ -56,6 +56,7 @@
     let currentCity = document.getElementById('current-city');
     let forecastGrid = document.getElementById('forecasts');
     let form = document.getElementById('submit-form');
+    // LOAD THE INITIAL MAP AND WEATHER OF BOULDER
     initial();
 
     // // THE MAP
@@ -67,7 +68,6 @@
         zoom: 8,
         center: [-105.2705, 40.0150]
     });
-
     const marker = new mapboxgl.Marker({
         draggable: true
     }).setLngLat([-105.2705, 40.0150])
@@ -75,7 +75,6 @@
 
     // RE-CENTERS MAP WHEN YOU MOVE THE PIN
     let newSpot = "";
-
     function onDragEnd() {
         const lngLat = marker.getLngLat();
         console.log(lngLat.lng);
