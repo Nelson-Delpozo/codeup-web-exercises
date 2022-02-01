@@ -18,7 +18,7 @@
 <header id="top-bar">
     <h1>Interactive Five-Day Forecast</h1>
     <h3>Current City:&nbsp; </h3>
-    <h4 id="current-city">Boulder, CO</h4>
+    <h4 id="current-city"></h4>
 </header>
 
 <!--THE SEARCH FORM-->
@@ -89,7 +89,6 @@
         map.panTo([lngLat.lng, lngLat.lat]);
         reverseGeocode({lng: lngLat.lng, lat: lngLat.lat}, accessToken).then(function (results) {
             newSpot = results.substr(results.indexOf(',') + 2);
-            currentCity.innerText = newSpot
             // console.log(newSpot);
             // console.log(typeof newSpot)
             $.get("https://api.openweathermap.org/data/2.5/forecast", {
@@ -134,6 +133,7 @@
                     html += '<div class="date">' + forecast[i].date + '</div><div class="temp">' + forecast[i].temp + '&deg;F</div><div class="icon"><img src="' + forecast[i].iconURL + '"></div><div>' + forecast[i].main + '<hr></div><div class="description">Description: ' + forecast[i].description + '</div><hr><div class="humidity">Humidity: ' + forecast[i].humidity + '%</div><hr><div class="wind">Wind: ' + forecast[i].wind + '</div><hr><div class="pressure">Pressure: ' + forecast[i].pressure + '</div></div>'
                 }
                 forecastGrid.innerHTML = html;
+                currentCity.innerText = data.city.name;
             })
         });
     }
@@ -143,7 +143,6 @@
 
     // RE-CENTER THE MAP ON SEARCH
     function getWeather(q) {
-        currentCity.innerText = searchBox.value;
         geocode(searchBox.value, accessToken).then(function (result) {
             // console.log(result);
             // console.log(searchBox.value)
@@ -197,6 +196,7 @@
                 html += '<div class="date">' + forecast[i].date + '</div><div class="temp">' + forecast[i].temp + '&deg;F</div><div class="icon"><img src="' + forecast[i].iconURL + '"></div><div>' + forecast[i].main + '<hr></div><div class="description">Description: ' + forecast[i].description + '</div><hr><div class="humidity">Humidity: ' + forecast[i].humidity + '%</div><hr><div class="wind">Wind: ' + forecast[i].wind + '</div><hr><div class="pressure">Pressure: ' + forecast[i].pressure + '</div></div>'
             }
             forecastGrid.innerHTML = html;
+            currentCity.innerText = data.city.name;
         });
         form.reset();
     }
@@ -209,7 +209,6 @@
             units: "imperial"
         }).done(function (data) {
             // console.log(data);
-
             let mains = []
             for (let i = 0; i < data.list.length; i++) {
                 let newMain = {};
@@ -255,8 +254,8 @@
                 }
                 html += '<div class="date">' + forecast[i].date + '</div><div class="temp">' + forecast[i].temp + '&deg;F</div><div class="icon"><img src="' + forecast[i].iconURL + '"></div><div>' + forecast[i].main + '<hr></div><div class="description">Description: ' + forecast[i].description + '</div><hr><div class="humidity">Humidity: ' + forecast[i].humidity + '%</div><hr><div class="wind">Wind: ' + forecast[i].wind + ' mph</div><hr><div class="pressure">Pressure: ' + forecast[i].pressure + ' mb</div></div>'
             }
-
             forecastGrid.innerHTML = html;
+            currentCity.innerText = data.city.name;
         });
     }
 

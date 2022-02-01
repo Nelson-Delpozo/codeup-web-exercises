@@ -61,6 +61,7 @@ body {
     flex-direction: column;
     border-radius: 5px;
     box-shadow: 3px 3px 3px #217591;
+    opacity: 95%;
 }
 
 .overcast {
@@ -139,6 +140,7 @@ hr {
     border-radius: 10px;
     border: 1px solid #217591;
     box-shadow: 3px 3px 3px #217591;
+    opacity: 95%;
 }
 
 #footer {
