@@ -35,13 +35,15 @@
         }
     </style>
 </head>
-<body>
 
+<body>
 <h1>My First Mapbox Map!</h1>
 
 <!-- The HTML element that serves as the Mapbox container -->
 <div id='map'></div>
+
 <br>
+<!--SEARCH FOR A PLACE-->
 <div id="search-form">
     <form onsubmit="return false" id="submit-form">
         <label for="search">place:&nbsp;</label>
@@ -50,6 +52,7 @@
     </form>
 </div>
 <br>
+<!--CHOOSE A ZOOM LEVEL-->
 <div id="zoom-level">
     <label for="choose-zoom">zoom: </label>
     <select id="choose-zoom" onchange="changeZoom()">
@@ -60,6 +63,7 @@
     </select>
 </div>
 <br>
+<!--CLICK TO HIDE MARKERS-->
 <div>
     <input type="submit" value="hide markers" onclick="hideMarkers()">
 </div>
@@ -71,7 +75,6 @@
 <!-- Custom JS -->
 <script>
     const accessToken = 'pk.eyJ1IjoibmVsZGVscG96byIsImEiOiJja3licjBodWcwaTU0Mm9wbTlreHgybXJ6In0.Y0YKAs4Kl1_KoKhZ3IUiJA';
-
     // THE MAP
     mapboxgl.accessToken = accessToken;
     let map = new mapboxgl.Map({
@@ -89,11 +92,11 @@
     }
 
     // HIDE MARKERS
-    function hideMarkers(){
+    function hideMarkers() {
         console.log('hide markers')
-       let markers = document.querySelectorAll('.mapboxgl-marker')
+        let markers = document.querySelectorAll('.mapboxgl-marker')
         console.log(markers)
-        markers.forEach(function(marker){
+        markers.forEach(function (marker) {
             marker.remove()
         })
     }
@@ -118,7 +121,7 @@
             web: "<a href='https://www.windfallbrewing.co/' target='_blank'>windfallbrewing.co</a>",
             image: "<img width='100px' height='100px' src='https://static.scientificamerican.com/sciam/cache/file/F27ED9D2-18FC-4836-BC4F2F5CE6630BB4_source.jpg'>"
         }
-    ]
+    ];
 
     // THE LOOP
     places.forEach(function (place) {
