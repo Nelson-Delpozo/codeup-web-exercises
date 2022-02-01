@@ -83,6 +83,7 @@
         map.panTo([lngLat.lng, lngLat.lat]);
         reverseGeocode({lng: lngLat.lng, lat: lngLat.lat}, accessToken).then(function (results) {
             newSpot = results.substr(results.indexOf(',') + 2);
+            currentCity.innerText = newSpot
             console.log(newSpot);
             console.log(typeof newSpot)
             $.get("https://api.openweathermap.org/data/2.5/forecast", {
