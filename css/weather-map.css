@@ -64,8 +64,18 @@ body {
     box-shadow: 5px 5px 5px #217591;
 }
 
-.clouds {
+.overcast {
     background-image: url("/img/clouds.jpeg");
+    background-size: cover;
+}
+
+.few{
+    background-image: url("/img/fewclouds.jpeg");
+    background-size: cover;
+}
+
+.scattered {
+    background-image: url("/img/scatteredclouds.jpeg");
     background-size: cover;
 }
 
@@ -75,7 +85,7 @@ body {
 }
 
 .snow {
-    background-image: url("/img/pexels-pixabay-65911.jpeg");
+    background-image: url("/img/snowgif.gif");
     background-size: cover;
 }
 
@@ -85,7 +95,7 @@ body {
 }
 
 .rain{
-    background-image: url("/img/pexels-ahmed-8589272.jpeg");
+    background-image: url("/img/raingif.gif");
     background-size: cover;
 }
 

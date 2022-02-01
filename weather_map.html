@@ -112,13 +112,20 @@
                 for (let i = 0; i < forecast.length; i++) {
                     if (forecast[i].main === "Rain" || forecast[i].main === "Drizzle" || forecast[i].main === "Thunderstorms") {
                         html += '<div class="day rain">'
-                    }else if(forecast[i].main === "Clouds"){
-                        html += '<div class="day clouds">'
-                    }else if (forecast[i].main === "Clear") {
+                    } else if (forecast[i].main === "Clouds") {
+                        if (forecast[i].description === "overcast clouds") {
+                            html += '<div class="day overcast">'
+                        } else if (forecast[i].description === "few clouds") {
+                            html += '<div class="day few">'
+                        } else {
+                            html += '<div class="day scattered">'
+                        }
+
+                    } else if (forecast[i].main === "Clear") {
                         html += '<div class="day clear">'
-                    }else if (forecast[i].main === "Snow"){
+                    } else if (forecast[i].main === "Snow") {
                         html += '<div class="day snow">'
-                    }else {
+                    } else {
                         html += '<div class="day nasty">'
                     }
                     html += '<div class="date">' + forecast[i].date + '</div><div class="temp">' + forecast[i].temp + '&deg;F</div><div class="icon"><img src="' + forecast[i].iconURL + '"></div><div>' + forecast[i].main + '</div><div class="description">Description: ' + forecast[i].description + '</div><hr><div class="humidity">Humidity: ' + forecast[i].humidity + '</div><hr><div class="wind">Wind: ' + forecast[i].wind + '</div><hr><div class="pressure">Pressure: ' + forecast[i].pressure + '</div></div>'
@@ -168,13 +175,20 @@
             for (let i = 0; i < forecast.length; i++) {
                 if (forecast[i].main === "Rain" || forecast[i].main === "Drizzle" || forecast[i].main === "Thunderstorms") {
                     html += '<div class="day rain">'
-                }else if(forecast[i].main === "Clouds"){
-                    html += '<div class="day clouds">'
-                }else if (forecast[i].main === "Clear") {
+                } else if (forecast[i].main === "Clouds") {
+                    if (forecast[i].description === "overcast clouds") {
+                        html += '<div class="day overcast">'
+                    } else if (forecast[i].description === "few clouds") {
+                        html += '<div class="day few">'
+                    } else {
+                        html += '<div class="day scattered">'
+                    }
+
+                } else if (forecast[i].main === "Clear") {
                     html += '<div class="day clear">'
-                }else if (forecast[i].main === "Snow"){
+                } else if (forecast[i].main === "Snow") {
                     html += '<div class="day snow">'
-                }else {
+                } else {
                     html += '<div class="day nasty">'
                 }
                 html += '<div class="date">' + forecast[i].date + '</div><div class="temp">' + forecast[i].temp + '&deg;F</div><div class="icon"><img src="' + forecast[i].iconURL + '"></div><div>' + forecast[i].main + '</div><div class="description">Description: ' + forecast[i].description + '</div><hr><div class="humidity">Humidity: ' + forecast[i].humidity + '</div><hr><div class="wind">Wind: ' + forecast[i].wind + '</div><hr><div class="pressure">Pressure: ' + forecast[i].pressure + '</div></div>'
@@ -194,7 +208,7 @@
             // console.log(data);
 
             let mains = []
-            for(let i = 0; i < data.list.length; i++){
+            for (let i = 0; i < data.list.length; i++) {
                 let newMain = {};
                 newMain.main = data.list[i].weather[0].main;
                 mains.push(newMain);
@@ -220,13 +234,20 @@
             for (let i = 0; i < forecast.length; i++) {
                 if (forecast[i].main === "Rain" || forecast[i].main === "Drizzle" || forecast[i].main === "Thunderstorms") {
                     html += '<div class="day rain">'
-                }else if(forecast[i].main === "Clouds"){
-                    html += '<div class="day clouds">'
-            }else if (forecast[i].main === "Clear") {
+                } else if (forecast[i].main === "Clouds") {
+                    if (forecast[i].description === "overcast clouds") {
+                        html += '<div class="day overcast">'
+                    } else if (forecast[i].description === "few clouds") {
+                        html += '<div class="day few">'
+                    } else {
+                        html += '<div class="day scattered">'
+                    }
+
+                } else if (forecast[i].main === "Clear") {
                     html += '<div class="day clear">'
-                }else if (forecast[i].main === "Snow"){
+                } else if (forecast[i].main === "Snow") {
                     html += '<div class="day snow">'
-                }else {
+                } else {
                     html += '<div class="day nasty">'
                 }
                 html += '<div class="date">' + forecast[i].date + '</div><div class="temp">' + forecast[i].temp + '&deg;F</div><div class="icon"><img src="' + forecast[i].iconURL + '"></div><div>' + forecast[i].main + '</div><div class="description">Description: ' + forecast[i].description + '</div><hr><div class="humidity">Humidity: ' + forecast[i].humidity + '</div><hr><div class="wind">Wind: ' + forecast[i].wind + ' mph</div><hr><div class="pressure">Pressure: ' + forecast[i].pressure + ' mb</div></div>'
