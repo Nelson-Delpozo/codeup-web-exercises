@@ -15,7 +15,8 @@ body {
     padding: 5px 15px;
     border-radius: 10px;
 }
-h2{
+
+h2 {
     background-color: rgba(227, 227, 219, 0.9);
     text-align: center;
 }
@@ -83,6 +84,7 @@ h2{
     box-shadow: 3px 3px 3px #217591;
     opacity: 95%;
 }
+
 .overcast {
     background-image: url("/img/clouds.jpeg");
     background-size: cover;
@@ -191,7 +193,7 @@ figcaption {
         display: block;
     }
 
-    #currentCondition{
+    #currentCondition {
         flex-direction: row;
     }
 }
