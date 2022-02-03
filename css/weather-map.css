@@ -64,6 +64,19 @@ body {
     opacity: 95%;
 }
 
+.current {
+    padding: 10px;
+    border: 1px solid #217591;
+    width: 85%;
+    display: flex;
+    flex-wrap: wrap;
+    /*flex-direction: column;*/
+    margin: 5px auto 10px;
+    background-color: #a3dbe1;
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px #217591;
+    opacity: 95%;
+}
 .overcast {
     background-image: url("/img/clouds.jpeg");
     background-size: cover;

@@ -30,6 +30,9 @@
     </form>
 </div>
 
+<!--CURRENT CONDITIONS-->
+<div id="current"></div>
+
 <!--    FORECASTS WILL GO HERE-->
 <div id="forecasts"></div>
 
@@ -146,8 +149,10 @@
 
         // RE-CENTER THE MAP ON SEARCH
         function getWeather(q) {
+            currentConditions(searchBox.value);
             geocode(searchBox.value, accessToken).then(function (result) {
-                // console.log(result);
+                console.log(searchBox.value)
+                // currentConditions(searchBox.value);
                 // console.log(searchBox.value)
                 map.setCenter(result);
                 map.setZoom(10);
@@ -205,23 +210,38 @@
         }
 
         function log(position) {
-            console.log(position)
+            // console.log(position)
             // console.log(position.coords.latitude)
             // console.log(position.coords.longitude)
             reverseGeocode({
                 lng: position.coords.longitude,
                 lat: position.coords.latitude
             }, accessToken).then(function (result) {
-                console.log(result)
+                // console.log(result)
                 let initialLocation = result.substr(result.indexOf(',') + 2);
                 // console.log(initialLocation)
                 initial(initialLocation)
+                currentConditions(initialLocation)
                 map.setCenter([position.coords.longitude, position.coords.latitude]);
                 marker.setLngLat([position.coords.longitude, position.coords.latitude])
                     .addTo(map);
             })
         }
 
+        function currentConditions(q) {
+            $.get("https://api.weatherapi.com/v1/current.json?key=46b4f587484f4fdeb48211459220102", {
+                q: q,
+            }).done(function (data) {
+                // console.log(data.current.condition.text);
+                // console.log(data.current.condition.icon);
+                // console.log(data.current.feelslike_f);
+                // console.log(data.location.localtime);
+                // console.log(data.current.humidity);
+                // console.log(data.current.temp_f);
+                // console.log(data.current.pressure_mb);
+                $('#current').html('<div class="current"><div>date and time: ' + data.location.localtime + '</div><div>&nbsp;' + data.current.condition.text + '</div><div>&nbsp;Current temp: ' + data.current.temp_f + '</div><div>&nbsp;Feels like: ' + data.current.feelslike_f + '</div><div>&nbsp;Humidity: ' + data.current.humidity + '</div><div>&nbsp;Pressure: ' + data.current.pressure_mb + '</div></div>');
+            })
+        }
         // LOAD THE INITIAL FORECAST
         function initial(q) {
             $.get("https://api.openweathermap.org/data/2.5/forecast", {
