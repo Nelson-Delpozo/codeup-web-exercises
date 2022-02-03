@@ -8,6 +8,10 @@ body {
     background-attachment: fixed;
 }
 
+#map2 {
+    height: 100%;
+}
+
 #top-bar {
     display: flex;
     justify-content: left;
