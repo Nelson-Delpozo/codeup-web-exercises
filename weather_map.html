@@ -16,7 +16,7 @@
 <body>
 <!--TOP HEADER-->
 <header id="top-bar">
-    <h1>Interactive Five-Day Forecast</h1>
+    <h1>Interactive Weather App</h1>
     <h3>Current City:&nbsp; </h3>
     <h4 id="current-city"></h4>
 </header>
@@ -31,9 +31,11 @@
 </div>
 
 <!--CURRENT CONDITIONS-->
+<h2>Currently:</h2>
 <div id="current"></div>
 
 <!--    FORECASTS WILL GO HERE-->
+<h2>Five Day Forecast:</h2>
 <div id="forecasts"></div>
 
 <!--    THE MAP-->
@@ -67,104 +69,39 @@
 
     // LOAD THE INITIAL MAP BASED ON LOCATION
     window.onload = getLocation;
+
     function getLocation() {
         navigator.geolocation.getCurrentPosition(log);
     }
-        // // THE MAP
-        const accessToken = 'pk.eyJ1IjoibmVsZGVscG96byIsImEiOiJja3licjBodWcwaTU0Mm9wbTlreHgybXJ6In0.Y0YKAs4Kl1_KoKhZ3IUiJA';
-        mapboxgl.accessToken = accessToken;
-        let map = new mapboxgl.Map({
-            container: 'map',
-            style: 'mapbox://styles/mapbox/satellite-streets-v11',
-            zoom: 8,
-            center: [-105.2705, 40.0150]
-        });
-        const marker = new mapboxgl.Marker({
-            draggable: true
-        })
-        // .setLngLat([-105.2705, 40.0150])
-        // .addTo(map);
 
-        // RE-CENTERS MAP WHEN YOU MOVE THE PIN
-        let newSpot = "";
+    // // THE MAP
+    const accessToken = 'pk.eyJ1IjoibmVsZGVscG96byIsImEiOiJja3licjBodWcwaTU0Mm9wbTlreHgybXJ6In0.Y0YKAs4Kl1_KoKhZ3IUiJA';
+    mapboxgl.accessToken = accessToken;
+    let map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/satellite-streets-v11',
+        zoom: 8,
+        center: [-105.2705, 40.0150]
+    });
+    const marker = new mapboxgl.Marker({
+        draggable: true
+    })
 
-        function onDragEnd() {
-            const lngLat = marker.getLngLat();
-            // console.log(lngLat.lng);
-            // console.log(lngLat.lat);
-            map.panTo([lngLat.lng, lngLat.lat]);
-            reverseGeocode({lng: lngLat.lng, lat: lngLat.lat}, accessToken).then(function (results) {
-                newSpot = results.substr(results.indexOf(',') + 2);
-                // console.log(newSpot);
-                // console.log(typeof newSpot)
-                $.get("https://api.openweathermap.org/data/2.5/forecast", {
-                    APPID: "92f38058292f35435f6f74b0304dcfd4",
-                    q: newSpot,
-                    units: "imperial"
-                }).done(function (data) {
-                    let forecast = [];
-                    for (let i = 6; i <= 38; i += 8) {
-                        let newDay = {};
-                        newDay.date = data.list[i].dt_txt.substring(0, 10);
-                        newDay.temp = data.list[i].main.temp_max;
-                        newDay.icon = data.list[i].weather[0].icon;
-                        newDay.iconURL = `https://openweathermap.org/img/wn/${newDay.icon}@2x.png`
-                        newDay.description = data.list[i].weather[0].description;
-                        newDay.main = data.list[i].weather[0].main;
-                        newDay.humidity = data.list[i].main.humidity;
-                        newDay.wind = data.list[i].wind.speed;
-                        newDay.pressure = data.list[i].main.pressure;
-                        forecast.push(newDay);
-                    }
-                    let html = "";
-                    for (let i = 0; i < forecast.length; i++) {
-                        if (forecast[i].main === "Rain" || forecast[i].main === "Drizzle" || forecast[i].main === "Thunderstorms") {
-                            html += '<div class="day rain">'
-                        } else if (forecast[i].main === "Clouds") {
-                            if (forecast[i].description === "overcast clouds") {
-                                html += '<div class="day overcast">'
-                            } else if (forecast[i].description === "few clouds") {
-                                html += '<div class="day few">'
-                            } else {
-                                html += '<div class="day scattered">'
-                            }
+    // RE-CENTERS MAP WHEN YOU MOVE THE PIN
+    let newSpot = "";
 
-                        } else if (forecast[i].main === "Clear") {
-                            html += '<div class="day clear">'
-                        } else if (forecast[i].main === "Snow") {
-                            html += '<div class="day snow">'
-                        } else {
-                            html += '<div class="day nasty">'
-                        }
-                        html += '<div class="date">' + forecast[i].date + '</div><div class="temp">' + forecast[i].temp + '&deg;F</div><div class="icon"><img src="' + forecast[i].iconURL + '"></div><div>' + forecast[i].main + '<hr></div><div class="description">Description: ' + forecast[i].description + '</div><hr><div class="humidity">Humidity: ' + forecast[i].humidity + '%</div><hr><div class="wind">Wind: ' + forecast[i].wind + '</div><hr><div class="pressure">Pressure: ' + forecast[i].pressure + '</div></div>'
-                    }
-                    forecastGrid.innerHTML = html;
-                    currentCity.innerText = data.city.name;
-                })
-            });
-        }
-
-        // LAUNCHES ONDRAGEND FUNCTION WHEN MARKER IS DROPPED
-        marker.on('dragend', onDragEnd);
-
-        // RE-CENTER THE MAP ON SEARCH
-        function getWeather(q) {
-            currentConditions(searchBox.value);
-            geocode(searchBox.value, accessToken).then(function (result) {
-                console.log(searchBox.value)
-                // currentConditions(searchBox.value);
-                // console.log(searchBox.value)
-                map.setCenter(result);
-                map.setZoom(10);
-                let markers = document.querySelectorAll('.mapboxgl-marker');
-                const marker = new mapboxgl.Marker({}).setLngLat(result)
-                    .addTo(map);
-                markers[1].remove();
-            });
-            // AND GET THE FORECAST ALONG WITH IT
+    function onDragEnd() {
+        const lngLat = marker.getLngLat();
+        map.panTo([lngLat.lng, lngLat.lat]);
+        reverseGeocode({lng: lngLat.lng, lat: lngLat.lat}, accessToken).then(function (results) {
+            newSpot = results.substr(results.indexOf(',') + 2);
+            // console.log(newSpot);
+            let newCurrent = newSpot.substr(0, newSpot.indexOf(','))
+            currentConditions(newCurrent);
+            // console.log(typeof newSpot)
             $.get("https://api.openweathermap.org/data/2.5/forecast", {
                 APPID: "92f38058292f35435f6f74b0304dcfd4",
-                q: searchBox.value,
+                q: newSpot,
                 units: "imperial"
             }).done(function (data) {
                 let forecast = [];
@@ -205,97 +142,165 @@
                 }
                 forecastGrid.innerHTML = html;
                 currentCity.innerText = data.city.name;
-            });
-            form.reset();
-        }
-
-        function log(position) {
-            // console.log(position)
-            // console.log(position.coords.latitude)
-            // console.log(position.coords.longitude)
-            reverseGeocode({
-                lng: position.coords.longitude,
-                lat: position.coords.latitude
-            }, accessToken).then(function (result) {
-                // console.log(result)
-                let initialLocation = result.substr(result.indexOf(',') + 2);
-                // console.log(initialLocation)
-                initial(initialLocation)
-                currentConditions(initialLocation)
-                map.setCenter([position.coords.longitude, position.coords.latitude]);
-                marker.setLngLat([position.coords.longitude, position.coords.latitude])
-                    .addTo(map);
             })
-        }
+        });
+    }
 
-        function currentConditions(q) {
-            $.get("https://api.weatherapi.com/v1/current.json?key=46b4f587484f4fdeb48211459220102", {
-                q: q,
-            }).done(function (data) {
-                // console.log(data.current.condition.text);
-                // console.log(data.current.condition.icon);
-                // console.log(data.current.feelslike_f);
-                // console.log(data.location.localtime);
-                // console.log(data.current.humidity);
-                // console.log(data.current.temp_f);
-                // console.log(data.current.pressure_mb);
-                $('#current').html('<div class="current"><div>date and time: ' + data.location.localtime + '</div><div>&nbsp;' + data.current.condition.text + '</div><div>&nbsp;Current temp: ' + data.current.temp_f + '</div><div>&nbsp;Feels like: ' + data.current.feelslike_f + '</div><div>&nbsp;Humidity: ' + data.current.humidity + '</div><div>&nbsp;Pressure: ' + data.current.pressure_mb + '</div></div>');
-            })
-        }
-        // LOAD THE INITIAL FORECAST
-        function initial(q) {
-            $.get("https://api.openweathermap.org/data/2.5/forecast", {
-                APPID: "92f38058292f35435f6f74b0304dcfd4",
-                q: q,
-                units: "imperial"
-            }).done(function (data) {
-                // console.log(data);
-                let mains = []
-                for (let i = 0; i < data.list.length; i++) {
-                    let newMain = {};
-                    newMain.main = data.list[i].weather[0].main;
-                    mains.push(newMain);
-                }
-                let forecast = [];
-                for (let i = 6; i <= 38; i += 8) {
-                    let newDay = {};
-                    newDay.date = data.list[i].dt_txt.substring(0, 10);
-                    newDay.temp = data.list[i].main.temp_max;
-                    newDay.icon = data.list[i].weather[0].icon;
-                    newDay.iconURL = `https://openweathermap.org/img/wn/${newDay.icon}@2x.png`
-                    newDay.description = data.list[i].weather[0].description;
-                    newDay.main = data.list[i].weather[0].main;
-                    newDay.humidity = data.list[i].main.humidity;
-                    newDay.wind = data.list[i].wind.speed;
-                    newDay.pressure = data.list[i].main.pressure;
-                    forecast.push(newDay);
-                }
-                let html = "";
-                for (let i = 0; i < forecast.length; i++) {
-                    if (forecast[i].main === "Rain" || forecast[i].main === "Drizzle" || forecast[i].main === "Thunderstorms") {
-                        html += '<div class="day rain">'
-                    } else if (forecast[i].main === "Clouds") {
-                        if (forecast[i].description === "overcast clouds") {
-                            html += '<div class="day overcast">'
-                        } else if (forecast[i].description === "few clouds") {
-                            html += '<div class="day few">'
-                        } else {
-                            html += '<div class="day scattered">'
-                        }
+    // LAUNCHES ONDRAGEND FUNCTION WHEN MARKER IS DROPPED
+    marker.on('dragend', onDragEnd);
 
-                    } else if (forecast[i].main === "Clear") {
-                        html += '<div class="day clear">'
-                    } else if (forecast[i].main === "Snow") {
-                        html += '<div class="day snow">'
+
+    // RE-CENTER THE MAP ON SEARCH
+    function getWeather(q) {
+        currentConditions(searchBox.value);
+        geocode(searchBox.value, accessToken).then(function (result) {
+            map.setCenter(result);
+            map.setZoom(10);
+            const newMarker = new mapboxgl.Marker({}).setLngLat(result);
+            newMarker.addTo(map);
+        });
+        // AND GET THE FORECAST ALONG WITH IT
+        $.get("https://api.openweathermap.org/data/2.5/forecast", {
+            APPID: "92f38058292f35435f6f74b0304dcfd4",
+            q: searchBox.value,
+            units: "imperial"
+        }).done(function (data) {
+            let forecast = [];
+            for (let i = 6; i <= 38; i += 8) {
+                let newDay = {};
+                newDay.date = data.list[i].dt_txt.substring(0, 10);
+                newDay.temp = data.list[i].main.temp_max;
+                newDay.icon = data.list[i].weather[0].icon;
+                newDay.iconURL = `https://openweathermap.org/img/wn/${newDay.icon}@2x.png`
+                newDay.description = data.list[i].weather[0].description;
+                newDay.main = data.list[i].weather[0].main;
+                newDay.humidity = data.list[i].main.humidity;
+                newDay.wind = data.list[i].wind.speed;
+                newDay.pressure = data.list[i].main.pressure;
+                forecast.push(newDay);
+            }
+            let html = "";
+            for (let i = 0; i < forecast.length; i++) {
+                if (forecast[i].main === "Rain" || forecast[i].main === "Drizzle" || forecast[i].main === "Thunderstorms") {
+                    html += '<div class="day rain">'
+                } else if (forecast[i].main === "Clouds") {
+                    if (forecast[i].description === "overcast clouds") {
+                        html += '<div class="day overcast">'
+                    } else if (forecast[i].description === "few clouds") {
+                        html += '<div class="day few">'
                     } else {
-                        html += '<div class="day nasty">'
+                        html += '<div class="day scattered">'
                     }
-                    html += '<div class="date">' + forecast[i].date + '</div><div class="temp">' + forecast[i].temp + '&deg;F</div><div class="icon"><img src="' + forecast[i].iconURL + '"></div><div>' + forecast[i].main + '<hr></div><div class="description">Description: ' + forecast[i].description + '</div><hr><div class="humidity">Humidity: ' + forecast[i].humidity + '%</div><hr><div class="wind">Wind: ' + forecast[i].wind + ' mph</div><hr><div class="pressure">Pressure: ' + forecast[i].pressure + ' mb</div></div>'
+
+                } else if (forecast[i].main === "Clear") {
+                    html += '<div class="day clear">'
+                } else if (forecast[i].main === "Snow") {
+                    html += '<div class="day snow">'
+                } else {
+                    html += '<div class="day nasty">'
                 }
-                forecastGrid.innerHTML = html;
-                currentCity.innerText = data.city.name;
-            });
-        }
+                html += '<div class="date">' + forecast[i].date + '</div><div class="temp">' + forecast[i].temp + '&deg;F</div><div class="icon"><img src="' + forecast[i].iconURL + '"></div><div>' + forecast[i].main + '<hr></div><div class="description">Description: ' + forecast[i].description + '</div><hr><div class="humidity">Humidity: ' + forecast[i].humidity + '%</div><hr><div class="wind">Wind: ' + forecast[i].wind + '</div><hr><div class="pressure">Pressure: ' + forecast[i].pressure + '</div></div>'
+            }
+            forecastGrid.innerHTML = html;
+            currentCity.innerText = data.city.name;
+        });
+        form.reset();
+    }
+
+    function log(position) {
+        // console.log(position)
+        reverseGeocode({
+            lng: position.coords.longitude,
+            lat: position.coords.latitude
+        }, accessToken).then(function (result) {
+            let initialLocation = result.substr(result.indexOf(',') + 2);
+            let forecastLocation = initialLocation.substr(0, initialLocation.indexOf(','))
+            // console.log(initialLocation)
+            initial(forecastLocation)
+            currentConditions(initialLocation)
+            map.setCenter([position.coords.longitude, position.coords.latitude]);
+            marker.setLngLat([position.coords.longitude, position.coords.latitude])
+                .addTo(map);
+        })
+    }
+
+    function currentConditions(q) {
+        $.get("https://api.weatherapi.com/v1/current.json?key=46b4f587484f4fdeb48211459220102", {
+            q: q,
+        }).done(function (data) {
+            $('#current').html('<div id="currentCondition"><div class="date">Date and Time: ' + data.location.localtime + '</div><div>&nbsp;Conditions: ' + data.current.condition.text + '</div><div>&nbsp;Current temp: ' + data.current.temp_f + '&deg;</div><div>&nbsp;Feels like: ' + data.current.feelslike_f + '&deg;</div><div>&nbsp;Humidity: ' + data.current.humidity + '&percnt;</div><div>&nbsp;Pressure: ' + data.current.pressure_mb + 'mb</div></div>');
+
+            if (data.current.condition.code === 1000) {
+                $('#currentCondition').toggleClass('clear')
+            } else if (data.current.condition.code === 1003 || data.current.condition.code === 1006) {
+                $('#currentCondition').toggleClass('few')
+            } else if (data.current.condition.code === 1009) {
+                $('#currentCondition').toggleClass('overcast')
+            } else if (data.current.condition.code === 1276 || data.current.condition.code === 1273 || data.current.condition.code === 1246 || data.current.condition.code === 1243 || data.current.condition.code === 1240 || data.current.condition.code === 1195 || data.current.condition.code === 1192 || data.current.condition.code === 1189 || data.current.condition.code === 1186 || data.current.condition.code === 1183 || data.current.condition.code === 1180 || data.current.condition.code === 1030 || data.current.condition.code === 1063 || data.current.condition.code === 1276 || data.current.condition.code === 1198) {
+                $('#currentCondition').toggleClass('rain')
+            } else if (data.current.condition.code === 1114 || data.current.condition.code === 1117 || data.current.condition.code === 1204 || data.current.condition.code === 1207 || data.current.condition.code === 1210 || data.current.condition.code === 1213 || data.current.condition.code === 1216 || data.current.condition.code === 1219 || data.current.condition.code === 1222 || data.current.condition.code === 1225 || data.current.condition.code === 1255 || data.current.condition.code === 1279 || data.current.condition.code === 1282) {
+                $('#currentCondition').toggleClass('snow')
+            } else {
+                $('#currentCondition').toggleClass('nasty')
+            }
+        })
+    }
+
+
+    // LOAD THE INITIAL FORECAST
+    function initial(q) {
+        $.get("https://api.openweathermap.org/data/2.5/forecast", {
+            APPID: "92f38058292f35435f6f74b0304dcfd4",
+            q: q,
+            units: "imperial"
+        }).done(function (data) {
+            // console.log(data);
+            let mains = []
+            for (let i = 0; i < data.list.length; i++) {
+                let newMain = {};
+                newMain.main = data.list[i].weather[0].main;
+                mains.push(newMain);
+            }
+            let forecast = [];
+            for (let i = 6; i <= 38; i += 8) {
+                let newDay = {};
+                newDay.date = data.list[i].dt_txt.substring(0, 10);
+                newDay.temp = data.list[i].main.temp_max;
+                newDay.icon = data.list[i].weather[0].icon;
+                newDay.iconURL = `https://openweathermap.org/img/wn/${newDay.icon}@2x.png`
+                newDay.description = data.list[i].weather[0].description;
+                newDay.main = data.list[i].weather[0].main;
+                newDay.humidity = data.list[i].main.humidity;
+                newDay.wind = data.list[i].wind.speed;
+                newDay.pressure = data.list[i].main.pressure;
+                forecast.push(newDay);
+            }
+            let html = "";
+            for (let i = 0; i < forecast.length; i++) {
+                if (forecast[i].main === "Rain" || forecast[i].main === "Drizzle" || forecast[i].main === "Thunderstorms") {
+                    html += '<div class="day rain">'
+                } else if (forecast[i].main === "Clouds") {
+                    if (forecast[i].description === "overcast clouds") {
+                        html += '<div class="day overcast">'
+                    } else if (forecast[i].description === "few clouds") {
+                        html += '<div class="day few">'
+                    } else {
+                        html += '<div class="day scattered">'
+                    }
+
+                } else if (forecast[i].main === "Clear") {
+                    html += '<div class="day clear">'
+                } else if (forecast[i].main === "Snow") {
+                    html += '<div class="day snow">'
+                } else {
+                    html += '<div class="day nasty">'
+                }
+                html += '<div class="date">' + forecast[i].date + '</div><div class="temp">' + forecast[i].temp + '&deg;F</div><div class="icon"><img src="' + forecast[i].iconURL + '"></div><div>' + forecast[i].main + '<hr></div><div class="description">Description: ' + forecast[i].description + '</div><hr><div class="humidity">Humidity: ' + forecast[i].humidity + '%</div><hr><div class="wind">Wind: ' + forecast[i].wind + ' mph</div><hr><div class="pressure">Pressure: ' + forecast[i].pressure + ' mb</div></div>'
+            }
+            forecastGrid.innerHTML = html;
+            currentCity.innerText = data.city.name;
+        });
+    }
 
     // END OF SCRIPTS
 </script>
