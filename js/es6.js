@@ -170,21 +170,37 @@ getGithubUsernames().then( users => {
 // myPromise2.then(() => console.log('resolved!'));
 // myPromise2.catch(() => console.log('rejected!'));
 
-const myPromise3 = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    if (Math.random() > 0.5) {
-      resolve();
-    } else {
-      reject();
-    }
-  }, 1500);
-});
+// const myPromise3 = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     if (Math.random() > 0.5) {
+//       resolve();
+//     } else {
+//       reject();
+//     }
+//   }, 1500);
+// });
 
-console.log(myPromise3); // a pending promise
+// console.log(myPromise3); // a pending promise
+//
+// myPromise3.then(() => console.log('resolved!'));
+// myPromise3.catch(() => console.log('rejected!'));
 
-myPromise3.then(() => console.log('resolved!'));
-myPromise3.catch(() => console.log('rejected!'));
+function makeRequest() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (Math.random() > 0.1) {
+        resolve('Here is your data: ...');
+      } else {
+        reject('Network Connection Error!');
+      }
+    }, 1500);
+  });
+}
 
-
-
+const request = makeRequest();
+console.log(request); // pending promise
+request.then(message => console.log('Promise resolved!', message));
+// if resolved, will log "Promise resolved!" and "Here is your data: ..."
+request.catch(message => console.log('Promise rejected!', message));
+// if rejected, will log "Promise rejected!" and "Network Connection Error!"
 
