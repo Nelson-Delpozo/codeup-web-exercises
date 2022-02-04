@@ -127,3 +127,13 @@ fetch('https://api.github.com/users').then( response => {
   });
 });
 
+fetch('https://api.github.com/users').then( response => {
+  response.json().then( users => {
+    users.forEach( userObj  => {
+      // do something with the username login
+      console.log(userObj.login);
+    });
+  });
+});
+
+
