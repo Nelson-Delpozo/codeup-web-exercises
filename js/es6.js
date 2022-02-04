@@ -99,3 +99,31 @@ console.log(list);
 //   list += '<li>' + developer + '</li>';
 // });
 // list += '</ul>';
+
+Promise.resolve('one').then((one) => {
+  console.log(one);
+  return 'two';
+}).then((two) => {
+  console.log(two);
+  return 'three';
+}).then((three) => {
+  console.log(three);
+});
+
+fetch('https://api.github.com/users')
+    .then(response => console.log(response))
+    .catch(error => console.error(error));
+
+const myPromise = fetch('https://api.github.com/users');
+myPromise.then(response => console.log(response));
+myPromise.catch(error => console.error(error));
+
+fetch('https://api.github.com/users').then( response => {
+  response.json().then( users => {
+    users.forEach( user => {
+      // do something with each user object...
+      console.log(user);
+    });
+  });
+});
+
