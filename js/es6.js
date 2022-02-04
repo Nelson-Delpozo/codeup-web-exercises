@@ -136,4 +136,55 @@ fetch('https://api.github.com/users').then( response => {
   });
 });
 
+fetch('https://api.github.com/users')
+    .then(response => response.json())
+    .then(users => {
+      users.forEach( userObj => {
+        // do something with each username
+        console.log(userObj.login);
+      })
+    })
+    .catch(error => console.error(error));
+function getGithubUsernames() {
+  return fetch('https://api.github.com/users')
+      .then(response => response.json())
+}
+
+// later on...
+
+getGithubUsernames().then( users => {
+  users.forEach( userObj => {
+    // do something with each username
+    console.log(userObj.login);
+  });
+}).catch(error => console.error(error));
+
+// const myPromise2 = new Promise((resolve, reject) => {
+//   if (Math.random() > 0.5) {
+//     resolve();
+//   } else {
+//     reject();
+//   }
+// });
+// console.log(myPromise2);
+// myPromise2.then(() => console.log('resolved!'));
+// myPromise2.catch(() => console.log('rejected!'));
+
+const myPromise3 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    if (Math.random() > 0.5) {
+      resolve();
+    } else {
+      reject();
+    }
+  }, 1500);
+});
+
+console.log(myPromise3); // a pending promise
+
+myPromise3.then(() => console.log('resolved!'));
+myPromise3.catch(() => console.log('rejected!'));
+
+
+
 
