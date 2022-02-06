@@ -40,3 +40,4 @@ fetch(url, options)
     .then( response => console.log(response) ) /* review was created successfully */
     .catch( error => console.error(error) ); /* handle errors */
 
+console.log('hello');
