@@ -132,3 +132,13 @@ let namesAndAges = customers.map(function(customer){
 })
 console.log(namesAndAges);
 
+// Create an array of civil servant customers (teachers and police officers) containing the same properties as the objects on the customers objects
+
+let civilServants = customers.filter(function(customer){
+    return customer.occupation === "Police Officer" || customer.occupation === "Teacher"
+})
+let civilServantNamesAndAges = civilServants.map(function(civilServant){
+    return {name: civilServant.name, age: civilServant.age};
+})
+console.log(civilServantNamesAndAges);
+
