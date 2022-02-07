@@ -183,4 +183,10 @@ const pets = [
 //     breed: THE_FIRST_LETTERS_OF_ALL_PET_BREEDS_CONCATENATATED_INTO_A_SINGLE_STRING
 // }
 
+function makeSuperPet(array){
+    let name = pets.map(function(pet){
+        return pet.name;
+    })
+}
 
+console.log(makeSuperPet(pets));
