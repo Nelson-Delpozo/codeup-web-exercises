@@ -187,6 +187,13 @@ function makeSuperPet(array){
     let name = pets.map(function(pet){
         return pet.name;
     })
+    let age = pets.map(function(pet){
+        return pet.age;
+    })
+    let breed = pets.map(function(pet){
+        return pet.breed
+    })
+    return {name: name, age: age, breed: breed}
 }
 
 console.log(makeSuperPet(pets));
