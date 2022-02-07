@@ -18,20 +18,20 @@
 <body>
 <div id="map"></div>
 
-<!--<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1IhfbELdK4SCFvQkHW2Yf2JyPJ_TlTPI&callback=initMap&v=weekly&channel=2" async></script>-->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1IhfbELdK4SCFvQkHW2Yf2JyPJ_TlTPI&callback=initMap&v=weekly&channel=2" async></script>
 
 <script>
 
-    // function initMap() {
-    //     const map = new google.maps.Map(document.getElementById("map"), {
-    //         zoom: 13,
-    //         center: { lat: 34.04924594193164, lng: -118.24104309082031 },
-    //     });
-    //     const trafficLayer = new google.maps.TrafficLayer();
-    //     console.log(trafficLayer)
-    //     trafficLayer.setMap(map);
-    // }
-    // initMap();
+    function initMap() {
+        const map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 13,
+            center: { lat: 34.04924594193164, lng: -118.24104309082031 },
+        });
+        const trafficLayer = new google.maps.TrafficLayer();
+        console.log(trafficLayer)
+        trafficLayer.setMap(map);
+    }
+    initMap();
 
 </script>
 </body>
