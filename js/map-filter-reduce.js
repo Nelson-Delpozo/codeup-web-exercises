@@ -76,6 +76,10 @@ console.log(longestEmail);
 let usernames = "Your instructors are: " + users.map(user => user.name).join(', ');
 console.log(usernames);
 
+let userNames = users.reduce((previousValue, currentValue) =>{
+        return previousValue + currentValue.name + ", "
+},"Your instructors are: ");
+console.log(userNames);
 // BONUS
 
 // Use .reduce to get the unique list of languages from the list of users.
@@ -148,5 +152,35 @@ let customerAges = customers.reduce((total, current) => {
     return Math.round((total + current.age) / customers.length);
 }, 0);
 console.log(customerAges);
+
+const pets = [
+    {
+        name: 'Bud',
+        age: 2,
+        breed: 'Pug'
+    },
+    {
+        name: 'Gabby',
+        age: 10,
+        breed: 'Retriever'
+    },
+    {
+        name: 'Fred',
+        age: 1,
+        breed: 'Lab'
+    },
+    {
+        name: 'Bowser',
+        age: 2,
+        breed: 'Pug'
+    }
+];
+
+// Create a function makeSuperPet() that takes in the pets array as input and returns a single pet object with the following shape...
+// {
+//     name: ALL_PET_NAMES_CONCATENATED_INTO_A_SINGLE_STRING,
+//         age: THE_TOTAL_OF_ALL_PET_AGES,
+//     breed: THE_FIRST_LETTERS_OF_ALL_PET_BREEDS_CONCATENATATED_INTO_A_SINGLE_STRING
+// }
 
 
