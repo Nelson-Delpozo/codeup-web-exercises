@@ -142,3 +142,11 @@ let civilServantNamesAndAges = civilServants.map(function(civilServant){
 })
 console.log(civilServantNamesAndAges);
 
+// Determine the average age of all the customers
+
+let customerAges = customers.reduce((total, current) => {
+    return Math.round((total + current.age) / customers.length);
+}, 0);
+console.log(customerAges);
+
+
