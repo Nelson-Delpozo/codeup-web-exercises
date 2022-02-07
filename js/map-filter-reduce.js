@@ -104,3 +104,31 @@ let firstLetters = fruits.map(function(fruit){
 console.log(firstLetters);
 
 
+const customers = [
+    {
+        name: "Fred",
+        age: 58,
+        occupation: "Police Officer",
+        noOfPurchases: 4
+    },
+    {
+        name: "Samantha",
+        age: 54,
+        occupation: "Teacher",
+        noOfPurchases: 18
+    },
+    {
+        name: "Charles",
+        age: 38,
+        occupation: "Librarian",
+        noOfPurchases: 9
+    }
+];
+
+// Create array of user objects based on the customers array of objects (each user object should just have name and age properties)
+
+let namesAndAges = customers.map(function(customer){
+    return {name: customer.name, age: customer.age};
+})
+console.log(namesAndAges);
+
