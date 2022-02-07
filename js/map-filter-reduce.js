@@ -89,9 +89,18 @@ allLangs.forEach((array =>{
 console.log(newArray);
 let unique = newArray.reduce((unique, lang) => {
   return unique.includes(lang) ? unique: [...unique, lang];
-
-}, []);
+  }, []);
 console.log(unique);
 
 // END OF EXERCISES
+
+const fruits = ["cantaloupe", "orange", "date", "elderberry", "ugli fruit", "pineapple"];
+
+// Create an array of the first letters of each fruit
+
+let firstLetters = fruits.map(function(fruit){
+    return fruit[0];
+})
+console.log(firstLetters);
+
 
