@@ -1,10 +1,12 @@
 "use strict";
 
 function getGithubCommits(username) {
+    console.log(username);
     return fetch(`https://api.github.com/users/${username}/events`)
         .then(response => response.json())
 }
-getGithubCommits("Nelson-Delpozo").then(events => {
+
+getGithubCommits().then(events => {
         console.log(`Your last push was at: ${events[0].created_at}`)
 }).catch(()=> console.log("You hit the max on this API for now"));
 
@@ -36,9 +38,6 @@ const options = {
 fetch(url, options)
     .then( response => console.log(response) ) /* review was created successfully */
     .catch( error => console.error(error) ); /* handle errors */
-
-console.log('hello');
-
 
 $.ajax('https://api.github.com/zen')
 .done(function(result){
