@@ -1,15 +1,14 @@
 "use strict";
 
-// function getGithubCommits(username) {
-//     return fetch(`https://api.github.com/users/${username}/events`)
-//         .then(response => response.json())
-// }
-// getGithubCommits("Nelson-Delpozo").then(events => {
-//     events.forEach(event => {
-//         // do something with each username
-//         console.log(event);
-//     });
-// }).catch(error => console.error(error));
+function getGithubCommits(username) {
+    return fetch(`https://api.github.com/users/${username}/events`)
+        .then(response => response.json())
+}
+getGithubCommits("Nelson-Delpozo").then(events => {
+    // events.forEach(event => {
+        // do something with each username
+        console.log(`Your last push was at: ${events[0].created_at}`)
+}).catch(()=> console.log("You hit the max on this API for now"));
 
 
 function wait(delay) {
