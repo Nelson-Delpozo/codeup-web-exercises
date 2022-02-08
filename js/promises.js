@@ -5,8 +5,6 @@ function getGithubCommits(username) {
         .then(response => response.json())
 }
 getGithubCommits("Nelson-Delpozo").then(events => {
-    // events.forEach(event => {
-        // do something with each username
         console.log(`Your last push was at: ${events[0].created_at}`)
 }).catch(()=> console.log("You hit the max on this API for now"));
 
@@ -42,26 +40,26 @@ fetch(url, options)
 console.log('hello');
 
 
-// $.ajax('https://api.github.com/zen')
-// .done(function(result){
-//     console.log(result)
-// });
-//
-// fetch('https://api.github.com/zen')
-//     .then(function(res){
-//         console.log(res);
-//     });
+$.ajax('https://api.github.com/zen')
+.done(function(result){
+    console.log(result)
+});
 
-// $.ajax('https://www.boredapi.com/activity')
-//     .done(function(result){
-//         console.log(result)
-//     });
-//
-// fetch('https://www.boredapi.com/activity')
-//     .then(function(res){
-//         console.log(res);
-//     });
-//
+fetch('https://api.github.com/zen')
+    .then(function(res){
+        console.log(res);
+    });
+
+$.ajax('https://www.boredapi.com/activity')
+    .done(function(result){
+        console.log(result)
+    });
+
+fetch('https://www.boredapi.com/activity')
+    .then(function(res){
+        console.log(res);
+    });
+
 
 // WITH AJAX
 $.ajax('https://api.kanye.rest')
