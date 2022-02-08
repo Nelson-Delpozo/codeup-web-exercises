@@ -6,8 +6,9 @@ function getGithubCommits(username) {
         .then(response => response.json())
 }
 
-getGithubCommits().then(events => {
-        console.log(`Your last push was at: ${events[0].created_at}`)
+getGithubCommits("Nelson-Delpozo").then(events => {
+        let dateAndTime = events[0].created_at;
+        console.log("Your last push was at: " + new Date(dateAndTime))
 }).catch(()=> console.log("You hit the max on this API for now"));
 
 
