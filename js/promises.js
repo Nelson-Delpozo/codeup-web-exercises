@@ -8,7 +8,12 @@ function getGithubCommits(username) {
 
 getGithubCommits("Nelson-Delpozo").then(events => {
         let dateAndTime = events[0].created_at;
-        console.log("Your last push was at: " + new Date(dateAndTime))
+        console.log("Your last push was at: " + (new Date(dateAndTime)).toLocaleString())
+
+    // console.log("Your last push was at: " + (new Date(dateAndTime)))
+    //
+    // console.log(new Date(dateAndTime).toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })
+    // );
 }).catch(()=> console.log("You hit the max on this API for now"));
 
 
