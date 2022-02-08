@@ -1,15 +1,15 @@
 "use strict";
 
-function getGithubCommits(username) {
-    return fetch(`https://api.github.com/users/${username}/events`)
-        .then(response => response.json())
-}
-getGithubCommits("Nelson-Delpozo").then(events => {
-    events.forEach(event => {
-        // do something with each username
-        console.log(event);
-    });
-}).catch(error => console.error(error));
+// function getGithubCommits(username) {
+//     return fetch(`https://api.github.com/users/${username}/events`)
+//         .then(response => response.json())
+// }
+// getGithubCommits("Nelson-Delpozo").then(events => {
+//     events.forEach(event => {
+//         // do something with each username
+//         console.log(event);
+//     });
+// }).catch(error => console.error(error));
 
 
 function wait(delay) {
@@ -53,26 +53,33 @@ console.log('hello');
 //         console.log(res);
 //     });
 
-$.ajax('https://www.boredapi.com/activity')
-    .done(function(result){
-        console.log(result)
-    });
+// $.ajax('https://www.boredapi.com/activity')
+//     .done(function(result){
+//         console.log(result)
+//     });
+//
+// fetch('https://www.boredapi.com/activity')
+//     .then(function(res){
+//         console.log(res);
+//     });
+//
 
-fetch('https://www.boredapi.com/activity')
-    .then(function(res){
-        console.log(res);
-    });
-
+// WITH AJAX
 $.ajax('https://api.kanye.rest')
     .done(function(result){
         console.log(result)
     });
 
+// WITH FETCH
 fetch('https://api.kanye.rest')
-    .then(function(res){
-        // res = res.valueOf()
-        console.log(res);
+    .then(response => response.json())
+    .then(response =>{
+        console.log(response)
     });
+
+
+
+
 
 
 
