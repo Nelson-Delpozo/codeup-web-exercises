@@ -43,8 +43,38 @@ fetch(url, options)
 console.log('hello');
 
 
-$.ajax('https://api.github.com/zen')
-.done(function(result){
-    console.log(result)
-});
+// $.ajax('https://api.github.com/zen')
+// .done(function(result){
+//     console.log(result)
+// });
+//
+// fetch('https://api.github.com/zen')
+//     .then(function(res){
+//         console.log(res);
+//     });
+
+$.ajax('https://www.boredapi.com/activity')
+    .done(function(result){
+        console.log(result)
+    });
+
+fetch('https://www.boredapi.com/activity')
+    .then(function(res){
+        console.log(res);
+    });
+
+$.ajax('https://api.kanye.rest')
+    .done(function(result){
+        console.log(result)
+    });
+
+fetch('https://api.kanye.rest')
+    .then(function(res){
+        // res = res.valueOf()
+        console.log(res);
+    });
+
+
+
+
 
