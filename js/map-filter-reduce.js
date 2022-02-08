@@ -205,6 +205,6 @@ console.log(makeSuperPet(pets));
 // expected output: [2,3,5,8,1,6,7,4]
 
 function removeDuplicates(array){
-    return Array.from(new Set(array))
+    return Array.from(new Set(array.sort()));
 }
 console.log(removeDuplicates([2,3,5,8,3,1,2,6,3,2,7,8,2,4,7]));
