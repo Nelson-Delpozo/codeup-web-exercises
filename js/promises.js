@@ -41,3 +41,10 @@ fetch(url, options)
     .catch( error => console.error(error) ); /* handle errors */
 
 console.log('hello');
+
+
+$.ajax('https://api.github.com/zen')
+.done(function(result){
+    console.log(result)
+});
+
