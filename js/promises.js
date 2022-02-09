@@ -75,9 +75,18 @@ fetch('https://api.kanye.rest')
     });
 
 
+// MORNING WARMUP
 
-
-
+function howManyVowels(string){
+    let vowels = 0;
+    for (let i = 0; i < string.length; i++){
+        if (string[i].toLowerCase() === "a" || string[i].toLowerCase() === "e" || string[i].toLowerCase() === "i" || string[i].toLowerCase() === "o" || string[i].toLowerCase() === "u") {
+            vowels += 1
+        }
+    }
+    console.log(vowels);
+}
+howManyVowels("the quick brown fox jumped over the lazy dog");
 
 
 
