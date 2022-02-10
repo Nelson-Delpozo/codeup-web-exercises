@@ -88,6 +88,30 @@ function howManyVowels(string){
 }
 howManyVowels("the quick brown fox jumped over the lazy dog");
 
+// LAURA WARMUP
+
+// write a function that counts the number of duplicate characters.
+//     example input: "adsjfdsfsfjsdjfhacabcsbajda"
+// expected output: { a: 5, b: 2, c: 2, d: 4, f: 4, j: 4, s: 5 }
+
+function numberOfDupes(str){
+    let counts = {}
+
+    for(let i =0; i < str.length; i++){
+        if (counts[str[i]]){
+            counts[str[i]] += 1
+        } else {
+            counts[str[i]] = 1
+        }
+    }
+    for (let prop in counts){
+        if (counts[prop] >= 2){
+            console.log(prop + " counted: " + counts[prop] + " times.")
+        }
+    }
+    console.log(counts)
+}
+numberOfDupes("adsjfdsfsfjsdjfhacabcsbajda");
 
 
 
