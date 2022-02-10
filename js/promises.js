@@ -113,5 +113,16 @@ function numberOfDupes(str){
 }
 numberOfDupes("adsjfdsfsfjsdjfhacabcsbajda");
 
+function howManyConsonants(string){
+    let consonants = 0;
+    for (let i = 0; i < string.length; i++){
+        if (string[i].toLowerCase() !== "a" || string[i].toLowerCase() !== "e" || string[i].toLowerCase() !== "i" || string[i].toLowerCase() !== "o" || string[i].toLowerCase() !== "u" || string[i].toLowerCase() !== " ") {
+            consonants += 1
+        }
+    }
+    console.log(consonants);
+}
+howManyConsonants("the quick brown fox jumped over the lazy dog");
+
 
 
