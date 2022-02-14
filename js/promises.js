@@ -125,4 +125,8 @@ function howManyConsonants(string){
 howManyConsonants("the quick brown fox jumped over the lazy dog");
 
 
+function addItUp(num1, num2){
+    return (num1 + num2)
+}
 
+console.log(addItUp(1, 2))
